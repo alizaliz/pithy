@@ -1,6 +1,75 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>pithy</title>
+<meta name="description" content="The sure conviction that we could if we wanted to is the reason so many good minds are idle. — Georg Christoph Lichtenberg">
+<meta property="og:title" content="pithy">
+<meta property="og:description" content="The sure conviction that we could if we wanted to is the reason so many good minds are idle. — Georg Christoph Lichtenberg">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<style>html,body{margin:0;background:#000;color:#7a7a7a;font:12px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}body{min-height:100svh;display:grid;place-items:center}</style>
-</head><body><p>The first entry arrives soon.</p></body></html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #000; --fg: #e8e8e8; --dim: #7a7a7a; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: var(--bg); color: var(--fg); }
+  body {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: clamp(24px, 6vw, 72px) 16px;
+  }
+  main {
+    width: 100%;
+    max-width: 640px;
+    display: grid;
+    gap: clamp(32px, 6vh, 56px);
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: min(560px, 62svh);
+    aspect-ratio: 1;
+    margin: 0 auto;
+  }
+  blockquote p {
+    font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 1rem + 1.6vw, 1.9rem);
+    line-height: 1.4;
+    text-wrap: balance;
+    text-align: center;
+  }
+  footer {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dim);
+    text-align: center;
+    display: grid;
+    gap: 6px;
+  }
+  footer cite { font-style: normal; color: var(--fg); }
+  footer a { color: inherit; text-decoration: none; }
+  footer a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+<main>
+  <figure>
+    <img src="data/images/2026-10-11.svg" alt="Technical blueprint of a stationary flywheel with brake caliper and torque vectors" width="800" height="800">
+  </figure>
+  <blockquote>
+    <p>“The sure conviction that we could if we wanted to is the reason so many good minds are idle.”</p>
+  </blockquote>
+  <footer>
+    <cite>Georg Christoph Lichtenberg</cite>
+    <time datetime="2026-10-11">2026-10-11</time>
+  </footer>
+</main>
+</body>
+</html>
