@@ -3,6 +3,14 @@
   "date": "2026-10-11",
   "hash": "b00a7c29b7f0",
   "sentiment": "Martial Arts",
-  "source": "Fran\u00e7ois de La Rochefoucauld"
+  "source": "Fran\u00e7ois de La Rochefoucauld",
+  "id": "2026-10-11"
+ },
+ {
+  "id": "2026-10-12-am",
+  "date": "2026-10-12",
+  "hash": "0b646f2899b4",
+  "sentiment": "Motivational",
+  "source": "Simone Weil"
  }
 ]

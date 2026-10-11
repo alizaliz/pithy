@@ -1,12 +1,14 @@
 {
-  "date": "2026-10-11",
-  "text": "Only firm people can be truly soft.",
-  "author": "François de La Rochefoucauld",
-  "work": "Maxims",
-  "origin": "https://en.wikiquote.org/wiki/Fran%C3%A7ois_de_La_Rochefoucauld",
-  "sentiment": "Martial Arts",
-  "visual_brief": "An engineering line study of a tempered recurve bow limb shown under tension, depicting both its relaxed contour and flexed arc in precise technical lines, accompanied by subtle bending-moment curves and center-of-mass markers on a pure black field.",
-  "alt": "Engineering line drawing of a flexed recurve bow limb under tension.",
-  "image": "data/images/2026-10-11.svg",
+  "id": "2026-10-12-am",
+  "date": "2026-10-12",
+  "slot": "am",
+  "text": "Only he who has measured the dominion of force, and knows how not to respect it, is capable of love and justice.",
+  "author": "Simone Weil",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Simone_Weil",
+  "sentiment": "Motivational",
+  "visual_brief": "Precise engineering cross-section of a monolithic sea breakwater resisting immense hydrostatic load. White lines on black show orthographic cutaways, foundation bedrock hatching, and crisp force-vector arrows indicating crushing external pressures met by solid structural geometry.",
+  "alt": "Engineering cross-section diagram of a breakwater resisting heavy force vectors",
+  "image": "data/images/2026-10-12-am.svg",
   "image_method": "llm"
 }
