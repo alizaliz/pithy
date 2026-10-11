@@ -10,7 +10,7 @@ import urllib.request
 from pathlib import Path
 
 WIKIQUOTE_API = "https://en.wikiquote.org/w/api.php"
-USER_AGENT = "pithy-bot/1.0 (https://github.com/; personal project)"
+USER_AGENT = "pithy-bot/1.0 (https://github.com/alizaliz/pithy)"
 
 # Aphorisms are short. Override these in seeds.toml [selection].
 MIN_LEN, MAX_LEN, MAX_WORDS = 15, 200, 35
@@ -64,16 +64,52 @@ def _mostly_latin(text: str) -> bool:
     return bool(letters) and latin / len(letters) > 0.9
 
 
+# Trailing notes that aren't part of the quote: "(1640)", "(14th century)",
+# "(Simpson, 2009)", "(Hays translation)", "(p. 12)".
+TRAILING_NOTE = re.compile(r"\s*\((?:[^()]*\b\d{3,4}s?\b[^()]*|[^()]*\bcentury\b[^()]*|[^()]*\btranslat\w*[^()]*|pp?\. ?\d[^()]*)\)\.?$", re.I)
+
+# Common English words that don't double as German/French/Latin/Spanish ones.
+ENGLISH_WORDS = {"the", "is", "and", "of", "to", "you", "your", "that", "this", "it", "not", "are",
+                 "what", "who", "when", "he", "his", "with", "without", "for", "from", "be", "but",
+                 "we", "our", "they", "has", "have", "can", "all", "only", "my", "do", "does", "no",
+                 "there", "by", "at", "or", "if", "one", "than", "more", "never", "always", "nothing"}
+
+CITATION = re.compile(r"\b1\d{3}\b|\b20\d{2}\b|^\W*(?:''|\")|\b(?:ch(?:apter)?|vol|p|pp|letter|book)\b\.?\s*\d", re.I)
+
+
+def _looks_english(text: str) -> bool:
+    return bool(ENGLISH_WORDS & set(re.findall(r"[a-z]+", text.lower())))
+
+
+def _translation(lines: list[str], i: int) -> str | None:
+    """The `**` line after line i, if it reads as an English translation, not a citation."""
+    if i + 1 >= len(lines):
+        return None
+    m = re.match(r"^\*\*(?![*:])\s*(.+)$", lines[i + 1])
+    if not m:
+        return None
+    raw = re.sub(r"^\s*(?:'')?Translation(?:'')?\s*:\s*", "", m.group(1), flags=re.I)
+    text = clean_wikitext(raw)
+    if _looks_english(text) and not CITATION.search(raw):
+        return raw
+    return None
+
+
 def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LEN,
                     max_words: int = MAX_WORDS) -> list[str]:
     """Top-level `* ` bullets outside skipped sections (`**` lines are citations).
+
+    A bullet in italics or with no common English words may be in its original
+    language: if the next `**` line reads as an English translation, that is used.
+    Italic non-English bullets without one are skipped.
 
     proverbs=True: when a line starts with a bold phrase, keep only that phrase
     (proverb pages often bold the proverb and follow it with an explanation).
     """
     quotes: list[str] = []
     skipping = False
-    for line in wikitext.splitlines():
+    lines = wikitext.splitlines()
+    for i, line in enumerate(lines):
         h2 = re.match(r"^==([^=].*?)==\s*$", line)
         if h2:
             skipping = bool(SKIP_SECTIONS.search(h2.group(1)))
@@ -87,9 +123,19 @@ def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LE
         bold = re.match(r"^'''(.+?)'''", body)
         if proverbs and bold:
             body = bold.group(1)
+        elif not proverbs:
+            plain = clean_wikitext(body)
+            italic = re.fullmatch(r"''(?!').+''[.!?]?", re.sub(r"<ref.*|\[https?://[^\]]*\]", "", body).strip())
+            if italic or not _looks_english(plain):
+                # No translation: drop italic foreign lines, keep plain ones (likely terse English).
+                body = _translation(lines, i) or (body if _looks_english(plain) or not italic else "")
         if SPEAKER_LABEL.match(clean_wikitext(body)):
             continue
         text = clean_wikitext(body)
+        while TRAILING_NOTE.search(text):
+            text = TRAILING_NOTE.sub("", text)
+        if proverbs and re.search(r"\([A-Z][^()\d]*\)\.?$", text):
+            continue  # credited to a named person, so not a proverb
         if (MIN_LEN <= len(text) <= max_len and len(text.split()) <= max_words
                 and not text.endswith(":") and "{" not in text and _mostly_latin(text)):
             quotes.append(text)

@@ -51,10 +51,53 @@ class WikiquoteParsing(unittest.TestCase):
             "* '''A rolling stone gathers no moss.''' Meaning: people who keep moving avoid responsibility.",
             "** Recorded in 1546.",
             "* Actions speak louder than words.",
+            "* Anger makes dull men witty, but it keeps them poor. (Francis Bacon)",
+            "* A good beginning makes a good ending. (14th century)",
         ])
         self.assertEqual(sources.parse_wikiquote(text, proverbs=True), [
             "A rolling stone gathers no moss.",
             "Actions speak louder than words.",
+            "A good beginning makes a good ending.",
+        ])
+
+
+    def test_uses_english_translation_of_original_language_quotes(self):
+        text = "\n".join([
+            "== Quotes ==",
+            "* ''Freier Wille ohne Fatum ist ebenso wenig denkbar, wie Geist ohne Reelles''.",
+            "** Free will without fate is no more conceivable than spirit without matter.",
+            "** \"Fatum und Geschichte,\" April 1862",
+            "* ''La culture est un instrument manié par des professeurs.''[http://x.org/a]",
+            "** Translation: Culture is an instrument wielded by professors.[http://x.org/b]",
+            "* ''Nur wer sich wandelt, bleibt mit mir verwandt und wandelt weiter.''",
+            "** ''Jenseits von Gut und Böse'' (1886)",
+            "* ''What does not kill me makes me stronger, it is said.''",
+            "* Il ne faut pas s’offenser que les autres nous cachent la vérité.",
+            "** We should not be upset that others hide the truth from us.",
+            "** Maxim 11 from the ''Manuscrit de Liancourt''.",
+        ])
+        self.assertEqual(sources.parse_wikiquote(text), [
+            "Free will without fate is no more conceivable than spirit without matter.",
+            "Culture is an instrument wielded by professors.",
+            "What does not kill me makes me stronger, it is said.",
+            "We should not be upset that others hide the truth from us.",
+        ])
+
+    def test_strips_trailing_dates_and_translator_notes(self):
+        text = "\n".join([
+            "== Quotes ==",
+            "* The absent are always in the wrong. (1640)",
+            "* To be free of passion and yet full of love. (Hays translation)",
+            "* A good beginning makes a good ending. (14th century)",
+            "* Fine feathers make fine birds. (Simpson , 2009)",
+            "* Kings (and queens) are only human, after all.",
+        ])
+        self.assertEqual(sources.parse_wikiquote(text), [
+            "The absent are always in the wrong.",
+            "To be free of passion and yet full of love.",
+            "A good beginning makes a good ending.",
+            "Fine feathers make fine birds.",
+            "Kings (and queens) are only human, after all.",
         ])
 
 
