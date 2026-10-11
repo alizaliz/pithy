@@ -1,0 +1,106 @@
+import unittest
+
+from generator import image, sources
+from generator.llm import extract_json, extract_svg
+
+WIKITEXT = """{{Wikipedia}}
+'''Friedrich Nietzsche''' was a German philosopher.
+
+== Quotes ==
+=== Human, All Too Human (1878) ===
+* Convictions are more dangerous foes of truth than lies.<ref>Aphorism 483</ref>
+** Aphorism 483, as translated by [[w:R. J. Hollingdale|R. J. Hollingdale]]
+* He who has a ''why'' to live can bear almost any [[how]].
+** Short
+* Too short.
+
+== Disputed ==
+* This one is disputed and should never be returned at all.
+
+== Quotes about Nietzsche ==
+* Someone else talking about Nietzsche at some length here.
+
+== Later works ==
+* And if you gaze long into an abyss, the abyss also gazes into you.
+"""
+
+
+class WikiquoteParsing(unittest.TestCase):
+    def test_parses_top_level_quotes_and_skips_sections(self):
+        q = sources.parse_wikiquote(WIKITEXT)
+        self.assertEqual(q, [
+            "Convictions are more dangerous foes of truth than lies.",
+            "He who has a why to live can bear almost any how.",
+            "And if you gaze long into an abyss, the abyss also gazes into you.",
+        ])
+
+    def test_skips_dialogue_long_passages_and_non_latin(self):
+        text = "\n".join([
+            "== Quotes ==",
+            "* '''Paul''': I must not fear, said the boy to his mother quietly.",
+            "* Jessica: We have come to a new world and must learn its ways.",
+            "* " + " ".join(["word"] * 40) + ".",
+            "* 猿も木から落ちる、とはよく言ったものです。本当に。",
+            "* Fear is the mind-killer.",
+        ])
+        self.assertEqual(sources.parse_wikiquote(text), ["Fear is the mind-killer."])
+
+    def test_proverb_pages_keep_only_the_bold_proverb(self):
+        text = "\n".join([
+            "== A ==",
+            "* '''A rolling stone gathers no moss.''' Meaning: people who keep moving avoid responsibility.",
+            "** Recorded in 1546.",
+            "* Actions speak louder than words.",
+        ])
+        self.assertEqual(sources.parse_wikiquote(text, proverbs=True), [
+            "A rolling stone gathers no moss.",
+            "Actions speak louder than words.",
+        ])
+
+
+class Extraction(unittest.TestCase):
+    def test_json_in_fences(self):
+        self.assertEqual(extract_json('```json\n{"index": 3}\n```')["index"], 3)
+
+    def test_svg_in_chatter(self):
+        self.assertTrue(extract_svg("Here:\n<svg viewBox='0 0 1 1'><g/></svg>\nDone").startswith("<svg"))
+
+
+class Sanitiser(unittest.TestCase):
+    def lines(self, n=15):
+        return "".join(f'<line x1="{i}" y1="0" x2="{i}" y2="800" stroke="#ff0000"/>' for i in range(n))
+
+    def test_strips_dangerous_content_and_forces_grey(self):
+        raw = (f'<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" onload="alert(1)">'
+               f'<rect width="800" height="800" fill="#ffffff"/>'
+               f'<script>alert(1)</script><foreignObject><div/></foreignObject>'
+               f'<image href="http://evil/x.png"/>{self.lines()}</svg>')
+        out = image.sanitize_svg(raw)
+        for bad in ("script", "onload", "foreignObject", "image", "evil", "red", "ff0000"):
+            self.assertNotIn(bad, out)
+        self.assertIn('viewBox="0 0 800.0 800.0"', out)
+        self.assertIn('fill="#000000"', out)       # white background flipped to black
+        self.assertIn('stroke="#808080"', out)     # dark red → lifted to visible grey
+
+    def test_unknown_named_colour_becomes_white(self):
+        out = image.sanitize_svg(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">{self.lines()}<circle r="5" stroke="red"/></svg>')
+        self.assertIn('<circle r="5" stroke="#ffffff"', out)
+
+    def test_adds_background_when_missing(self):
+        out = image.sanitize_svg(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">{self.lines()}</svg>')
+        self.assertIn('fill="#000000"', out)
+
+    def test_rejects_sparse_and_invalid(self):
+        with self.assertRaises(image.SVGRejected):
+            image.sanitize_svg('<svg xmlns="http://www.w3.org/2000/svg"><line/></svg>')
+        with self.assertRaises(image.SVGRejected):
+            image.sanitize_svg('<svg><unclosed></svg>')
+        with self.assertRaises(image.SVGRejected):
+            image.sanitize_svg('<!DOCTYPE x [<!ENTITY a "b">]><svg/>')
+
+    def test_fallback_is_valid(self):
+        self.assertTrue(image.sanitize_svg(image.fallback_svg("seed")))
+
+
+if __name__ == "__main__":
+    unittest.main()

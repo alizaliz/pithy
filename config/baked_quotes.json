@@ -1,0 +1,78 @@
+[
+  {
+    "text": "The unexamined life is not worth living.",
+    "author": "Socrates",
+    "work": "Plato, Apology",
+    "sentiments": ["Piques interest", "Motivational"]
+  },
+  {
+    "text": "Man is born free, and everywhere he is in chains.",
+    "author": "Jean-Jacques Rousseau",
+    "work": "The Social Contract",
+    "sentiments": ["Political"]
+  },
+  {
+    "text": "Power tends to corrupt, and absolute power corrupts absolutely.",
+    "author": "Lord Acton",
+    "work": "Letter to Mandell Creighton, 1887",
+    "sentiments": ["Political"]
+  },
+  {
+    "text": "The only thing we have to fear is fear itself.",
+    "author": "Franklin D. Roosevelt",
+    "work": "First inaugural address, 1933",
+    "sentiments": ["Motivational", "Political"]
+  },
+  {
+    "text": "That which does not kill us makes us stronger.",
+    "author": "Friedrich Nietzsche",
+    "work": "Twilight of the Idols",
+    "sentiments": ["Motivational"]
+  },
+  {
+    "text": "Whereof one cannot speak, thereof one must be silent.",
+    "author": "Ludwig Wittgenstein",
+    "work": "Tractatus Logico-Philosophicus",
+    "sentiments": ["Piques interest"]
+  },
+  {
+    "text": "I think, therefore I am.",
+    "author": "René Descartes",
+    "work": "Discourse on the Method",
+    "sentiments": ["Piques interest"]
+  },
+  {
+    "text": "I have measured out my life with coffee spoons.",
+    "author": "T. S. Eliot",
+    "work": "The Love Song of J. Alfred Prufrock",
+    "sentiments": ["Melancholic"]
+  },
+  {
+    "text": "All happy families are alike; each unhappy family is unhappy in its own way.",
+    "author": "Leo Tolstoy",
+    "work": "Anna Karenina",
+    "sentiments": ["Melancholic", "Piques interest"]
+  },
+  {
+    "text": "We all have strength enough to endure the misfortunes of others.",
+    "author": "François de La Rochefoucauld",
+    "work": "Maxims",
+    "sentiments": ["Piques interest"]
+  },
+  {
+    "text": "The heart has its reasons which reason knows nothing of.",
+    "author": "Blaise Pascal",
+    "work": "Pensées",
+    "sentiments": ["Piques interest", "Melancholic"]
+  },
+  {
+    "text": "Fall seven times, stand up eight.",
+    "author": "Japanese proverb",
+    "sentiments": ["Motivational"]
+  },
+  {
+    "text": "Still waters run deep.",
+    "author": "English proverb",
+    "sentiments": ["Piques interest"]
+  }
+]

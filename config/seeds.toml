@@ -1,0 +1,90 @@
+# Seeds for pithy, the daily aphorism.
+# Edit freely: add sentiments and sources, change weights, then commit.
+
+[schedule]
+# Which midnight counts as "today".
+timezone = "Pacific/Auckland"
+# Chance (0–1) that a day draws from config/baked_quotes.json instead of a source.
+baked_probability = 0.2
+# Don't reuse the same sentiment or source within this many days.
+avoid_recent_days = 3
+
+[selection]
+# Aphorisms are short: lines longer than this are never offered to the curator.
+max_chars = 200
+max_words = 35
+
+# ── Sentiments ───────────────────────────────────────────────
+# `description` is what the curator model reads, so make it specific.
+
+[[sentiments]]
+name = "Motivational"
+description = "Encourages effort, courage or perseverance without being saccharine."
+weight = 1
+
+[[sentiments]]
+name = "Piques interest"
+description = "A surprising, paradoxical or thought-provoking idea that makes you stop and think."
+weight = 1
+
+[[sentiments]]
+name = "Political"
+description = "About power, the state, freedom or society. Historical and philosophical, not partisan or about current events."
+weight = 0.5
+
+[[sentiments]]
+name = "Melancholic"
+description = "Quietly sad or wistful; about time, loss or impermanence."
+weight = 0.5
+
+# ── Sources ──────────────────────────────────────────────────
+# `wikiquote` is the exact page title on en.wikiquote.org.
+# `work` is optional: set it when the source is a single book/film.
+# `kind = "proverbs"` for anonymous proverb pages; `author` is then shown as-is
+# (e.g. "English proverb"). Use English-language proverb pages: lines in other
+# scripts are skipped.
+
+# Aphorists: people who wrote in aphorisms, so nearly every line qualifies.
+
+[[sources]]
+author = "François de La Rochefoucauld"
+work = "Maxims"
+wikiquote = "François de La Rochefoucauld"
+weight = 1.5
+
+[[sources]]
+author = "Georg Christoph Lichtenberg"
+wikiquote = "Georg Christoph Lichtenberg"
+weight = 1.5
+
+# Proverbs and adages: anonymous, no author.
+
+[[sources]]
+author = "English proverb"
+kind = "proverbs"
+wikiquote = "English proverbs"
+weight = 1
+
+# People and books: quotes that also work as aphorisms.
+
+[[sources]]
+author = "Friedrich Nietzsche"
+wikiquote = "Friedrich Nietzsche"
+weight = 1
+
+[[sources]]
+author = "Frank Herbert"
+work = "Dune"
+wikiquote = "Dune"
+weight = 1
+
+[[sources]]
+author = "Marcus Aurelius"
+work = "Meditations"
+wikiquote = "Marcus Aurelius"
+weight = 1
+
+[[sources]]
+author = "Simone Weil"
+wikiquote = "Simone Weil"
+weight = 0.5
