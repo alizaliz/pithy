@@ -1,12 +1,12 @@
 {
   "date": "2026-10-11",
-  "text": "Man loves company — even if it is only that of a small burning candle.",
-  "author": "Georg Christoph Lichtenberg",
-  "work": null,
-  "origin": "https://en.wikiquote.org/wiki/Georg_Christoph_Lichtenberg",
-  "sentiment": "Melancholic",
-  "visual_brief": "A precise engineering drawing of an automated weather beacon adrift in deep water, showing orthographic side elevations and a faint dash-line radius marking the reach of its low-power radio signal. The surrounding black space is vast and unmarked, emphasizing the tiny envelope of contact.",
-  "alt": "Engineering line drawing of an isolated floating beacon transmitting into empty space",
+  "text": "Only firm people can be truly soft.",
+  "author": "François de La Rochefoucauld",
+  "work": "Maxims",
+  "origin": "https://en.wikiquote.org/wiki/Fran%C3%A7ois_de_La_Rochefoucauld",
+  "sentiment": "Martial Arts",
+  "visual_brief": "An engineering line study of a tempered recurve bow limb shown under tension, depicting both its relaxed contour and flexed arc in precise technical lines, accompanied by subtle bending-moment curves and center-of-mass markers on a pure black field.",
+  "alt": "Engineering line drawing of a flexed recurve bow limb under tension.",
   "image": "data/images/2026-10-11.svg",
   "image_method": "llm"
 }
