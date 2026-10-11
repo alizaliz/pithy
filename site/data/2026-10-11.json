@@ -1,12 +1,12 @@
 {
   "date": "2026-10-11",
-  "text": "Hypocrisy is an homage that vice pays to virtue.",
-  "author": "François de La Rochefoucauld",
-  "work": "Maxims",
-  "origin": "https://en.wikiquote.org/wiki/Fran%C3%A7ois_de_La_Rochefoucauld",
-  "sentiment": "Piques interest",
-  "visual_brief": "A precise architectural elevation and section of an ornate classical facade standing entirely freestanding, held upright from behind by stark utilitarian timber scaffolding and diagonal bracing. Orthographic style with delicate drafting lines, masonry hatch patterns, and engineering dimension callouts.",
-  "alt": "Architectural drawing of an ornate classical facade supported by rear wooden scaffolding.",
+  "text": "Man loves company — even if it is only that of a small burning candle.",
+  "author": "Georg Christoph Lichtenberg",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Georg_Christoph_Lichtenberg",
+  "sentiment": "Melancholic",
+  "visual_brief": "A precise engineering drawing of an automated weather beacon adrift in deep water, showing orthographic side elevations and a faint dash-line radius marking the reach of its low-power radio signal. The surrounding black space is vast and unmarked, emphasizing the tiny envelope of contact.",
+  "alt": "Engineering line drawing of an isolated floating beacon transmitting into empty space",
   "image": "data/images/2026-10-11.svg",
   "image_method": "llm"
 }
