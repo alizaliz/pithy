@@ -40,7 +40,7 @@
     font-family: "Newsreader", Georgia, "Times New Roman", serif;
     font-weight: 300;
     font-optical-sizing: auto;
-    font-size: clamp(1.4rem, 1rem + 1.7vw, 2rem);
+    font-size: clamp(1.1rem, 0.95rem + 0.8vw, 1.45rem);
     line-height: 1.42;
     letter-spacing: 0.005em;
     text-wrap: balance;
@@ -58,11 +58,11 @@
   footer a { color: inherit; text-decoration: none; }
   footer a:hover { color: var(--fg); }
 
-  /* On load: the words rise and fade in, then the drawing fades in. */
+  /* On load: the drawing fades in, then the words rise and fade in. */
   @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
   @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-  blockquote, footer { animation: rise 1.1s cubic-bezier(.2, .7, .2, 1) 0.15s both; }
-  figure { animation: fade 1.6s ease-out 0.9s both; }
+  blockquote, footer { animation: rise 1.1s cubic-bezier(.2, .7, .2, 1) 1.1s both; }
+  figure { animation: fade 1.4s ease-out 0.1s both; }
   @media (prefers-reduced-motion: reduce) {
     blockquote, footer, figure { animation: none; }
   }

@@ -60,7 +60,7 @@ def render_site(entry: dict) -> None:
     page = TEMPLATE.read_text(encoding="utf-8")
     fields = {
         "TITLE": "pithy",
-        "DESCRIPTION": f"{entry['text']} — {attribution(entry)}",
+        "DESCRIPTION": f"{' '.join(entry['text'].split())} — {attribution(entry)}",
         "IMAGE": entry["image"],
         "ALT": entry["alt"],
         "QUOTE": quote,
@@ -91,11 +91,12 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     history: list[dict] = json.loads(HISTORY.read_text()) if HISTORY.exists() else []
+    used = {h["hash"] for h in history}  # includes today's, so --force picks something new
     history = [h for h in history if h["date"] != today]
-    used = {h["hash"] for h in history}
     recent = history[-int(sched.get("avoid_recent_days", 3)):]
 
-    rng = random.Random(f"{today}-{len(history)}")
+    # Normal runs are reproducible; --force reseeds so a rerun gives a different result.
+    rng = random.Random(f"{today}-{len(history)}" + (f"-{random.random()}" if args.force else ""))
     sentiment = weighted_pick(cfg["sentiments"], rng, {h["sentiment"] for h in recent}, "name")
     use_baked = args.offline or rng.random() < float(sched.get("baked_probability", 0.2))
     source = None if use_baked else weighted_pick(cfg["sources"], rng, {h.get("source") for h in recent}, "author")

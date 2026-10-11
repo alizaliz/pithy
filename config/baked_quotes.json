@@ -74,5 +74,17 @@
     "text": "Still waters run deep.",
     "author": "English proverb",
     "sentiments": ["Piques interest"]
+  },
+  {
+    "text": "He who fights with monsters might take care lest he thereby become a monster. And when you gaze long into an abyss the abyss also gazes into you.",
+    "author": "Friedrich Nietzsche",
+    "work": "Beyond Good and Evil, §146",
+    "sentiments": ["Melancholic", "Piques interest"]
+  },
+  {
+    "text": "I must not fear.\nFear is the mind-killer.\nFear is the little-death that brings total obliteration.\nI will face my fear.",
+    "author": "Frank Herbert",
+    "work": "Dune",
+    "sentiments": ["Motivational"]
   }
 ]

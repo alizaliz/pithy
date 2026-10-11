@@ -75,12 +75,16 @@ class WikiquoteParsing(unittest.TestCase):
             "* Il ne faut pas s’offenser que les autres nous cachent la vérité.",
             "** We should not be upset that others hide the truth from us.",
             "** Maxim 11 from the ''Manuscrit de Liancourt''.",
+            "* ''Und wenn du lange in einen Abgrund blickst, blickt der Abgrund auch in dich hinein.''",
+            "** '''And when you gaze long into an abyss the abyss also gazes into you.'''",
+            "** Chapter IV, aphorism 146, tr. R. J. Hollingdale",
         ])
         self.assertEqual(sources.parse_wikiquote(text), [
             "Free will without fate is no more conceivable than spirit without matter.",
             "Culture is an instrument wielded by professors.",
             "What does not kill me makes me stronger, it is said.",
             "We should not be upset that others hide the truth from us.",
+            "And when you gaze long into an abyss the abyss also gazes into you.",
         ])
 
     def test_strips_trailing_dates_and_translator_notes(self):

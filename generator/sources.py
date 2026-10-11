@@ -74,7 +74,7 @@ ENGLISH_WORDS = {"the", "is", "and", "of", "to", "you", "your", "that", "this", 
                  "we", "our", "they", "has", "have", "can", "all", "only", "my", "do", "does", "no",
                  "there", "by", "at", "or", "if", "one", "than", "more", "never", "always", "nothing"}
 
-CITATION = re.compile(r"\b1\d{3}\b|\b20\d{2}\b|^\W*(?:''|\")|\b(?:ch(?:apter)?|vol|p|pp|letter|book)\b\.?\s*\d", re.I)
+CITATION = re.compile(r"\b1\d{3}\b|\b20\d{2}\b|^\s*(?:''(?!')|\")|\b(?:ch(?:apter)?|vol|p|pp|letter|book)\b\.?\s*\d", re.I)
 
 
 def _looks_english(text: str) -> bool:

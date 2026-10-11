@@ -16,9 +16,12 @@ proverbs). Choose the single line that is the best aphorism for the mood:
 - states a general truth or insight, not a description of a particular event,
   character or plot moment;
 - makes complete sense on its own, with no surrounding context or names needed;
-- is concise and memorable — ideally one sentence, under about 30 words;
+- is concise and memorable — ideally one sentence, under about 30 words, though
+  a short passage of a few lines (a litany, a verse, a book's key lines) is
+  welcome when it stands on its own;
 - rewards a second reading.
 Reject dialogue, narration, lists, and lines that only make sense in the source.
+Lines of a passage are separated by " / " in the list.
 If none fit well, choose the closest one anyway.
 
 Then write a brief for a white-on-black line drawing that captures the quote's
@@ -40,7 +43,7 @@ def curate(llm: LLM, sentiment: dict, candidates: list[dict], rng: random.Random
     pool = candidates[:]
     rng.shuffle(pool)
     pool = pool[:limit]
-    listing = "\n".join(f"{i}. {c['text']}" for i, c in enumerate(pool))
+    listing = "\n".join(f"{i}. {' / '.join(c['text'].splitlines())}" for i, c in enumerate(pool))
     user = f"Mood: {sentiment['name']} — {sentiment['description']}\n\nQuotes:\n{listing}"
 
     for _ in range(2):
