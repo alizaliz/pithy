@@ -65,7 +65,6 @@ def render_site(entry: dict) -> None:
         "ALT": entry["alt"],
         "QUOTE": quote,
         "ATTRIBUTION": attribution(entry),
-        "DATE": entry["date"],
     }
     for k, v in fields.items():
         page = page.replace("{{" + k + "}}", html.escape(v, quote=True))
