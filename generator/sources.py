@@ -22,6 +22,22 @@ SPEAKER_LABEL = re.compile(r"^[A-Z][\w .'-]{0,30}:\s")
 SPEECH_TAG = re.compile(r"[\"“”‘’'],?\s+(?:said|says|asked|replied|added|whispered|shouted|muttered)\b"
                         r"|\b(?:said|asked|replied)\s+(?:the\s+)?[A-Z]")
 
+# Trailing notes that aren't part of the quote: "(1640)", "(14th century)",
+# "(Simpson, 2009)", "(Hays translation)", "(p. 12)".
+TRAILING_NOTE = re.compile(r"\s*\((?:[^()]*\b\d{3,4}s?\b[^()]*|[^()]*\bcentury\b[^()]*|[^()]*\btranslat\w*[^()]*|pp?\. ?\d[^()]*)\)\.?$", re.I)
+
+# On proverb pages, "(Francis Bacon)" credits a person, so the line isn't a proverb.
+CREDITED = re.compile(r"\([A-Z][^()\d]*\)\.?$")
+
+# A `**` line that cites a source rather than translating the quote above it.
+CITATION = re.compile(r"\b1\d{3}\b|\b20\d{2}\b|^\s*(?:''(?!')|\")|\b(?:ch(?:apter)?|vol|p|pp|letter|book)\b\.?\s*\d", re.I)
+
+# Common English words that don't double as German/French/Latin/Spanish ones.
+ENGLISH_WORDS = {"the", "is", "and", "of", "to", "you", "your", "that", "this", "it", "not", "are",
+                 "what", "who", "when", "he", "his", "with", "without", "for", "from", "be", "but",
+                 "we", "our", "they", "has", "have", "can", "all", "only", "my", "do", "does", "no",
+                 "there", "by", "at", "or", "if", "one", "than", "more", "never", "always", "nothing"}
+
 # Level-2 sections whose bullets are NOT reliable quotes by the subject.
 SKIP_SECTIONS = re.compile(
     r"disputed|misattributed|attributed|quotes? about|about |external links|see also|"
@@ -68,19 +84,6 @@ def _mostly_latin(text: str) -> bool:
     return bool(letters) and latin / len(letters) > 0.9
 
 
-# Trailing notes that aren't part of the quote: "(1640)", "(14th century)",
-# "(Simpson, 2009)", "(Hays translation)", "(p. 12)".
-TRAILING_NOTE = re.compile(r"\s*\((?:[^()]*\b\d{3,4}s?\b[^()]*|[^()]*\bcentury\b[^()]*|[^()]*\btranslat\w*[^()]*|pp?\. ?\d[^()]*)\)\.?$", re.I)
-
-# Common English words that don't double as German/French/Latin/Spanish ones.
-ENGLISH_WORDS = {"the", "is", "and", "of", "to", "you", "your", "that", "this", "it", "not", "are",
-                 "what", "who", "when", "he", "his", "with", "without", "for", "from", "be", "but",
-                 "we", "our", "they", "has", "have", "can", "all", "only", "my", "do", "does", "no",
-                 "there", "by", "at", "or", "if", "one", "than", "more", "never", "always", "nothing"}
-
-CITATION = re.compile(r"\b1\d{3}\b|\b20\d{2}\b|^\s*(?:''(?!')|\")|\b(?:ch(?:apter)?|vol|p|pp|letter|book)\b\.?\s*\d", re.I)
-
-
 def _looks_english(text: str) -> bool:
     return bool(ENGLISH_WORDS & set(re.findall(r"[a-z]+", text.lower())))
 
@@ -99,13 +102,25 @@ def _translation(lines: list[str], i: int) -> str | None:
     return None
 
 
+def _english_version(body: str, lines: list[str], i: int) -> str:
+    """Bullet i as given, or its English translation if it's in another language.
+
+    Italics or no common English words suggest the original language, so the
+    next `**` line is used if it reads as a translation. Without one, italic
+    non-English bullets become "" (skipped); plain ones are kept as terse English.
+    """
+    plain = clean_wikitext(body)
+    italic = re.fullmatch(r"''(?!').+''[.!?]?", re.sub(r"<ref.*|\[https?://[^\]]*\]", "", body).strip())
+    if not italic and _looks_english(plain):
+        return body
+    return _translation(lines, i) or ("" if italic and not _looks_english(plain) else body)
+
+
 def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LEN,
                     max_words: int = MAX_WORDS) -> list[str]:
     """Top-level `* ` bullets outside skipped sections (`**` lines are citations).
 
-    A bullet in italics or with no common English words may be in its original
-    language: if the next `**` line reads as an English translation, that is used.
-    Italic non-English bullets without one are skipped.
+    Bullets in another language are replaced by their English translation.
 
     proverbs=True: when a line starts with a bold phrase, keep only that phrase
     (proverb pages often bold the proverb and follow it with an explanation).
@@ -128,20 +143,14 @@ def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LE
         if proverbs and bold:
             body = bold.group(1)
         elif not proverbs:
-            plain = clean_wikitext(body)
-            italic = re.fullmatch(r"''(?!').+''[.!?]?", re.sub(r"<ref.*|\[https?://[^\]]*\]", "", body).strip())
-            if italic or not _looks_english(plain):
-                # No translation: drop italic foreign lines, keep plain ones (likely terse English).
-                body = _translation(lines, i) or (body if _looks_english(plain) or not italic else "")
-        if SPEAKER_LABEL.match(clean_wikitext(body)):
-            continue
+            body = _english_version(body, lines, i)
         text = clean_wikitext(body)
-        if SPEECH_TAG.search(text):
+        if not text or SPEAKER_LABEL.match(text) or SPEECH_TAG.search(text):
             continue
         while TRAILING_NOTE.search(text):
             text = TRAILING_NOTE.sub("", text)
-        if proverbs and re.search(r"\([A-Z][^()\d]*\)\.?$", text):
-            continue  # credited to a named person, so not a proverb
+        if proverbs and CREDITED.search(text):
+            continue
         if (MIN_LEN <= len(text) <= max_len and len(text.split()) <= max_words
                 and not text.endswith(":") and "{" not in text and _mostly_latin(text)):
             quotes.append(text)
