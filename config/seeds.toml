@@ -37,6 +37,26 @@ name = "Melancholic"
 description = "Quietly sad or wistful; about time, loss or impermanence."
 weight = 0.5
 
+[[sentiments]]
+name = "Wry"
+description = "Dry, knowing humour that lands a real truth; witty without being a joke."
+weight = 0.75
+
+[[sentiments]]
+name = "Tender"
+description = "Warm and gentle; about love, kindness, memory or connection between people."
+weight = 0.5
+
+[[sentiments]]
+name = "Philosophical"
+description = "About the nature of reality, mind, truth or how to live; contemplative rather than practical."
+weight = 0.75
+
+[[sentiments]]
+name = "Martial Arts"
+description = "The martial way: discipline, focus, conviction and mastery of the self, as in martial arts films and teachings."
+weight = 0.25
+
 # ── Sources ──────────────────────────────────────────────────
 # `wikiquote` is the exact page title on en.wikiquote.org.
 # `work` is optional: set it when the source is a single book/film.
@@ -88,3 +108,57 @@ weight = 1
 author = "Simone Weil"
 wikiquote = "Simone Weil"
 weight = 0.5
+
+[[sources]]
+author = "Seneca"
+wikiquote = "Seneca the Younger"
+weight = 1
+
+[[sources]]
+author = "Epictetus"
+wikiquote = "Epictetus"
+weight = 0.5
+
+[[sources]]
+author = "Oscar Wilde"
+wikiquote = "Oscar Wilde"
+weight = 1
+
+[[sources]]
+author = "Mark Twain"
+wikiquote = "Mark Twain"
+weight = 0.75
+
+[[sources]]
+author = "Albert Camus"
+wikiquote = "Albert Camus"
+weight = 0.75
+
+[[sources]]
+author = "Kurt Vonnegut"
+wikiquote = "Kurt Vonnegut"
+weight = 0.75
+
+[[sources]]
+author = "Rainer Maria Rilke"
+wikiquote = "Rainer Maria Rilke"
+weight = 0.5
+
+[[sources]]
+author = "Kahlil Gibran"
+wikiquote = "Kahlil Gibran"
+weight = 0.5
+
+# Terry Pratchett: his own page, plus the Discworld page (the novels' titles
+# redirect there).
+
+[[sources]]
+author = "Terry Pratchett"
+wikiquote = "Terry Pratchett"
+weight = 0.75
+
+[[sources]]
+author = "Terry Pratchett"
+work = "Discworld"
+wikiquote = "Discworld"
+weight = 1

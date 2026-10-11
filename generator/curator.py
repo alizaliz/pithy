@@ -20,7 +20,8 @@ proverbs). Choose the single line that is the best aphorism for the mood:
   a short passage of a few lines (a litany, a verse, a book's key lines) is
   welcome when it stands on its own;
 - rewards a second reading.
-Reject dialogue, narration, lists, and lines that only make sense in the source.
+Reject dialogue, narration, lists, and lines that only make sense in the source
+(a short two-line exchange is fine if, together, it stands on its own).
 Lines of a passage are separated by " / " in the list.
 If none fit well, choose the closest one anyway.
 

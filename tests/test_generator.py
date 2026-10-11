@@ -87,6 +87,17 @@ class WikiquoteParsing(unittest.TestCase):
             "And when you gaze long into an abyss the abyss also gazes into you.",
         ])
 
+    def test_skips_narrated_dialogue(self):
+        text = "\n".join([
+            "== Quotes ==",
+            "* \"Dwarfs and trolls get along like a house on fire,\" said Nobby. \"Ever been in one?\"",
+            "* “It’s not that simple,” asked Granny, looking up from the fire.",
+            "* People aren’t just people; they are people surrounded by circumstances.",
+        ])
+        self.assertEqual(sources.parse_wikiquote(text), [
+            "People aren’t just people; they are people surrounded by circumstances.",
+        ])
+
     def test_strips_trailing_dates_and_translator_notes(self):
         text = "\n".join([
             "== Quotes ==",

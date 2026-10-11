@@ -86,5 +86,95 @@
     "author": "Frank Herbert",
     "work": "Dune",
     "sentiments": ["Motivational"]
+  },
+  {
+    "text": "This is your life, and it's ending one minute at a time.",
+    "author": "Chuck Palahniuk",
+    "work": "Fight Club",
+    "sentiments": ["Melancholic"]
+  },
+  {
+    "text": "You can't remember your name?\nNo. But for some reason I remember yours.",
+    "author": "Hayao Miyazaki",
+    "work": "Spirited Away",
+    "sentiments": ["Tender"]
+  },
+  {
+    "text": "A heart is a heavy burden.",
+    "author": "Hayao Miyazaki",
+    "work": "Howl's Moving Castle",
+    "sentiments": ["Tender", "Melancholic"]
+  },
+  {
+    "text": "The trouble with having an open mind, of course, is that people will insist on coming along and trying to put things in it.",
+    "author": "Terry Pratchett",
+    "work": "Diggers",
+    "sentiments": ["Wry"]
+  },
+  {
+    "text": "Light thinks it travels faster than anything but it is wrong. No matter how fast light travels it finds the darkness has always got there first, and is waiting for it.",
+    "author": "Terry Pratchett",
+    "work": "Reaper Man",
+    "sentiments": ["Piques interest", "Melancholic"]
+  },
+  {
+    "text": "Gods don't like people not doing much work. People who aren't busy all the time might start to think.",
+    "author": "Terry Pratchett",
+    "work": "Small Gods",
+    "sentiments": ["Wry", "Political"]
+  },
+  {
+    "text": "We are all in the gutter, but some of us are looking at the stars.",
+    "author": "Oscar Wilde",
+    "work": "Lady Windermere's Fan",
+    "sentiments": ["Motivational", "Tender"]
+  },
+  {
+    "text": "Experience is the name everyone gives to their mistakes.",
+    "author": "Oscar Wilde",
+    "work": "Lady Windermere's Fan",
+    "sentiments": ["Wry"]
+  },
+  {
+    "text": "There are more things, Lucilius, likely to frighten us than there are to crush us; we suffer more often in imagination than in reality.",
+    "author": "Seneca",
+    "work": "Moral Letters to Lucilius",
+    "sentiments": ["Motivational"]
+  },
+  {
+    "text": "Lay hold of today’s task, and you will not need to depend so much upon tomorrow’s. While we are postponing, life speeds by.",
+    "author": "Seneca",
+    "work": "Moral Letters to Lucilius",
+    "sentiments": ["Motivational", "Melancholic"]
+  },
+  {
+    "text": "In the middle of winter I at last discovered that there was in me an invincible summer.",
+    "author": "Albert Camus",
+    "work": "Return to Tipasa",
+    "sentiments": ["Motivational"]
+  },
+  {
+    "text": "We are what we pretend to be, so we must be careful about what we pretend to be.",
+    "author": "Kurt Vonnegut",
+    "work": "Mother Night",
+    "sentiments": ["Piques interest"]
+  },
+  {
+    "text": "I urge you to please notice when you are happy, and exclaim or murmur or think at some point, \"If this isn't nice, I don't know what is.\"",
+    "author": "Kurt Vonnegut",
+    "work": "A Man Without a Country",
+    "sentiments": ["Tender"]
+  },
+  {
+    "text": "First say to yourself what you would be; and then do what you have to do.",
+    "author": "Epictetus",
+    "work": "Discourses",
+    "sentiments": ["Motivational"]
+  },
+  {
+    "text": "Everything is an illusion in the mundane world. Only your conviction is real.",
+    "author": "Shibumi",
+    "work": "Dragon Tiger Gate",
+    "sentiments": ["Philosophical", "Martial Arts"]
   }
 ]

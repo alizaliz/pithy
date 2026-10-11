@@ -18,6 +18,10 @@ MIN_LEN, MAX_LEN, MAX_WORDS = 15, 200, 35
 # "Paul: some line" — a speaker label means dialogue, not an aphorism.
 SPEAKER_LABEL = re.compile(r"^[A-Z][\w .'-]{0,30}:\s")
 
+# '"…," said Nobby' / 'asked Granny': a speech tag means narrated dialogue.
+SPEECH_TAG = re.compile(r"[\"“”‘’'],?\s+(?:said|says|asked|replied|added|whispered|shouted|muttered)\b"
+                        r"|\b(?:said|asked|replied)\s+(?:the\s+)?[A-Z]")
+
 # Level-2 sections whose bullets are NOT reliable quotes by the subject.
 SKIP_SECTIONS = re.compile(
     r"disputed|misattributed|attributed|quotes? about|about |external links|see also|"
@@ -132,6 +136,8 @@ def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LE
         if SPEAKER_LABEL.match(clean_wikitext(body)):
             continue
         text = clean_wikitext(body)
+        if SPEECH_TAG.search(text):
+            continue
         while TRAILING_NOTE.search(text):
             text = TRAILING_NOTE.sub("", text)
         if proverbs and re.search(r"\([A-Z][^()\d]*\)\.?$", text):
