@@ -1,6 +1,9 @@
 import unittest
 
+import datetime as dt
+
 from generator import image, sources
+from generator.__main__ import entry_id
 from generator.llm import extract_json, extract_svg
 
 WIKITEXT = """{{Wikipedia}}
@@ -114,6 +117,17 @@ class WikiquoteParsing(unittest.TestCase):
             "Fine feathers make fine birds.",
             "Kings (and queens) are only human, after all.",
         ])
+
+
+class EntryIds(unittest.TestCase):
+    def test_slot_follows_the_local_hour(self):
+        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 1, 7)), "2026-10-12-am")
+        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 13, 7)), "2026-10-12-pm")
+
+    def test_explicit_date_and_slot(self):
+        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 13, 7), "2026-10-20"), "2026-10-20-am")
+        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 1, 7), "2026-10-20", "pm"), "2026-10-20-pm")
+        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 1, 7), slot="pm"), "2026-10-12-pm")
 
 
 class Extraction(unittest.TestCase):

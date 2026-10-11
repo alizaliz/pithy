@@ -2,12 +2,12 @@
 # Edit freely: add sentiments and sources, change weights, then commit.
 
 [schedule]
-# Which midnight counts as "today".
+# Decides the date and the am/pm slot of each entry (two a day).
 timezone = "Pacific/Auckland"
 # Chance (0–1) that a day draws from config/baked_quotes.json instead of a source.
 baked_probability = 0.2
-# Don't reuse the same sentiment or source within this many days.
-avoid_recent_days = 3
+# Don't reuse the same sentiment or source within this many entries.
+avoid_recent = 6
 
 [selection]
 # Aphorisms are short: lines longer than this are never offered to the curator.

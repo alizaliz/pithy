@@ -2,11 +2,11 @@ name: pithy
 
 on:
   schedule:
-    - cron: "7 12 * * *"   # ≈ 01:00 in the timezone set in config/seeds.toml
+    - cron: "7 0,12 * * *"   # every 12 hours: one am and one pm entry in Pacific/Auckland
   workflow_dispatch:
     inputs:
       force:
-        description: "Regenerate today's entry even if it exists"
+        description: "Regenerate the current entry even if it exists"
         type: boolean
         default: false
   push:
@@ -35,7 +35,7 @@ jobs:
         run: python -m unittest discover -s tests
 
       # Pushes to main only redeploy; scheduled and manual runs make the entry.
-      - name: Generate today's entry
+      - name: Generate the current entry
         if: github.event_name != 'push'
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -54,7 +54,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Entry for $(python -c 'import json; print(json.load(open("site/data/today.json"))["date"])')"
+          git commit -m "Entry for $(python -c 'import json; print(json.load(open("site/data/latest.json"))["id"])')"
           git pull --rebase
           git push
 
