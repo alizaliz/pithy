@@ -21,11 +21,16 @@ proverbs). Choose the single line that is the best aphorism for the mood:
 Reject dialogue, narration, lists, and lines that only make sense in the source.
 If none fit well, choose the closest one anyway.
 
-Then write a brief for a technical line drawing (white lines on black, like an
-engineering or architectural diagram) that captures the quote's feeling
-indirectly — an object, machine, structure, instrument or natural form, not
-people's faces and not literal text. One or two sentences, concrete and drawable.
-Do not use the quote's words as labels.
+Then write a brief for a white-on-black line drawing that captures the quote's
+feeling indirectly, by metaphor rather than illustration. The subject can be an
+object, machine, structure, instrument or natural form, or a scene or situation
+with the right sentiment: a quote about loneliness might be a lone probe
+travelling past the outer planets; one about persistence, a lighthouse in a
+storm. Choose the style that suits it: a precise engineering or architectural
+drawing (orthographic views, sections, dimensions), or a looser industrial
+design sketch (confident perspective linework, construction lines, callouts).
+No faces or portraits, and no literal text. One or two sentences, concrete and
+drawable, naming the style. Do not use the quote's words as labels.
 
 Reply with JSON only:
 {"index": <number>, "visual_brief": "<brief>", "alt": "<5-12 word image description>"}"""
@@ -49,5 +54,5 @@ def curate(llm: LLM, sentiment: dict, candidates: list[dict], rng: random.Random
             print(f"  curator: bad reply ({e}), retrying")
     print("  curator: falling back to a random candidate")
     pick = rng.choice(pool)
-    return {**pick, "visual_brief": f"An abstract precision instrument evoking: {sentiment['name'].lower()}",
+    return {**pick, "visual_brief": f"An abstract precision instrument evoking: {sentiment['name'].lower()}, as an engineering drawing",
             "alt": "Technical line drawing of a precision instrument"}

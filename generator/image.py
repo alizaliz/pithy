@@ -1,4 +1,4 @@
-"""White-on-black technical line art as SVG: prompt, sanitiser and fallback."""
+"""White-on-black line art (technical drawings, design sketches) as SVG: prompt, sanitiser and fallback."""
 
 from __future__ import annotations
 
@@ -13,17 +13,27 @@ SVG_NS = "http://www.w3.org/2000/svg"
 ET.register_namespace("", SVG_NS)
 VIEWBOX = (0, 0, 800, 800)
 
-SVG_SYSTEM_PROMPT = """You are a draughtsman producing technical line drawings as SVG code.
+SVG_SYSTEM_PROMPT = """You are a draughtsman and industrial designer producing line drawings as SVG code.
+
+Draw in whichever of these styles the brief asks for (default to the one that suits it):
+- Technical drawing: like an engineering or architectural drawing. Orthographic or
+  isometric views, construction lines, section hatching, centre lines (dash-dot),
+  dimension lines with small arrowheads, a thin border frame.
+- Industrial design sketch: like a designer's marker-and-fineliner concept sketch.
+  Confident perspective linework, construction and guide lines that overshoot their
+  corners, a few lighter repeated strokes, hatching for shadow, ellipse guides,
+  small callout arrows or detail views. Loose but accurate; no border frame needed.
+Subjects can be objects, machines and structures, or scenes: a spacecraft on its
+trajectory past planets, a bridge across a gorge, a vessel at sea. Render scenes in
+the same line style, e.g. orbits as dashed ellipses, terrain as contour lines.
 
 Style rules (strict):
 - White lines on a pure black background. Use only #ffffff, light greys, or black.
 - Line art only: stroke-based drawing, fill="none" except for tiny arrowheads or dots.
-- Look like an engineering or architectural drawing: orthographic or isometric views,
-  construction lines, section hatching, centre lines (dash-dot), dimension lines with
-  small arrowheads, a thin border frame.
-- Stroke widths between 0.75 and 2.5. Vary weight: outlines heavier, detail lighter.
+- Stroke widths between 0.5 and 2.5. Vary weight: outlines heavier, detail and
+  construction lines lighter (stroke-opacity may be used for faint guide lines).
 - At most 3 short labels (1–3 words, uppercase), font-family="monospace", font-size 12–16,
-  fill="#ffffff". Labels are optional.
+  fill="#ffffff". Labels are optional; keep them clear of other lines.
 - Rich detail: aim for 40–150 drawing elements.
 - viewBox="0 0 800 800". Begin with <rect width="800" height="800" fill="#000000"/>.
 - No <script>, <image>, <foreignObject>, <use>, CSS <style>, filters, gradients,
@@ -165,14 +175,14 @@ def _num(v: str) -> float:
 
 def generate_svg(llm: LLM, brief: str, attempts: int = 3) -> tuple[str, str]:
     """Returns (svg, method). Falls back to a procedural drawing if the model keeps failing."""
-    user = f"Draw this as a technical drawing:\n{brief}"
+    user = f"Draw this:\n{brief}"
     errors = []
     for _ in range(attempts):
         try:
             return sanitize_svg(extract_svg(llm.chat(SVG_SYSTEM_PROMPT, user, temperature=0.9))), "llm"
         except Exception as e:  # noqa: BLE001 — any failure means try again
             errors.append(str(e))
-            user = f"Draw this as a technical drawing:\n{brief}\n\nPrevious attempt failed: {e}. Follow the rules exactly."
+            user = f"Draw this:\n{brief}\n\nPrevious attempt failed: {e}. Follow the rules exactly."
     print(f"  image: falling back to procedural drawing ({'; '.join(errors)})")
     return fallback_svg(brief), "fallback"
 
