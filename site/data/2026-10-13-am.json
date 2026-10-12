@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-13-am",
+  "date": "2026-10-13",
+  "slot": "am",
+  "text": "Man is born free, and everywhere he is in chains.",
+  "author": "Jean-Jacques Rousseau",
+  "work": "The Social Contract",
+  "origin": "baked",
+  "sentiment": "Political",
+  "visual_brief": "An architectural section and exploded isometric blueprint of an intricate vault locking mechanism, showing heavy deadbolts, tumblers, and fine mechanical tolerances. White vector lines with dimension markers on a pure black background.",
+  "alt": "White blueprint drawing of an exploded vault lock mechanism on black",
+  "image": "data/images/2026-10-13-am.svg",
+  "image_method": "llm"
+}
