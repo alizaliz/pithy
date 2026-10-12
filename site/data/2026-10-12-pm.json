@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-12-pm",
+  "date": "2026-10-12",
+  "slot": "pm",
+  "text": "He who thinks a great deal is not suited to be a party man: he thinks his way through the party and out the other side too soon.",
+  "author": "Friedrich Nietzsche",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Friedrich_Nietzsche",
+  "sentiment": "Wry",
+  "visual_brief": "An architectural plan view in precise white technical linework showing an intricate, closed labyrinthine floorplan, pierced straight through the center by a single, perfectly straight transit line with directional arrows that enters one wall and exits the opposite side without turning.",
+  "alt": "Technical plan showing a straight path cutting clean through an intricate maze",
+  "image": "data/images/2026-10-12-pm.svg",
+  "image_method": "llm"
+}
