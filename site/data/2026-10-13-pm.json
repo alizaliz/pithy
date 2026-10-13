@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-13-pm",
+  "date": "2026-10-13",
+  "slot": "pm",
+  "text": "Money makes people rich; it is a fallacy to think it makes them better, or even that it makes them worse. People are what they do, and what they leave behind.",
+  "author": "Terry Pratchett",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Terry_Pratchett",
+  "sentiment": "Tender",
+  "visual_brief": "An architectural section and elevation drawing in crisp white linework on black, showing a solid timber threshold. Dimension lines and fine dotted contours measure the smooth, shallow hollow worn into the grain by generations of passing footsteps.",
+  "alt": "Architectural drawing of a wooden threshold worn down by footsteps",
+  "image": "data/images/2026-10-13-pm.svg",
+  "image_method": "llm"
+}

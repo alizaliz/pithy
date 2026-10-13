@@ -26,5 +26,12 @@
   "hash": "b73419d88521",
   "sentiment": "Political",
   "source": "baked"
+ },
+ {
+  "id": "2026-10-13-pm",
+  "date": "2026-10-13",
+  "hash": "45257f0d849c",
+  "sentiment": "Tender",
+  "source": "Terry Pratchett"
  }
 ]
