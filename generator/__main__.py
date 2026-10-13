@@ -112,7 +112,9 @@ def main(argv: list[str] | None = None) -> int:
     rng = random.Random(f"{eid}-{len(history)}" + (f"-{random.random()}" if args.force else ""))
     sentiment = weighted_pick(cfg["sentiments"], rng, {h["sentiment"] for h in recent}, "name")
     use_baked = args.offline or rng.random() < float(sched.get("baked_probability", 0.2))
-    source = None if use_baked else weighted_pick(cfg["sources"], rng, {h.get("source") for h in recent}, "author")
+    # Only sources tagged with the sentiment; with none, the baked list is used.
+    matching = [s for s in cfg["sources"] if sentiment["name"] in s.get("sentiments", [])]
+    source = None if use_baked or not matching else weighted_pick(matching, rng, {h.get("source") for h in recent}, "author")
     print(f"{eid}: sentiment={sentiment['name']!r} source={(source or {}).get('author', 'baked list')!r}")
 
     candidates: list[dict] = []

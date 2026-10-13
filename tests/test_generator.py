@@ -1,9 +1,11 @@
 import unittest
 
 import datetime as dt
+import json
+import tomllib
 
 from generator import image, sources
-from generator.__main__ import entry_id
+from generator.__main__ import BAKED, CONFIG, entry_id
 from generator.llm import extract_json, extract_svg
 
 WIKITEXT = """{{Wikipedia}}
@@ -209,6 +211,27 @@ class Sanitiser(unittest.TestCase):
     def test_fallback_is_valid(self):
         self.assertTrue(image.sanitize_svg(image.fallback_svg("seed")))
 
+
+
+class Config(unittest.TestCase):
+    """seeds.toml and baked_quotes.json agree on sentiment names."""
+
+    def setUp(self):
+        self.cfg = tomllib.loads(CONFIG.read_text(encoding="utf-8"))
+        self.names = {s["name"] for s in self.cfg["sentiments"]}
+
+    def test_every_source_has_known_sentiments(self):
+        for src in self.cfg["sources"]:
+            self.assertTrue(src.get("sentiments"), f"{src['wikiquote']} has no sentiments")
+            self.assertLessEqual(set(src["sentiments"]), self.names, src["wikiquote"])
+
+    def test_every_sentiment_has_a_source(self):
+        tagged = {n for src in self.cfg["sources"] for n in src["sentiments"]}
+        self.assertEqual(self.names - tagged, set())
+
+    def test_baked_quotes_use_known_sentiments(self):
+        for q in json.loads(BAKED.read_text(encoding="utf-8")):
+            self.assertLessEqual(set(q["sentiments"]), self.names, q["text"][:40])
 
 if __name__ == "__main__":
     unittest.main()
