@@ -200,5 +200,39 @@
     "author": "Tim Ferriss",
     "work": "Tools of Titans",
     "sentiments": ["Motivational"]
+  },
+  {
+    "text": "We knew the world would not be the same. A few people laughed, a few people cried. Most people were silent.",
+    "author": "J. Robert Oppenheimer",
+    "work": "The Decision to Drop the Bomb",
+    "sentiments": ["Melancholic", "Political"]
+  },
+  {
+    "text": "Now I am become Death, the destroyer of worlds.",
+    "author": "J. Robert Oppenheimer",
+    "work": "quoting the Bhagavad Gita",
+    "sentiments": ["Melancholic"]
+  },
+  {
+    "text": "We are the local embodiment of a Cosmos grown to self-awareness.",
+    "author": "Carl Sagan",
+    "work": "Cosmos",
+    "sentiments": ["Wonder", "Philosophical"]
+  },
+  {
+    "text": "The first principle is that you must not fool yourself — and you are the easiest person to fool.",
+    "author": "Richard Feynman",
+    "work": "Cargo Cult Science",
+    "sentiments": ["Wry", "Piques interest"]
+  },
+  {
+    "text": "In life, there's nothing to be feared, everything is to be understood.",
+    "author": "Marie Curie",
+    "sentiments": ["Motivational", "Wonder"]
+  },
+  {
+    "text": "How wonderful that we have met with a paradox. Now we have some hope of making progress.",
+    "author": "Niels Bohr",
+    "sentiments": ["Piques interest", "Wonder"]
   }
 ]

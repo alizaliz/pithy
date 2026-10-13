@@ -48,6 +48,11 @@ description = "Warm and gentle; about love, kindness, memory or connection betwe
 weight = 0.5
 
 [[sentiments]]
+name = "Wonder"
+description = "Awe at the universe, nature and discovery; the curiosity that drives science."
+weight = 0.75
+
+[[sentiments]]
 name = "Philosophical"
 description = "About the nature of reality, mind, truth or how to live; contemplative rather than practical."
 weight = 0.75
@@ -159,6 +164,73 @@ work = "Looking for Alaska"
 wikiquote = "John Green"
 section = "Looking for Alaska"
 weight = 0.5
+
+# Scientists.
+
+[[sources]]
+author = "Carl Sagan"
+wikiquote = "Carl Sagan"
+weight = 1
+
+[[sources]]
+author = "Richard Feynman"
+wikiquote = "Richard Feynman"
+weight = 1
+
+[[sources]]
+author = "J. Robert Oppenheimer"
+wikiquote = "J. Robert Oppenheimer"
+weight = 0.5
+
+[[sources]]
+author = "Albert Einstein"
+wikiquote = "Albert Einstein"
+weight = 0.75
+
+[[sources]]
+author = "Niels Bohr"
+wikiquote = "Niels Bohr"
+weight = 0.5
+
+[[sources]]
+author = "Stephen Hawking"
+wikiquote = "Stephen Hawking"
+weight = 0.5
+
+[[sources]]
+author = "Jacob Bronowski"
+wikiquote = "Jacob Bronowski"
+weight = 0.5
+
+[[sources]]
+author = "Rachel Carson"
+wikiquote = "Rachel Carson"
+weight = 0.5
+
+[[sources]]
+author = "Marie Curie"
+wikiquote = "Marie Curie"
+weight = 0.25
+
+[[sources]]
+author = "Werner Heisenberg"
+wikiquote = "Werner Heisenberg"
+weight = 0.25
+
+[[sources]]
+author = "Erwin Schrödinger"
+wikiquote = "Erwin Schrödinger"
+weight = 0.25
+
+[[sources]]
+author = "Max Planck"
+wikiquote = "Max Planck"
+weight = 0.25
+
+[[sources]]
+author = "Freeman Dyson"
+wikiquote = "Freeman Dyson"
+weight = 0.25
 
 # Terry Pratchett: his own page, plus the Discworld page (the novels' titles
 # redirect there).
