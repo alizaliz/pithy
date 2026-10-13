@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-14-am",
+  "date": "2026-10-14",
+  "slot": "am",
+  "text": "Fiery the angels fell; deep thunder rolled around their shores; burning with the fires of Orc.",
+  "author": "Ridley Scott",
+  "work": "Blade Runner",
+  "origin": "https://en.wikiquote.org/wiki/Blade_Runner",
+  "sentiment": "Wonder",
+  "visual_brief": "A precise astronomical engineering drawing of an open parabolic radio telescope array tilted upward toward deep space. Fine orthographic projection lines, focal point construction rays, and vector arrows track high-energy particle cascades descending across the dark field into the receiver horn.",
+  "alt": "Technical white line schematic of a deep-space radio dish receiving cosmic rays",
+  "image": "data/images/2026-10-14-am.svg",
+  "image_method": "fallback"
+}
