@@ -167,6 +167,8 @@ folder, or prefix commands with `SSL_CERT_FILE=/etc/ssl/cert.pem`.
 <summary><strong>Notes</strong></summary>
 
 - Wikiquote page titles in `seeds.toml` must match exactly (check the page URL).
+- To use one book from an author's page, add `section = "<book title>"` to the
+  source; only quotes under that heading are used.
 - To add a passage from a book, put it in `config/baked_quotes.json` with `\n`
   between lines; the page keeps the line breaks. Wikiquote sources are limited
   by `max_chars` / `max_words`, so longer passages only come from the baked list.

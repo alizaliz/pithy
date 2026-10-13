@@ -176,5 +176,17 @@
     "author": "Shibumi",
     "work": "Dragon Tiger Gate",
     "sentiments": ["Philosophical", "Martial Arts"]
+  },
+  {
+    "text": "Language is the foundation of civilization. It is the glue that holds a people together. It is the first weapon drawn in a conflict.",
+    "author": "Denis Villeneuve",
+    "work": "Arrival",
+    "sentiments": ["Piques interest", "Political", "Philosophical"]
+  },
+  {
+    "text": "I've seen things you people wouldn't believe... Attack ships on fire off the shoulder of Orion... I watched c-beams glitter in the dark near the Tannhäuser Gate. All those moments will be lost in time, like tears in rain... Time to die.",
+    "author": "Ridley Scott",
+    "work": "Blade Runner",
+    "sentiments": ["Melancholic"]
   }
 ]

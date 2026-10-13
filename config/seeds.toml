@@ -60,6 +60,8 @@ weight = 0.25
 # ── Sources ──────────────────────────────────────────────────
 # `wikiquote` is the exact page title on en.wikiquote.org.
 # `work` is optional: set it when the source is a single book/film.
+# `section` is optional: only use quotes under the level-3 heading containing it
+# (e.g. one book on an author's page).
 # `kind = "proverbs"` for anonymous proverb pages; `author` is then shown as-is
 # (e.g. "English proverb"). Use English-language proverb pages: lines in other
 # scripts are skipped.
@@ -147,6 +149,13 @@ weight = 0.5
 [[sources]]
 author = "Kahlil Gibran"
 wikiquote = "Kahlil Gibran"
+weight = 0.5
+
+[[sources]]
+author = "John Green"
+work = "Looking for Alaska"
+wikiquote = "John Green"
+section = "Looking for Alaska"
 weight = 0.5
 
 # Terry Pratchett: his own page, plus the Discworld page (the novels' titles

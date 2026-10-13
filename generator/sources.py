@@ -117,23 +117,31 @@ def _english_version(body: str, lines: list[str], i: int) -> str:
 
 
 def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LEN,
-                    max_words: int = MAX_WORDS) -> list[str]:
+                    max_words: int = MAX_WORDS, section: str | None = None) -> list[str]:
     """Top-level `* ` bullets outside skipped sections (`**` lines are citations).
 
     Bullets in another language are replaced by their English translation.
 
     proverbs=True: when a line starts with a bold phrase, keep only that phrase
     (proverb pages often bold the proverb and follow it with an explanation).
+
+    section: only use bullets under a level-3 heading containing this text
+    (e.g. one book on an author's page).
     """
     quotes: list[str] = []
     skipping = False
+    h3 = ""
     lines = wikitext.splitlines()
     for i, line in enumerate(lines):
         h2 = re.match(r"^==([^=].*?)==\s*$", line)
         if h2:
-            skipping = bool(SKIP_SECTIONS.search(h2.group(1)))
+            skipping, h3 = bool(SKIP_SECTIONS.search(h2.group(1))), ""
             continue
-        if skipping:
+        heading3 = re.match(r"^===([^=].*?)===\s*$", line)
+        if heading3:
+            h3 = clean_wikitext(heading3.group(1))
+            continue
+        if skipping or (section and section.lower() not in h3.lower()):
             continue
         m = re.match(r"^\*(?![*:])\s*(.+)$", line)
         if not m:
@@ -165,6 +173,7 @@ def wikiquote_candidates(source: dict, selection: dict | None = None) -> list[di
         proverbs=source.get("kind") == "proverbs",
         max_len=int(selection.get("max_chars", MAX_LEN)),
         max_words=int(selection.get("max_words", MAX_WORDS)),
+        section=source.get("section"),
     )
     return [
         {"text": t, "author": source["author"], "work": source.get("work"),

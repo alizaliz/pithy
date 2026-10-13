@@ -90,6 +90,18 @@ class WikiquoteParsing(unittest.TestCase):
             "And when you gaze long into an abyss the abyss also gazes into you.",
         ])
 
+    def test_section_limits_to_one_level3_heading(self):
+        text = "\n".join([
+            "== Quotes ==",
+            "=== ''[[w:Looking for Alaska|Looking for Alaska]]'' (2005) ===",
+            "* Imagining the future is a kind of nostalgia.",
+            "=== ''Paper Towns'' (2008) ===",
+            "* What a treacherous thing to believe that a person is more than a person.",
+        ])
+        self.assertEqual(sources.parse_wikiquote(text, section="Looking for Alaska"),
+                         ["Imagining the future is a kind of nostalgia."])
+        self.assertEqual(len(sources.parse_wikiquote(text)), 2)
+
     def test_skips_narrated_dialogue(self):
         text = "\n".join([
             "== Quotes ==",
