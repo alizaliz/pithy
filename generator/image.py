@@ -27,9 +27,18 @@ Subjects can be objects, machines and structures, or scenes: a spacecraft on its
 trajectory past planets, a bridge across a gorge, a vessel at sea. Render scenes in
 the same line style, e.g. orbits as dashed ellipses, terrain as contour lines.
 
+Show motion wherever something moves, turns, opens, flows or travels, as design
+sketches and technical diagrams do: curved arrows around an axis of rotation,
+straight arrows for direction of travel or force, arcs with arrowheads for
+trajectories and swings, short parallel speed lines, and a faint dashed "ghost"
+outline of a previous or next position. Use several where they help explain the
+movement, drawn lighter than the subject so they don't compete with it. Skip
+them for subjects that are genuinely still.
+
 Style rules (strict):
 - White lines on a pure black background. Use only #ffffff, light greys, or black.
 - Line art only: stroke-based drawing, fill="none" except for tiny arrowheads or dots.
+  Arrowheads can be a <marker> in <defs> referenced with marker-end="url(#id)".
 - Stroke widths between 0.5 and 2.5. Vary weight: outlines heavier, detail and
   construction lines lighter (stroke-opacity may be used for faint guide lines).
 - At most 3 short labels (1–3 words, uppercase), font-family="monospace", font-size 12–16,

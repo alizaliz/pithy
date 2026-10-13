@@ -33,8 +33,9 @@ travelling past the outer planets; one about persistence, a lighthouse in a
 storm. Choose the style that suits it: a precise engineering or architectural
 drawing (orthographic views, sections, dimensions), or a looser industrial
 design sketch (confident perspective linework, construction lines, callouts).
-No faces or portraits, and no literal text. One or two sentences, concrete and
-drawable, naming the style. Do not use the quote's words as labels.
+If the subject moves (turns, travels, opens, flows), say how, so the drawing
+can show it with motion arrows. No faces or portraits, and no literal text. One
+or two sentences, concrete and drawable, naming the style. Do not use the quote's words as labels.
 
 Reply with JSON only:
 {"index": <number>, "visual_brief": "<brief>", "alt": "<5-12 word image description>"}"""
