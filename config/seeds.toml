@@ -62,6 +62,8 @@ weight = 0.25
 # `work` is optional: set it when the source is a single book/film.
 # `section` is optional: only use quotes under the level-3 heading containing it
 # (e.g. one book on an author's page).
+# `kind = "film"` for film pages: also uses one-line dialogue and drops stage
+# directions. Credit films to the director, with the film as `work`.
 # `kind = "proverbs"` for anonymous proverb pages; `author` is then shown as-is
 # (e.g. "English proverb"). Use English-language proverb pages: lines in other
 # scripts are skipped.
@@ -171,3 +173,54 @@ author = "Terry Pratchett"
 work = "Discworld"
 wikiquote = "Discworld"
 weight = 1
+
+# Films: lighter weights, since film lines lean on their scenes more often.
+
+[[sources]]
+author = "Ridley Scott"
+work = "Blade Runner"
+wikiquote = "Blade Runner"
+kind = "film"
+weight = 0.25
+
+[[sources]]
+author = "David Fincher"
+work = "Fight Club"
+wikiquote = "Fight Club (film)"
+kind = "film"
+weight = 0.25
+
+[[sources]]
+author = "Christopher Nolan"
+work = "Interstellar"
+wikiquote = "Interstellar (film)"
+kind = "film"
+weight = 0.25
+
+[[sources]]
+author = "Frank Darabont"
+work = "The Shawshank Redemption"
+wikiquote = "The Shawshank Redemption"
+kind = "film"
+weight = 0.25
+
+[[sources]]
+author = "Hayao Miyazaki"
+work = "Spirited Away"
+wikiquote = "Spirited Away"
+kind = "film"
+weight = 0.25
+
+[[sources]]
+author = "Hayao Miyazaki"
+work = "Princess Mononoke"
+wikiquote = "Princess Mononoke"
+kind = "film"
+weight = 0.25
+
+[[sources]]
+author = "Mamoru Oshii"
+work = "Ghost in the Shell"
+wikiquote = "Ghost in the Shell (film)"
+kind = "film"
+weight = 0.25

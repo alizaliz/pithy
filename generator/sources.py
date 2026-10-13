@@ -116,8 +116,27 @@ def _english_version(body: str, lines: list[str], i: int) -> str:
     return _translation(lines, i) or ("" if italic and not _looks_english(plain) else body)
 
 
+def _lone_dialogue_line(lines: list[str], i: int) -> re.Match | None:
+    """A `:'''Name''': line` that is a whole dialogue block on its own (a monologue)."""
+    m = re.match(r"^:+\s*'''[^']+?'''\s*:\s*(.+)$", lines[i])
+    if not m:
+        return None
+    neighbours = [lines[j] for j in (i - 1, i + 1) if 0 <= j < len(lines)]
+    return None if any(n.startswith(":") for n in neighbours) else m
+
+
+def _film_text(text: str) -> str:
+    """Drop [stage directions] and quote marks wrapped around the whole line."""
+    text = re.sub(r"\s*\[[^\]]*\]\s*", " ", text).strip()
+    wrapped = re.fullmatch(r"[\"“](.+)[\"”]", text)
+    if wrapped and not re.search(r"[\"“”]", wrapped.group(1)):
+        text = wrapped.group(1).strip()
+    return text
+
+
 def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LEN,
-                    max_words: int = MAX_WORDS, section: str | None = None) -> list[str]:
+                    max_words: int = MAX_WORDS, section: str | None = None,
+                    film: bool = False) -> list[str]:
     """Top-level `* ` bullets outside skipped sections (`**` lines are citations).
 
     Bullets in another language are replaced by their English translation.
@@ -127,15 +146,19 @@ def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LE
 
     section: only use bullets under a level-3 heading containing this text
     (e.g. one book on an author's page).
+
+    film=True: also take one-line dialogue blocks (including in the Dialogue
+    section, which is otherwise skipped), and drop stage directions.
     """
     quotes: list[str] = []
-    skipping = False
+    skipping = in_dialogue = False
     h3 = ""
     lines = wikitext.splitlines()
     for i, line in enumerate(lines):
         h2 = re.match(r"^==([^=].*?)==\s*$", line)
         if h2:
-            skipping, h3 = bool(SKIP_SECTIONS.search(h2.group(1))), ""
+            in_dialogue = film and bool(re.search(r"dialogue", h2.group(1), re.I))
+            skipping, h3 = bool(SKIP_SECTIONS.search(h2.group(1))) and not in_dialogue, ""
             continue
         heading3 = re.match(r"^===([^=].*?)===\s*$", line)
         if heading3:
@@ -143,16 +166,22 @@ def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LE
             continue
         if skipping or (section and section.lower() not in h3.lower()):
             continue
-        m = re.match(r"^\*(?![*:])\s*(.+)$", line)
+        m = None if in_dialogue else re.match(r"^\*(?![*:])\s*(.+)$", line)
+        if film and not m:
+            m = _lone_dialogue_line(lines, i)
         if not m:
             continue
         body = m.group(1).strip()
+        if film:  # "'''Agent Halpern''': line" in a character-less section
+            body = re.sub(r"^'''[^']+?'''\s*:\s*", "", body)
         bold = re.match(r"^'''(.+?)'''", body)
         if proverbs and bold:
             body = bold.group(1)
         elif not proverbs:
             body = _english_version(body, lines, i)
         text = clean_wikitext(body)
+        if film:
+            text = _film_text(text)
         if not text or SPEAKER_LABEL.match(text) or SPEECH_TAG.search(text):
             continue
         while TRAILING_NOTE.search(text):
@@ -174,6 +203,7 @@ def wikiquote_candidates(source: dict, selection: dict | None = None) -> list[di
         max_len=int(selection.get("max_chars", MAX_LEN)),
         max_words=int(selection.get("max_words", MAX_WORDS)),
         section=source.get("section"),
+        film=source.get("kind") == "film",
     )
     return [
         {"text": t, "author": source["author"], "work": source.get("work"),

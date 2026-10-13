@@ -109,7 +109,8 @@ change after a successful run and are what the site itself serves.
    and anything over `max_chars` / `max_words` in `[selection]`. Quotes in their
    original language are replaced by the English translation listed under
    them, and trailing notes like "(1640)" or "(Hays translation)" are removed.
-   On proverb pages, lines credited to a named person are skipped.
+   On proverb pages, lines credited to a named person are skipped. Film pages
+   (`kind = "film"`) also give one-line dialogue, with stage directions removed.
 3. **Curator**: the LLM chooses the line that works best as a standalone
    aphorism, *by number*, and writes a drawing brief: an object or a scene that
    carries the quote's feeling (a lone probe passing the outer planets for
@@ -169,6 +170,10 @@ folder, or prefix commands with `SSL_CERT_FILE=/etc/ssl/cert.pem`.
 - Wikiquote page titles in `seeds.toml` must match exactly (check the page URL).
 - To use one book from an author's page, add `section = "<book title>"` to the
   source; only quotes under that heading are used.
+- Films: add the Wikiquote film page with `kind = "film"`, crediting the
+  director as `author` and the film as `work`. Many film pages are mostly long
+  exchanges and give fewer than 5 usable lines; a source like that falls back to
+  the baked list, so add those films' best lines to the baked list instead.
 - To add a passage from a book, put it in `config/baked_quotes.json` with `\n`
   between lines; the page keeps the line breaks. Wikiquote sources are limited
   by `max_chars` / `max_words`, so longer passages only come from the baked list.

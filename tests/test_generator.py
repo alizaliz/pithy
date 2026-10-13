@@ -102,6 +102,30 @@ class WikiquoteParsing(unittest.TestCase):
                          ["Imagining the future is a kind of nostalgia."])
         self.assertEqual(len(sources.parse_wikiquote(text)), 2)
 
+    def test_film_pages(self):
+        text = "\n".join([
+            "== Yubaba ==",
+            "* So, your name's Chihiro? [uses magic to steal the kanji] And it belongs to me now.",
+            "== San ==",
+            "* \"Cut off a wolf's head and it still has the power to bite.\"",
+            "== Other ==",
+            "* '''Agent Halpern''': We're a world with no single leader.",
+            "== Dialogue ==",
+            ":'''Col. Weber''': How would you approach translating this?",
+            ":'''Dr. Louise Banks''': I do not know.",
+            "<hr width=\"50%\"/>",
+            ":'''Roy Batty''': All those moments will be lost in time, like tears in rain.",
+            "",
+            "== Cast ==",
+            "* Rutger Hauer as Roy Batty, the replicant leader",
+        ])
+        self.assertEqual(sources.parse_wikiquote(text, film=True), [
+            "So, your name's Chihiro? And it belongs to me now.",
+            "Cut off a wolf's head and it still has the power to bite.",
+            "We're a world with no single leader.",
+            "All those moments will be lost in time, like tears in rain.",
+        ])
+
     def test_skips_narrated_dialogue(self):
         text = "\n".join([
             "== Quotes ==",
