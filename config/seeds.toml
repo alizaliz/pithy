@@ -4,6 +4,9 @@
 [schedule]
 # Decides the date and the am/pm slot of each entry (two a day).
 timezone = "Pacific/Auckland"
+# Local time of the am run; the pm run is 12 hours later (11:45 → 11:45 and 23:45).
+# Keep in step with the crons in .github/workflows/daily.yml.
+slot_start = "11:45"
 # Chance (0–1) that a day draws from config/baked_quotes.json instead of a source.
 baked_probability = 0.2
 # Don't reuse the same sentiment or source within this many entries.
@@ -69,7 +72,8 @@ weight = 0.25
 # `section` is optional: only use quotes under the level-3 heading containing it
 # (e.g. one book on an author's page).
 # `kind = "film"` for film pages: also uses one-line dialogue and drops stage
-# directions. Credit films to the director, with the film as `work`.
+# directions. Set `author` to the film title; lines are credited
+# "Character, Film" when the character is known, otherwise just the film.
 # `kind = "proverbs"` for anonymous proverb pages; `author` is then shown as-is
 # (e.g. "English proverb"). Use English-language proverb pages: lines in other
 # scripts are skipped.
@@ -83,13 +87,11 @@ wikiquote = "François de La Rochefoucauld"
 weight = 1.5
 sentiments = ["Wry", "Piques interest", "Philosophical"]
 
-
 [[sources]]
 author = "Georg Christoph Lichtenberg"
 wikiquote = "Georg Christoph Lichtenberg"
 weight = 1.5
 sentiments = ["Wry", "Piques interest", "Philosophical", "Wonder"]
-
 
 # Proverbs and adages: anonymous, no author.
 
@@ -100,7 +102,6 @@ wikiquote = "English proverbs"
 weight = 1
 sentiments = ["Motivational", "Wry", "Piques interest"]
 
-
 # People and books: quotes that also work as aphorisms.
 
 [[sources]]
@@ -109,14 +110,12 @@ wikiquote = "Friedrich Nietzsche"
 weight = 0.75
 sentiments = ["Philosophical", "Motivational", "Melancholic", "Piques interest"]
 
-
 [[sources]]
 author = "Frank Herbert"
 work = "Dune"
 wikiquote = "Dune"
 weight = 0.75
 sentiments = ["Political", "Philosophical", "Motivational", "Martial Arts"]
-
 
 [[sources]]
 author = "Marcus Aurelius"
@@ -125,13 +124,11 @@ wikiquote = "Marcus Aurelius"
 weight = 0.75
 sentiments = ["Motivational", "Philosophical", "Melancholic", "Martial Arts"]
 
-
 [[sources]]
 author = "Simone Weil"
 wikiquote = "Simone Weil"
 weight = 0.5
 sentiments = ["Philosophical", "Tender", "Melancholic"]
-
 
 [[sources]]
 author = "Seneca"
@@ -139,13 +136,11 @@ wikiquote = "Seneca the Younger"
 weight = 0.75
 sentiments = ["Motivational", "Philosophical", "Melancholic"]
 
-
 [[sources]]
 author = "Epictetus"
 wikiquote = "Epictetus"
 weight = 0.5
 sentiments = ["Motivational", "Philosophical", "Martial Arts"]
-
 
 [[sources]]
 author = "Oscar Wilde"
@@ -153,13 +148,11 @@ wikiquote = "Oscar Wilde"
 weight = 0.75
 sentiments = ["Wry", "Piques interest", "Tender"]
 
-
 [[sources]]
 author = "Mark Twain"
 wikiquote = "Mark Twain"
 weight = 0.5
 sentiments = ["Wry", "Political", "Piques interest"]
-
 
 [[sources]]
 author = "Albert Camus"
@@ -167,13 +160,11 @@ wikiquote = "Albert Camus"
 weight = 0.5
 sentiments = ["Philosophical", "Melancholic", "Motivational"]
 
-
 [[sources]]
 author = "Kurt Vonnegut"
 wikiquote = "Kurt Vonnegut"
 weight = 0.5
 sentiments = ["Wry", "Melancholic", "Tender", "Political"]
-
 
 [[sources]]
 author = "Rainer Maria Rilke"
@@ -181,13 +172,11 @@ wikiquote = "Rainer Maria Rilke"
 weight = 0.5
 sentiments = ["Tender", "Melancholic", "Philosophical"]
 
-
 [[sources]]
 author = "Kahlil Gibran"
 wikiquote = "Kahlil Gibran"
 weight = 0.5
 sentiments = ["Tender", "Philosophical"]
-
 
 [[sources]]
 author = "John Green"
@@ -197,6 +186,17 @@ section = "Looking for Alaska"
 weight = 0.5
 sentiments = ["Tender", "Melancholic"]
 
+[[sources]]
+author = "Brandon Sanderson"
+wikiquote = "Brandon Sanderson"
+weight = 0.75
+sentiments = ["Motivational", "Philosophical", "Political"]
+
+[[sources]]
+author = "Brent Weeks"
+wikiquote = "Brent Weeks"
+weight = 0.5
+sentiments = ["Martial Arts", "Political", "Motivational"]
 
 # Scientists.
 
@@ -206,13 +206,11 @@ wikiquote = "Carl Sagan"
 weight = 1
 sentiments = ["Wonder", "Philosophical", "Piques interest"]
 
-
 [[sources]]
 author = "Richard Feynman"
 wikiquote = "Richard Feynman"
 weight = 1
 sentiments = ["Wonder", "Wry", "Piques interest"]
-
 
 [[sources]]
 author = "J. Robert Oppenheimer"
@@ -220,13 +218,11 @@ wikiquote = "J. Robert Oppenheimer"
 weight = 0.5
 sentiments = ["Political", "Melancholic", "Wonder"]
 
-
 [[sources]]
 author = "Albert Einstein"
 wikiquote = "Albert Einstein"
 weight = 0.75
 sentiments = ["Wonder", "Piques interest", "Political", "Philosophical"]
-
 
 [[sources]]
 author = "Niels Bohr"
@@ -234,13 +230,11 @@ wikiquote = "Niels Bohr"
 weight = 0.5
 sentiments = ["Piques interest", "Wonder", "Wry"]
 
-
 [[sources]]
 author = "Stephen Hawking"
 wikiquote = "Stephen Hawking"
 weight = 0.5
 sentiments = ["Wonder", "Motivational", "Wry"]
-
 
 [[sources]]
 author = "Jacob Bronowski"
@@ -248,13 +242,11 @@ wikiquote = "Jacob Bronowski"
 weight = 0.5
 sentiments = ["Wonder", "Philosophical", "Political"]
 
-
 [[sources]]
 author = "Rachel Carson"
 wikiquote = "Rachel Carson"
 weight = 0.5
 sentiments = ["Wonder", "Tender", "Melancholic"]
-
 
 [[sources]]
 author = "Marie Curie"
@@ -262,13 +254,11 @@ wikiquote = "Marie Curie"
 weight = 0.25
 sentiments = ["Wonder", "Motivational"]
 
-
 [[sources]]
 author = "Werner Heisenberg"
 wikiquote = "Werner Heisenberg"
 weight = 0.25
 sentiments = ["Wonder", "Philosophical"]
-
 
 [[sources]]
 author = "Erwin Schrödinger"
@@ -276,20 +266,17 @@ wikiquote = "Erwin Schrödinger"
 weight = 0.25
 sentiments = ["Wonder", "Philosophical"]
 
-
 [[sources]]
 author = "Max Planck"
 wikiquote = "Max Planck"
 weight = 0.25
 sentiments = ["Wonder", "Philosophical"]
 
-
 [[sources]]
 author = "Freeman Dyson"
 wikiquote = "Freeman Dyson"
 weight = 0.25
 sentiments = ["Wonder", "Piques interest"]
-
 
 # Terry Pratchett: his own page, plus the Discworld page (the novels' titles
 # redirect there).
@@ -300,14 +287,12 @@ wikiquote = "Terry Pratchett"
 weight = 0.5
 sentiments = ["Wry", "Political", "Piques interest", "Philosophical"]
 
-
 [[sources]]
 author = "Terry Pratchett"
 work = "Discworld"
 wikiquote = "Discworld"
 weight = 0.75
 sentiments = ["Wry", "Political", "Piques interest", "Philosophical"]
-
 
 # Martial arts.
 
@@ -339,62 +324,49 @@ sentiments = ["Martial Arts", "Philosophical", "Tender"]
 # Films.
 
 [[sources]]
-author = "Ridley Scott"
-work = "Blade Runner"
+author = "Blade Runner"
 wikiquote = "Blade Runner"
 kind = "film"
 weight = 0.75
 sentiments = ["Melancholic", "Philosophical", "Wonder"]
 
-
 [[sources]]
-author = "David Fincher"
-work = "Fight Club"
+author = "Fight Club"
 wikiquote = "Fight Club (film)"
 kind = "film"
 weight = 0.75
 sentiments = ["Wry", "Philosophical", "Political", "Melancholic"]
 
-
 [[sources]]
-author = "Christopher Nolan"
-work = "Interstellar"
+author = "Interstellar"
 wikiquote = "Interstellar (film)"
 kind = "film"
 weight = 0.75
 sentiments = ["Wonder", "Tender", "Motivational"]
 
-
 [[sources]]
-author = "Frank Darabont"
-work = "The Shawshank Redemption"
+author = "The Shawshank Redemption"
 wikiquote = "The Shawshank Redemption"
 kind = "film"
 weight = 0.75
 sentiments = ["Motivational", "Melancholic", "Tender"]
 
-
 [[sources]]
-author = "Hayao Miyazaki"
-work = "Spirited Away"
+author = "Spirited Away"
 wikiquote = "Spirited Away"
 kind = "film"
 weight = 0.75
 sentiments = ["Tender", "Wonder", "Melancholic"]
 
-
 [[sources]]
-author = "Hayao Miyazaki"
-work = "Princess Mononoke"
+author = "Princess Mononoke"
 wikiquote = "Princess Mononoke"
 kind = "film"
 weight = 0.75
 sentiments = ["Political", "Melancholic", "Martial Arts"]
 
-
 [[sources]]
-author = "Mamoru Oshii"
-work = "Ghost in the Shell"
+author = "Ghost in the Shell"
 wikiquote = "Ghost in the Shell (film)"
 kind = "film"
 weight = 0.75

@@ -45,11 +45,13 @@ flowchart TD
 <details>
 <summary><strong>Schedule</strong></summary>
 
-- The workflow runs every 12 hours, at 00:07 and 12:07 UTC. Each run makes the
-  entry for the current half-day, `am` or `pm`, in the timezone set in
-  `config/seeds.toml` (default `Pacific/Auckland`, where the runs land at about
-  01:00 and 13:00). If you change the timezone, check the two run times fall in
-  different halves of its day, or adjust the cron in `daily.yml`.
+- New entries are made at 11:45 and 23:45 New Zealand time (`timezone` and
+  `slot_start` in `config/seeds.toml`), all year. GitHub's schedule is UTC-only,
+  so `daily.yml` has one cron for daylight time (UTC+13) and one for standard
+  time (UTC+12); the run whose cron doesn't match the current offset skips.
+- The 11:45 run makes that date's `am` entry and the 23:45 run its `pm` entry. A
+  run that starts late still fills the slot it was scheduled for.
+- To change the times, edit `slot_start` and both crons together.
 - **Run workflow** makes the current entry if it doesn't exist yet. Tick *force*
   to regenerate it with a fresh pick (a different quote, sentiment and
   drawing), which is handy for testing. Each forced run adds a commit.
@@ -172,8 +174,9 @@ folder, or prefix commands with `SSL_CERT_FILE=/etc/ssl/cert.pem`.
 - Wikiquote page titles in `seeds.toml` must match exactly (check the page URL).
 - To use one book from an author's page, add `section = "<book title>"` to the
   source; only quotes under that heading are used.
-- Films: add the Wikiquote film page with `kind = "film"`, crediting the
-  director as `author` and the film as `work`. Many film pages are mostly long
+- Films: add the Wikiquote film page with `kind = "film"` and the film title as
+  `author`. Lines are credited to the character whose section they're in
+  ("Tyler Durden, Fight Club"), or to the film alone when there isn't one. Many film pages are mostly long
   exchanges and give fewer than 5 usable lines; a source like that falls back to
   the baked list, so add those films' best lines to the baked list instead.
 - To add a passage from a book, put it in `config/baked_quotes.json` with `\n`

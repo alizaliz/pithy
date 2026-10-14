@@ -54,11 +54,37 @@ class OfflineLLM:
         raise RuntimeError("offline")
 
 
-def entry_id(now: dt.datetime, date: str | None = None, slot: str | None = None) -> str:
-    """Id of the entry for `now`, or for an explicit date/slot (slot defaults to am)."""
+def parse_hhmm(value: str) -> dt.timedelta:
+    h, m = value.split(":")
+    return dt.timedelta(hours=int(h), minutes=int(m))
+
+
+def entry_id(now: dt.datetime, date: str | None = None, slot: str | None = None,
+             start: dt.timedelta = dt.timedelta(0)) -> str:
+    """Id of the entry for local time `now`, or for an explicit date/slot (slot defaults to am).
+
+    The am slot runs from `start` for 12 hours and the pm slot for the 12 after,
+    so a run that starts late still lands in the slot it was scheduled for.
+    """
     if date:
         return f"{date}-{slot or 'am'}"
-    return f"{now.date().isoformat()}-{slot or ('am' if now.hour < 12 else 'pm')}"
+    shifted = now - start
+    return f"{shifted.date().isoformat()}-{slot or ('am' if shifted.hour < 12 else 'pm')}"
+
+
+def scheduled_for_now(cron: str, now_utc: dt.datetime, tz: ZoneInfo, start: dt.timedelta) -> bool:
+    """Whether the cron that fired ("M H1,H2 * * *", in UTC) was due at a local slot time.
+
+    The workflow has one cron for each UTC offset (daylight time or not); only the
+    one matching the timezone's current offset should make an entry.
+    """
+    minute, hours = cron.split()[:2]
+    due = max(t for h in hours.split(",") for day in (0, 1)
+              if (t := now_utc.replace(hour=int(h), minute=int(minute), second=0, microsecond=0)
+                  - dt.timedelta(days=day)) <= now_utc)
+    local = due.astimezone(tz)
+    since_midnight = dt.timedelta(hours=local.hour, minutes=local.minute)
+    return since_midnight in (start, start + dt.timedelta(hours=12))
 
 
 def attribution(entry: dict) -> str:
@@ -87,12 +113,17 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--date")
     ap.add_argument("--slot", choices=["am", "pm"])
+    ap.add_argument("--cron", help="the schedule that triggered this run; skip if it isn't a slot time")
     args = ap.parse_args(argv)
 
     cfg = tomllib.loads(CONFIG.read_text(encoding="utf-8"))
     sched = cfg.get("schedule", {})
     tz = ZoneInfo(sched.get("timezone", "UTC"))
-    eid = entry_id(dt.datetime.now(tz), args.date, args.slot)
+    start = parse_hhmm(sched.get("slot_start", "00:00"))
+    if args.cron and not scheduled_for_now(args.cron, dt.datetime.now(dt.timezone.utc), tz, start):
+        print(f"Skipping: {args.cron!r} isn't a slot time in {tz.key} today (the other cron is).")
+        return 0
+    eid = entry_id(dt.datetime.now(tz), args.date, args.slot, start)
 
     DATA.mkdir(parents=True, exist_ok=True)
     (DATA / "images").mkdir(exist_ok=True)

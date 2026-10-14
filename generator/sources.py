@@ -18,9 +18,12 @@ MIN_LEN, MAX_LEN, MAX_WORDS = 15, 200, 35
 # "Paul: some line" — a speaker label means dialogue, not an aphorism.
 SPEAKER_LABEL = re.compile(r"^[A-Z][\w .'-]{0,30}:\s")
 
-# '"…," said Nobby' / 'asked Granny': a speech tag means narrated dialogue.
+# '"…," said Nobby' / 'asked Granny' / '“…” “…”': narrated dialogue or an exchange.
 SPEECH_TAG = re.compile(r"[\"“”‘’'],?\s+(?:said|says|asked|replied|added|whispered|shouted|muttered)\b"
-                        r"|\b(?:said|asked|replied)\s+(?:the\s+)?[A-Z]")
+                        r"|\b(?:said|asked|replied)\s+(?:the\s+)?[A-Z]|[”\"]\s+[“\"]")
+
+# Film page sections that aren't one character, so their lines credit the film alone.
+NOT_A_CHARACTER = re.compile(r"^(?:others?|voice-?overs?|narration|quotes|misc\w*|general)$", re.I)
 
 # Trailing notes that aren't part of the quote: "(1640)", "(14th century)",
 # "(Simpson, 2009)", "(Hays translation)", "(p. 12)".
@@ -41,7 +44,7 @@ ENGLISH_WORDS = {"the", "is", "and", "of", "to", "you", "your", "that", "this", 
 # Level-2 sections whose bullets are NOT reliable quotes by the subject.
 SKIP_SECTIONS = re.compile(
     r"disputed|misattributed|attributed|quotes? about|about |external links|see also|"
-    r"sources|references|further reading|criticism|cast|taglines|dialogue",
+    r"sources|references|further reading|criticism|cast|taglines?|dialogue|questions",
     re.I,
 )
 
@@ -117,8 +120,10 @@ def _english_version(body: str, lines: list[str], i: int) -> str:
 
 
 def _lone_dialogue_line(lines: list[str], i: int) -> re.Match | None:
-    """A `:'''Name''': line` that is a whole dialogue block on its own (a monologue)."""
-    m = re.match(r"^:+\s*'''[^']+?'''\s*:\s*(.+)$", lines[i])
+    """A `:'''Name''': line` that is a whole dialogue block on its own (a monologue).
+
+    group(1) is the speaker, group(2) the line."""
+    m = re.match(r"^:+\s*'''([^']+?)'''\s*:\s*(.+)$", lines[i])
     if not m:
         return None
     neighbours = [lines[j] for j in (i - 1, i + 1) if 0 <= j < len(lines)]
@@ -134,10 +139,22 @@ def _film_text(text: str) -> str:
     return text
 
 
-def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LEN,
-                    max_words: int = MAX_WORDS, section: str | None = None,
-                    film: bool = False) -> list[str]:
-    """Top-level `* ` bullets outside skipped sections (`**` lines are citations).
+def _character(heading: str) -> str | None:
+    """'Chihiro/Sen' → 'Chihiro'; generic sections like 'Others' → None."""
+    name = re.sub(r"\s*\([^)]*\)", "", clean_wikitext(heading)).split("/")[0].strip()
+    return None if not name or NOT_A_CHARACTER.match(name) else name
+
+
+def parse_wikiquote(wikitext: str, **options) -> list[str]:
+    """The quote texts from a Wikiquote page; see parse_quotes for the options."""
+    return [text for text, _ in parse_quotes(wikitext, **options)]
+
+
+def parse_quotes(wikitext: str, proverbs: bool = False, max_len: int = MAX_LEN,
+                 max_words: int = MAX_WORDS, section: str | None = None,
+                 film: bool = False) -> list[tuple[str, str | None]]:
+    """(text, speaker) for top-level `* ` bullets outside skipped sections
+    (`**` lines are citations). The speaker is only known on film pages.
 
     Bullets in another language are replaced by their English translation.
 
@@ -148,17 +165,20 @@ def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LE
     (e.g. one book on an author's page).
 
     film=True: also take one-line dialogue blocks (including in the Dialogue
-    section, which is otherwise skipped), and drop stage directions.
+    section, which is otherwise skipped), and drop stage directions. The
+    speaker is the character section a line is in, or its speaker label.
     """
-    quotes: list[str] = []
+    quotes: list[tuple[str, str | None]] = []
     skipping = in_dialogue = False
     h3 = ""
+    character = None
     lines = wikitext.splitlines()
     for i, line in enumerate(lines):
         h2 = re.match(r"^==([^=].*?)==\s*$", line)
         if h2:
             in_dialogue = film and bool(re.search(r"dialogue", h2.group(1), re.I))
             skipping, h3 = bool(SKIP_SECTIONS.search(h2.group(1))) and not in_dialogue, ""
+            character = _character(h2.group(1)) if film and not in_dialogue else None
             continue
         heading3 = re.match(r"^===([^=].*?)===\s*$", line)
         if heading3:
@@ -166,14 +186,17 @@ def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LE
             continue
         if skipping or (section and section.lower() not in h3.lower()):
             continue
+        speaker = character
         m = None if in_dialogue else re.match(r"^\*(?![*:])\s*(.+)$", line)
-        if film and not m:
-            m = _lone_dialogue_line(lines, i)
-        if not m:
+        if m:
+            body = m.group(1).strip()
+        elif film and (lone := _lone_dialogue_line(lines, i)):
+            speaker, body = _character(lone.group(1)), lone.group(2).strip()
+        else:
             continue
-        body = m.group(1).strip()
-        if film:  # "'''Agent Halpern''': line" in a character-less section
-            body = re.sub(r"^'''[^']+?'''\s*:\s*", "", body)
+        label = re.match(r"^'''([^']+?)'''\s*:\s*", body) if film else None
+        if label:  # "'''Agent Halpern''': line" in a section like "Other"
+            speaker, body = _character(label.group(1)), body[label.end():]
         bold = re.match(r"^'''(.+?)'''", body)
         if proverbs and bold:
             body = bold.group(1)
@@ -190,25 +213,29 @@ def parse_wikiquote(wikitext: str, proverbs: bool = False, max_len: int = MAX_LE
             continue
         if (MIN_LEN <= len(text) <= max_len and len(text.split()) <= max_words
                 and not text.endswith(":") and "{" not in text and _mostly_latin(text)):
-            quotes.append(text)
+            quotes.append((text, speaker))
     seen: set[str] = set()
-    return [q for q in quotes if not (q in seen or seen.add(q))]
+    return [q for q in quotes if not (q[0] in seen or seen.add(q[0]))]
 
 
 def wikiquote_candidates(source: dict, selection: dict | None = None) -> list[dict]:
+    """Candidates from a source. Film lines credit "Character, Film" when the
+    character is known, otherwise just the film (the source's `author`)."""
     selection = selection or {}
-    texts = parse_wikiquote(
+    film = source.get("kind") == "film"
+    quotes = parse_quotes(
         fetch_wikitext(source["wikiquote"]),
         proverbs=source.get("kind") == "proverbs",
         max_len=int(selection.get("max_chars", MAX_LEN)),
         max_words=int(selection.get("max_words", MAX_WORDS)),
         section=source.get("section"),
-        film=source.get("kind") == "film",
+        film=film,
     )
+    origin = f"https://en.wikiquote.org/wiki/{urllib.parse.quote(source['wikiquote'].replace(' ', '_'))}"
     return [
-        {"text": t, "author": source["author"], "work": source.get("work"),
-         "origin": f"https://en.wikiquote.org/wiki/{urllib.parse.quote(source['wikiquote'].replace(' ', '_'))}"}
-        for t in texts
+        {"text": t, "author": speaker, "work": source["author"], "origin": origin} if film and speaker else
+        {"text": t, "author": source["author"], "work": None if film else source.get("work"), "origin": origin}
+        for t, speaker in quotes
     ]
 
 

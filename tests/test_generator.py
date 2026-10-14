@@ -1,11 +1,14 @@
 import unittest
+import unittest.mock
 
 import datetime as dt
 import json
 import tomllib
 
 from generator import image, sources
-from generator.__main__ import BAKED, CONFIG, entry_id
+from zoneinfo import ZoneInfo
+
+from generator.__main__ import BAKED, CONFIG, entry_id, scheduled_for_now
 from generator.llm import extract_json, extract_svg
 
 WIKITEXT = """{{Wikipedia}}
@@ -108,8 +111,10 @@ class WikiquoteParsing(unittest.TestCase):
         text = "\n".join([
             "== Yubaba ==",
             "* So, your name's Chihiro? [uses magic to steal the kanji] And it belongs to me now.",
-            "== San ==",
+            "== San/Princess Mononoke ==",
             "* \"Cut off a wolf's head and it still has the power to bite.\"",
+            "== Others ==",
+            "* Time to go.  Nobody in particular said this, at some length.",
             "== Other ==",
             "* '''Agent Halpern''': We're a world with no single leader.",
             "== Dialogue ==",
@@ -121,12 +126,20 @@ class WikiquoteParsing(unittest.TestCase):
             "== Cast ==",
             "* Rutger Hauer as Roy Batty, the replicant leader",
         ])
-        self.assertEqual(sources.parse_wikiquote(text, film=True), [
-            "So, your name's Chihiro? And it belongs to me now.",
-            "Cut off a wolf's head and it still has the power to bite.",
-            "We're a world with no single leader.",
-            "All those moments will be lost in time, like tears in rain.",
+        self.assertEqual(sources.parse_quotes(text, film=True), [
+            ("So, your name's Chihiro? And it belongs to me now.", "Yubaba"),
+            ("Cut off a wolf's head and it still has the power to bite.", "San"),
+            ("Time to go. Nobody in particular said this, at some length.", None),
+            ("We're a world with no single leader.", "Agent Halpern"),
+            ("All those moments will be lost in time, like tears in rain.", "Roy Batty"),
         ])
+
+    def test_film_attribution(self):
+        page = "== Tyler Durden ==\n* The things you own end up owning you.\n== Others ==\n* Nobody is credited for this line here."
+        film = {"author": "Fight Club", "wikiquote": "Fight Club (film)", "kind": "film"}
+        with unittest.mock.patch.object(sources, "fetch_wikitext", return_value=page):
+            got = [(c["author"], c["work"]) for c in sources.wikiquote_candidates(film)]
+        self.assertEqual(got, [("Tyler Durden", "Fight Club"), ("Fight Club", None)])
 
     def test_skips_narrated_dialogue(self):
         text = "\n".join([
@@ -162,10 +175,36 @@ class EntryIds(unittest.TestCase):
         self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 1, 7)), "2026-10-12-am")
         self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 13, 7)), "2026-10-12-pm")
 
+    def test_slots_start_at_slot_start(self):
+        start = dt.timedelta(hours=11, minutes=45)
+        ids = {when: entry_id(dt.datetime(2026, 10, 14, *when), start=start)
+               for when in [(11, 45), (12, 30), (23, 45), (0, 30), (11, 44)]}
+        self.assertEqual(ids, {(11, 45): "2026-10-14-am", (12, 30): "2026-10-14-am",
+                               (23, 45): "2026-10-14-pm", (0, 30): "2026-10-13-pm",
+                               (11, 44): "2026-10-13-pm"})
+
     def test_explicit_date_and_slot(self):
         self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 13, 7), "2026-10-20"), "2026-10-20-am")
         self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 1, 7), "2026-10-20", "pm"), "2026-10-20-pm")
         self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 1, 7), slot="pm"), "2026-10-12-pm")
+
+
+class Schedule(unittest.TestCase):
+    start = dt.timedelta(hours=11, minutes=45)
+    nz = ZoneInfo("Pacific/Auckland")
+
+    def check(self, cron, *utc):
+        return scheduled_for_now(cron, dt.datetime(*utc, tzinfo=dt.timezone.utc), self.nz, self.start)
+
+    def test_daylight_time_uses_the_utc13_cron(self):  # October: NZDT
+        self.assertTrue(self.check("45 10,22 * * *", 2026, 10, 14, 22, 50))   # 11:45 local
+        self.assertTrue(self.check("45 10,22 * * *", 2026, 10, 14, 11, 20))   # 23:45, late start
+        self.assertFalse(self.check("45 11,23 * * *", 2026, 10, 14, 23, 50))  # 12:45 local
+
+    def test_standard_time_uses_the_utc12_cron(self):  # July: NZST
+        self.assertTrue(self.check("45 11,23 * * *", 2026, 7, 14, 23, 50))
+        self.assertTrue(self.check("45 11,23 * * *", 2026, 7, 14, 11, 46))
+        self.assertFalse(self.check("45 10,22 * * *", 2026, 7, 14, 22, 50))  # 10:45 local
 
 
 class Extraction(unittest.TestCase):

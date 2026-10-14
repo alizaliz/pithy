@@ -89,19 +89,19 @@
   },
   {
     "text": "This is your life, and it's ending one minute at a time.",
-    "author": "Chuck Palahniuk",
+    "author": "The Narrator",
     "work": "Fight Club",
     "sentiments": ["Melancholic"]
   },
   {
     "text": "You can't remember your name?\nNo. But for some reason I remember yours.",
-    "author": "Hayao Miyazaki",
+    "author": "Chihiro and Haku",
     "work": "Spirited Away",
     "sentiments": ["Tender"]
   },
   {
     "text": "A heart is a heavy burden.",
-    "author": "Hayao Miyazaki",
+    "author": "Sophie",
     "work": "Howl's Moving Castle",
     "sentiments": ["Tender", "Melancholic"]
   },
@@ -179,13 +179,13 @@
   },
   {
     "text": "Language is the foundation of civilization. It is the glue that holds a people together. It is the first weapon drawn in a conflict.",
-    "author": "Denis Villeneuve",
+    "author": "Dr. Louise Banks",
     "work": "Arrival",
     "sentiments": ["Piques interest", "Political", "Philosophical"]
   },
   {
     "text": "I've seen things you people wouldn't believe... Attack ships on fire off the shoulder of Orion... I watched c-beams glitter in the dark near the Tannhäuser Gate. All those moments will be lost in time, like tears in rain... Time to die.",
-    "author": "Ridley Scott",
+    "author": "Roy Batty",
     "work": "Blade Runner",
     "sentiments": ["Melancholic"]
   },
