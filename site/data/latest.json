@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-14-pm",
-  "date": "2026-10-14",
-  "slot": "pm",
-  "text": "When you have insomnia, you're never really asleep... and you're never really awake.",
-  "author": "The Narrator",
-  "work": "Fight Club",
-  "origin": "https://en.wikiquote.org/wiki/Fight_Club_%28film%29",
-  "sentiment": "Melancholic",
-  "visual_brief": "An abstract precision instrument evoking: melancholic, as an engineering drawing",
-  "alt": "Technical line drawing of a precision instrument",
-  "image": "data/images/2026-10-14-pm.svg",
-  "image_method": "fallback"
+  "id": "2026-10-15-am",
+  "date": "2026-10-15",
+  "slot": "am",
+  "text": "How wonderful that we have met with a paradox. Now we have some hope of making progress.",
+  "author": "Niels Bohr",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Niels_Bohr",
+  "sentiment": "Piques interest",
+  "visual_brief": "An isometric engineering schematic of a differential gear assembly where two counter-rotating shafts mesh with a central spider gear, featuring precise tooth profiles, dimension callouts, and curved rotation arrows showing opposing forces resolving into forward motion.",
+  "alt": "Engineering drawing of differential gears resolving opposing rotations into forward drive.",
+  "image": "data/images/2026-10-15-am.svg",
+  "image_method": "llm"
 }

@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    <marker id="dim-arrow-rev" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 8 2 L 1 5 L 8 8 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    <marker id="dim-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 2 2 L 9 5 L 2 8 Z" fill="#ffffff" stroke="none" />
+    </marker>
+  </defs>
+
+  
+  <rect width="800" height="800" fill="#000000" />
+
+  
+  <rect x="25" y="25" width="750" height="750" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85" />
+  <rect x="31" y="31" width="738" height="738" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.4" />
+
+  
+  <path d="M 25 45 L 45 45 M 45 25 L 45 45" fill="none" stroke="#ffffff" stroke-width="0.75" />
+  <path d="M 775 45 L 755 45 M 755 25 L 755 45" fill="none" stroke="#ffffff" stroke-width="0.75" />
+  <path d="M 25 755 L 45 755 M 45 775 L 45 755" fill="none" stroke="#ffffff" stroke-width="0.75" />
+  <path d="M 775 755 L 755 755 M 755 775 L 755 755" fill="none" stroke="#ffffff" stroke-width="0.75" />
+
+  
+  
+  <line x1="80" y1="230" x2="720" y2="600" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="16,4,3,4" stroke-opacity="0.6" />
+  
+  <line x1="400" y1="120" x2="400" y2="700" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="16,4,3,4" stroke-opacity="0.6" />
+  
+  <line x1="680" y1="250" x2="120" y2="575" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="12,4,2,4" stroke-opacity="0.35" />
+
+  
+  
+  <g id="left-shaft" stroke="#ffffff" fill="none">
+    <ellipse cx="150" cy="270" rx="14" ry="24" stroke-width="1.5" transform="rotate(-30 150 270)" />
+    <path d="M 138 249 L 268 324" stroke-width="1.2" />
+    <path d="M 162 291 L 292 366" stroke-width="1.2" />
+    
+    <path d="M 175 272 L 235 307" stroke-width="0.75" stroke-opacity="0.7" />
+    <path d="M 172 267 L 232 302" stroke-width="0.75" stroke-opacity="0.7" />
+    <path d="M 172 267 A 3 3 0 0 1 175 272" stroke-width="0.75" />
+    <path d="M 232 302 A 3 3 0 0 1 235 307" stroke-width="0.75" />
+
+    
+    <ellipse cx="270" cy="340" rx="20" ry="36" stroke-width="1.5" transform="rotate(-30 270 340)" />
+    <path d="M 252 309 L 287 329" stroke-width="1.2" />
+    <path d="M 288 371 L 323 391" stroke-width="1.2" />
+
+    
+    <ellipse cx="300" cy="357" rx="36" ry="68" stroke-width="1.5" transform="rotate(-30 300 357)" />
+    <ellipse cx="300" cy="357" rx="30" ry="58" stroke-width="0.75" stroke-dasharray="4,3" stroke-opacity="0.5" transform="rotate(-30 300 357)" />
+
+    
+    <line x1="300" y1="357" x2="400" y2="415" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="3,3" stroke-opacity="0.4" />
+    <line x1="268" y1="298" x2="400" y2="415" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.3" />
+    <line x1="332" y1="416" x2="400" y2="415" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.3" />
+
+    
+    
+    <path d="M 268 298 L 332 342 L 340 370 L 282 322 Z" stroke-width="1.2" />
+    <path d="M 282 322 L 340 370 L 346 398 L 298 348 Z" stroke-width="1.2" />
+    <path d="M 298 348 L 346 398 L 350 424 L 314 374 Z" stroke-width="1.2" />
+    <path d="M 314 374 L 350 424 L 351 450 L 328 398 Z" stroke-width="1.2" />
+    <path d="M 328 398 L 351 450 L 348 474 L 338 420 Z" stroke-width="1.2" />
+    
+    <line x1="275" y1="310" x2="336" y2="356" stroke-width="0.5" stroke-opacity="0.6" />
+    <line x1="290" y1="335" x2="343" y2="384" stroke-width="0.5" stroke-opacity="0.6" />
+    <line x1="306" y1="361" x2="348" y2="411" stroke-width="0.5" stroke-opacity="0.6" />
+    <line x1="321" y1="386" x2="351" y2="437" stroke-width="0.5" stroke-opacity="0.6" />
+  </g>
+
+  
+  <g id="right-shaft" stroke="#ffffff" fill="none">
+    
+    <path d="M 508 493 L 638 568" stroke-width="1.2" />
+    <path d="M 532 535 L 662 610" stroke-width="1.2" />
+    <ellipse cx="650" cy="589" rx="14" ry="24" stroke-width="1.5" transform="rotate(-30 650 589)" />
+
+    
+    <path d="M 565 537 L 625 572" stroke-width="0.75" stroke-opacity="0.7" />
+    <path d="M 562 532 L 622 567" stroke-width="0.75" stroke-opacity="0.7" />
+    <path d="M 562 532 A 3 3 0 0 1 565 537" stroke-width="0.75" />
+    <path d="M 622 567 A 3 3 0 0 1 625 572" stroke-width="0.75" />
+
+    
+    <ellipse cx="530" cy="490" rx="20" ry="36" stroke-width="1.5" transform="rotate(-30 530 490)" />
+    <path d="M 477 429 L 512 449" stroke-width="1.2" />
+    <path d="M 513 491 L 548 511" stroke-width="1.2" />
+
+    
+    <ellipse cx="500" cy="473" rx="36" ry="68" stroke-width="1.5" transform="rotate(-30 500 473)" />
+    <ellipse cx="500" cy="473" rx="30" ry="58" stroke-width="0.75" stroke-dasharray="4,3" stroke-opacity="0.5" transform="rotate(-30 500 473)" />
+
+    
+    <line x1="500" y1="473" x2="400" y2="415" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="3,3" stroke-opacity="0.4" />
+    <line x1="468" y1="414" x2="400" y2="415" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.3" />
+    <line x1="532" y1="532" x2="400" y2="415" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.3" />
+
+    
+    <path d="M 468 414 L 449 410 L 452 380 L 480 390 Z" stroke-width="1.2" />
+    <path d="M 480 390 L 452 380 L 459 352 L 498 375 Z" stroke-width="1.2" />
+    <path d="M 468 414 L 449 410 L 450 436 L 478 445 Z" stroke-width="1.2" />
+    <path d="M 478 445 L 450 436 L 456 462 L 494 476 Z" stroke-width="1.2" />
+    <path d="M 494 476 L 456 462 L 467 486 L 512 505 Z" stroke-width="1.2" />
+    
+    <line x1="474" y1="402" x2="451" y2="395" stroke-width="0.5" stroke-opacity="0.6" />
+    <line x1="473" y1="430" x2="450" y2="423" stroke-width="0.5" stroke-opacity="0.6" />
+    <line x1="486" y1="461" x2="453" y2="449" stroke-width="0.5" stroke-opacity="0.6" />
+  </g>
+
+  
+  <g id="spider-assembly" stroke="#ffffff" fill="none">
+    
+    <path d="M 390 170 L 390 280" stroke-width="1.5" />
+    <path d="M 410 170 L 410 280" stroke-width="1.5" />
+    <ellipse cx="400" cy="170" rx="10" ry="5" stroke-width="1.2" />
+    
+    <line x1="388" y1="185" x2="412" y2="185" stroke-width="0.75" />
+    <line x1="388" y1="188" x2="412" y2="188" stroke-width="0.75" />
+
+    
+    
+    <ellipse cx="400" cy="270" rx="55" ry="18" stroke-width="1.5" />
+    <ellipse cx="400" cy="275" rx="50" ry="16" stroke-width="0.75" stroke-opacity="0.5" />
+    <ellipse cx="400" cy="265" rx="22" ry="7" stroke-width="1" />
+
+    
+    
+    <path d="M 345 270 L 365 340 L 380 348 L 368 280 Z" stroke-width="1.2" />
+    
+    <path d="M 368 280 L 380 348 L 398 352 L 390 285 Z" stroke-width="1.2" />
+    <path d="M 390 285 L 398 352 L 416 350 L 412 284 Z" stroke-width="1.2" />
+    <path d="M 412 284 L 416 350 L 434 342 L 432 278 Z" stroke-width="1.2" />
+    
+    <path d="M 432 278 L 434 342 L 455 270 Z" stroke-width="1.2" />
+
+    
+    <line x1="374" y1="314" x2="357" y2="275" stroke-width="0.5" stroke-opacity="0.6" />
+    <line x1="389" y1="318" x2="379" y2="282" stroke-width="0.5" stroke-opacity="0.6" />
+    <line x1="407" y1="318" x2="401" y2="284" stroke-width="0.5" stroke-opacity="0.6" />
+    <line x1="425" y1="312" x2="422" y2="281" stroke-width="0.5" stroke-opacity="0.6" />
+
+    
+    <circle cx="400" cy="415" r="2.5" fill="#ffffff" stroke="none" />
+    <circle cx="400" cy="415" r="5" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,2" />
+
+    
+    <ellipse cx="400" cy="560" rx="55" ry="18" stroke-width="1.5" />
+    <ellipse cx="400" cy="555" rx="50" ry="16" stroke-width="0.75" stroke-opacity="0.5" />
+    <ellipse cx="400" cy="565" rx="22" ry="7" stroke-width="1" />
+    
+    <path d="M 348 558 L 368 490 L 382 484 L 370 552 Z" stroke-width="1.2" />
+    <path d="M 370 552 L 382 484 L 400 480 L 392 548 Z" stroke-width="1.2" />
+    <path d="M 392 548 L 400 480 L 418 482 L 414 550 Z" stroke-width="1.2" />
+    <path d="M 414 550 L 418 482 L 434 490 L 432 556 Z" stroke-width="1.2" />
+    <path d="M 432 556 L 434 490 L 452 558 Z" stroke-width="1.2" />
+
+    
+    <path d="M 390 568 L 390 655" stroke-width="1.5" />
+    <path d="M 410 568 L 410 655" stroke-width="1.5" />
+    <ellipse cx="400" cy="655" rx="10" ry="5" stroke-width="1.2" />
+    <line x1="388" y1="640" x2="412" y2="640" stroke-width="0.75" />
+    <line x1="388" y1="643" x2="412" y2="643" stroke-width="0.75" />
+  </g>
+
+  
+  <g id="carrier-phantom" stroke="#ffffff" fill="none" stroke-opacity="0.35" stroke-dasharray="6,3">
+    
+    <path d="M 280 260 A 180 180 0 0 1 520 260" stroke-width="0.75" />
+    <path d="M 520 570 A 180 180 0 0 1 280 570" stroke-width="0.75" />
+    <path d="M 240 330 A 185 185 0 0 1 240 500" stroke-width="0.75" />
+    <path d="M 560 330 A 185 185 0 0 1 560 500" stroke-width="0.75" />
+    
+    <circle cx="400" cy="170" r="16" stroke-width="0.75" />
+    <circle cx="400" cy="655" r="16" stroke-width="0.75" />
+  </g>
+
+  
+  <g id="motion-indicators" stroke="#ffffff" fill="none">
+    
+    
+    <path d="M 175 220 A 28 48 -30 0 1 215 315" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 183 212 A 36 60 -30 0 1 228 320" stroke-width="0.75" stroke-opacity="0.6" stroke-dasharray="3,2" />
+    
+    <line x1="210" y1="315" x2="225" y2="340" stroke-width="1.5" marker-end="url(#arrow)" />
+
+    
+    
+    <path d="M 610 630 A 28 48 -30 0 1 570 535" stroke-width="2" marker-end="url(#arrow)" />
+    <path d="M 618 638 A 36 60 -30 0 1 557 530" stroke-width="0.75" stroke-opacity="0.6" stroke-dasharray="3,2" />
+    
+    <line x1="575" y1="540" x2="560" y2="515" stroke-width="1.5" marker-end="url(#arrow)" />
+
+    
+    
+    <path d="M 438 215 A 42 16 0 1 1 362 215" stroke-width="1.5" stroke-dasharray="5,2" />
+    <path d="M 362 215 A 42 16 0 0 1 432 225" stroke-width="2" marker-end="url(#arrow)" />
+
+    
+    
+    <path d="M 270 470 A 170 85 20 0 0 535 375" stroke-width="2.2" stroke-dasharray="140" marker-end="url(#arrow)" />
+    
+    <path d="M 290 495 A 170 85 20 0 0 520 405" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="8,4" />
+    <path d="M 315 520 A 170 85 20 0 0 500 435" stroke-width="0.75" stroke-opacity="0.3" stroke-dasharray="4,4" />
+
+    
+    <line x1="365" y1="340" x2="350" y2="365" stroke-width="1.5" stroke-opacity="0.85" marker-end="url(#arrow)" />
+    <line x1="435" y1="340" x2="450" y2="315" stroke-width="1.5" stroke-opacity="0.85" marker-end="url(#arrow)" />
+  </g>
+
+  
+  <g id="dimensions" stroke="#ffffff" fill="none" stroke-opacity="0.75">
+    
+    <line x1="125" y1="230" x2="95" y2="210" stroke-width="0.6" />
+    <line x1="150" y1="272" x2="120" y2="252" stroke-width="0.6" />
+    <line x1="102" y1="215" x2="127" y2="257" stroke-width="0.75" marker-start="url(#dim-arrow-rev)" marker-end="url(#dim-arrow)" />
+
+    
+    <line x1="300" y1="357" x2="300" y2="190" stroke-width="0.5" stroke-opacity="0.5" />
+    <line x1="500" y1="473" x2="500" y2="190" stroke-width="0.5" stroke-opacity="0.5" />
+    <line x1="400" y1="415" x2="400" y2="180" stroke-width="0.5" stroke-opacity="0.3" />
+    <line x1="300" y1="195" x2="500" y2="195" stroke-width="0.75" marker-start="url(#dim-arrow-rev)" marker-end="url(#dim-arrow)" />
+    <circle cx="300" cy="195" r="1.5" fill="#ffffff" />
+    <circle cx="500" cy="195" r="1.5" fill="#ffffff" />
+
+    
+    <line x1="410" y1="170" x2="495" y2="170" stroke-width="0.5" stroke-opacity="0.5" />
+    <line x1="400" y1="415" x2="495" y2="415" stroke-width="0.5" stroke-opacity="0.5" />
+    <line x1="490" y1="170" x2="490" y2="415" stroke-width="0.75" marker-start="url(#dim-arrow-rev)" marker-end="url(#dim-arrow)" />
+
+    
+    <path d="M 370 398 A 35 35 0 0 1 385 385" stroke-width="0.75" marker-end="url(#arrow)" />
+    <text x="350" y="385" fill="#ffffff" font-family="monospace" font-size="10" stroke="none" opacity="0.75">45°</text>
+  </g>
+
+  
+  <g id="schematic-labels">
+    
+    <text x="60" y="150" fill="#ffffff" font-family="monospace" font-size="13" letter-spacing="1.5">COUNTER-ROTATION</text>
+    <path d="M 185 155 L 210 175 L 210 205" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-opacity="0.7" />
+    <circle cx="210" cy="205" r="2" fill="#ffffff" />
+
+    
+    <text x="470" y="115" fill="#ffffff" font-family="monospace" font-size="13" letter-spacing="1.5">SPIDER PINION</text>
+    <path d="M 465 118 L 430 140 L 415 170" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-opacity="0.7" />
+    <circle cx="415" cy="170" r="2" fill="#ffffff" />
+
+    
+    <text x="490" y="725" fill="#ffffff" font-family="monospace" font-size="13" letter-spacing="1.5">RESOLVED FORWARD DRIVE</text>
+    <path d="M 485 720 L 440 695 L 435 620" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-opacity="0.7" />
+    <circle cx="435" cy="620" r="2" fill="#ffffff" />
+  </g>
+</svg>
