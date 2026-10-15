@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-15-pm",
+  "date": "2026-10-15",
+  "slot": "pm",
+  "text": "We are all in the gutter, but some of us are looking at the stars.",
+  "author": "Oscar Wilde",
+  "work": "Lady Windermere's Fan",
+  "origin": "baked",
+  "sentiment": "Motivational",
+  "visual_brief": "An abstract precision instrument evoking: motivational, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-10-15-pm.svg",
+  "image_method": "llm"
+}
