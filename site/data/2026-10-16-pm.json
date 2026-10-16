@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-16-pm",
+  "date": "2026-10-16",
+  "slot": "pm",
+  "text": "Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win.",
+  "author": "Sun Tzu",
+  "work": "The Art of War",
+  "origin": "https://en.wikiquote.org/wiki/Sun_Tzu",
+  "sentiment": "Martial Arts",
+  "visual_brief": "A clean engineering cross-section of a high-mass flywheel suspended within a gimbaled housing. Centerlines, dimension ticks, and circular rotation arrows reveal the heavy rotor spinning at peak momentum inside a completely stationary, balanced outer frame.",
+  "alt": "White line engineering section of a gyroscope spinning in perfect equilibrium",
+  "image": "data/images/2026-10-16-pm.svg",
+  "image_method": "fallback"
+}

@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-16-am",
+  "id": "2026-10-16-pm",
   "date": "2026-10-16",
-  "slot": "am",
-  "text": "It is not even clear that intelligence has any long-term survival value.",
-  "author": "Stephen Hawking",
-  "work": null,
-  "origin": "https://en.wikiquote.org/wiki/Stephen_Hawking",
-  "sentiment": "Wry",
-  "visual_brief": "A precise orthographic engineering drawing of a horseshoe crab carapace in top and sectional views, rendered with technical cross-hatching, datum lines, and dimension arrows marking its completely unchanged structural tolerances across hundreds of millions of years.",
-  "alt": "Orthographic engineering schematic of an ancient horseshoe crab's unchanging shell",
-  "image": "data/images/2026-10-16-am.svg",
-  "image_method": "llm"
+  "slot": "pm",
+  "text": "Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win.",
+  "author": "Sun Tzu",
+  "work": "The Art of War",
+  "origin": "https://en.wikiquote.org/wiki/Sun_Tzu",
+  "sentiment": "Martial Arts",
+  "visual_brief": "A clean engineering cross-section of a high-mass flywheel suspended within a gimbaled housing. Centerlines, dimension ticks, and circular rotation arrows reveal the heavy rotor spinning at peak momentum inside a completely stationary, balanced outer frame.",
+  "alt": "White line engineering section of a gyroscope spinning in perfect equilibrium",
+  "image": "data/images/2026-10-16-pm.svg",
+  "image_method": "fallback"
 }
