@@ -75,5 +75,12 @@
   "hash": "2205fc8fadbd",
   "sentiment": "Martial Arts",
   "source": "Sun Tzu"
+ },
+ {
+  "id": "2026-10-17-am",
+  "date": "2026-10-17",
+  "hash": "45869045d141",
+  "sentiment": "Philosophical",
+  "source": "Fran\u00e7ois de La Rochefoucauld"
  }
 ]

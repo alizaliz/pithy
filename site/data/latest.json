@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-16-pm",
-  "date": "2026-10-16",
-  "slot": "pm",
-  "text": "Victorious warriors win first and then go to war, while defeated warriors go to war first and then seek to win.",
-  "author": "Sun Tzu",
-  "work": "The Art of War",
-  "origin": "https://en.wikiquote.org/wiki/Sun_Tzu",
-  "sentiment": "Martial Arts",
-  "visual_brief": "A clean engineering cross-section of a high-mass flywheel suspended within a gimbaled housing. Centerlines, dimension ticks, and circular rotation arrows reveal the heavy rotor spinning at peak momentum inside a completely stationary, balanced outer frame.",
-  "alt": "White line engineering section of a gyroscope spinning in perfect equilibrium",
-  "image": "data/images/2026-10-16-pm.svg",
-  "image_method": "fallback"
+  "id": "2026-10-17-am",
+  "date": "2026-10-17",
+  "slot": "am",
+  "text": "Neither the sun nor death can be looked at steadily.",
+  "author": "François de La Rochefoucauld",
+  "work": "Maxims",
+  "origin": "https://en.wikiquote.org/wiki/Fran%C3%A7ois_de_La_Rochefoucauld",
+  "sentiment": "Philosophical",
+  "visual_brief": "An engineering cross-section of an optical coronagraph or eclipse telescope, showing a dark central occulting disc suspended along an optical axis to block direct rays from an overwhelming light source. Clean white technical linework on black displays ray paths diverging around the perimeter, lens elements in cross-hatch, and calibration tick marks along the tube.",
+  "alt": "Engineering cross-section of a coronagraph with an occulting disc blocking direct rays",
+  "image": "data/images/2026-10-17-am.svg",
+  "image_method": "llm"
 }
