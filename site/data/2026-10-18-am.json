@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-18-am",
+  "date": "2026-10-18",
+  "slot": "am",
+  "text": "We are the local embodiment of a Cosmos grown to self-awareness.",
+  "author": "Carl Sagan",
+  "work": "Cosmos",
+  "origin": "baked",
+  "sentiment": "Wonder",
+  "visual_brief": "A technical schematic of a large radio observatory dish angled sharply upward, with crisp geometric lines showing incoming parallel radio waves converging precisely onto a focal subreflector. Rendered in a clean architectural drafting style with dashed axis lines, rotation angle arcs, and fine coordinate marks.",
+  "alt": "Technical line drawing of a radio telescope dish aimed toward space",
+  "image": "data/images/2026-10-18-am.svg",
+  "image_method": "llm"
+}

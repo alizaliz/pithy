@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    
+    <marker id="arrow-end" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff" />
+    </marker>
+    <marker id="arrow-start" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+      <path d="M6,0 L0,3 L6,6 Z" fill="#ffffff" />
+    </marker>
+    <marker id="ray-arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+      <path d="M0,0.5 L4,2.5 L0,4.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+    </marker>
+  </defs>
+
+  
+  <rect width="800" height="800" fill="#000000" />
+
+  
+  <rect x="28" y="28" width="744" height="744" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <rect x="34" y="34" width="732" height="732" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+
+  
+  <path d="M20,28 L36,28 M28,20 L28,36 M764,28 L780,28 M772,20 L772,36 M20,772 L36,772 M28,764 L28,780 M764,772 L780,772 M772,764 L772,780" stroke="#ffffff" stroke-width="0.75" />
+
+  
+  <path d="M100,28 v6 M200,28 v6 M300,28 v6 M400,28 v8 M500,28 v6 M600,28 v6 M700,28 v6" stroke="#ffffff" stroke-width="0.6" />
+  <path d="M100,772 v-6 M200,772 v-6 M300,772 v-6 M400,772 v-8 M500,772 v-6 M600,772 v-6 M700,772 v-6" stroke="#ffffff" stroke-width="0.6" />
+  <path d="M28,100 h6 M28,200 h6 M28,300 h6 M28,400 h8 M28,500 h6 M28,600 h6 M28,700 h6" stroke="#ffffff" stroke-width="0.6" />
+  <path d="M772,100 h-6 M772,200 h-6 M772,300 h-6 M772,400 h-8 M772,500 h-6 M772,600 h-6 M772,700 h-6" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  <g stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.4">
+    <path d="M150,145 v10 M145,150 h10" />
+    <path d="M150,445 v10 M145,450 h10" />
+    <path d="M680,145 v10 M675,150 h10" />
+    <path d="M680,645 v10 M675,650 h10" />
+  </g>
+
+  
+  
+  <path d="M140,730 H480" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M140,730 L130,742 M170,730 L160,742 M200,730 L190,742 M230,730 L220,742 M260,730 L250,742 M290,730 L280,742 M320,730 L310,742 M350,730 L340,742 M380,730 L370,742 M410,730 L400,742 M440,730 L430,742 M470,730 L460,742" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.5" />
+  
+  
+  <polygon points="160,730 180,680 440,680 460,730" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <line x1="170" y1="705" x2="450" y2="705" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="4,3" />
+
+  
+  <rect x="210" y="666" width="200" height="14" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <line x1="210" y1="673" x2="410" y2="673" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,2" />
+
+  
+  <polygon points="230,666 260,570 340,570 370,666" fill="none" stroke="#ffffff" stroke-width="1.4" />
+  <path d="M260,666 L290,575 M340,666 L310,575" stroke="#ffffff" stroke-width="0.75" />
+  <line x1="245" y1="620" x2="355" y2="620" stroke="#ffffff" stroke-width="0.75" />
+  <line x1="252" y1="595" x2="348" y2="595" stroke="#ffffff" stroke-width="0.75" />
+
+  
+  <circle cx="300" cy="570" r="16" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <circle cx="300" cy="570" r="10" fill="none" stroke="#ffffff" stroke-width="0.75" />
+  <circle cx="300" cy="570" r="3" fill="#ffffff" />
+  <circle cx="300" cy="570" r="23" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-dasharray="3,2" />
+
+  
+  <path d="M290,580 L230,615 L215,590 L275,555 Z" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <line x1="218" y1="596" x2="233" y2="621" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="225" y1="592" x2="240" y2="617" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  <path d="M222,410 L236,442 L254,470 L280,496 L310,517 L344,534 L378,548 L416,560 L454,570 L490,577 L516,585" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="4,2" />
+  
+  <path d="M211,401 L236,442 L239,432 M239,432 L254,470 L269,461 M269,461 L280,496 L300,487 M300,487 L310,517 L333,510 M333,510 L344,534 L368,530 M368,530 L378,548 L404,547 M404,547 L416,560 L442,561 M442,561 L454,570 L482,572 M482,572 L490,577 L523,581" stroke="#ffffff" stroke-width="0.6" />
+  
+  <polygon points="280,520 320,535 312,560 288,560" fill="none" stroke="#ffffff" stroke-width="1" />
+  <line x1="280" y1="520" x2="300" y2="570" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="320" y1="535" x2="300" y2="570" stroke="#ffffff" stroke-width="0.8" />
+
+  
+  <path d="M211.0,400.8             L224.7,416.4 L239.0,432.3 L253.6,447.1 L268.6,461.0             L284.1,474.3 L299.9,486.8 L316.2,498.6 L332.9,509.6             L350.0,520.0             L367.5,529.6 L385.5,538.6 L403.8,546.8 L422.6,554.3             L441.8,561.0 L461.4,567.0 L481.5,572.3 L501.9,576.9             L522.8,580.8" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+
+  
+  <line x1="205" y1="397" x2="217" y2="405" stroke="#ffffff" stroke-width="1.5" />
+  <line x1="517" y1="577" x2="529" y2="585" stroke="#ffffff" stroke-width="1.5" />
+
+  
+  <polygon points="342,514 347,506 361,514 356,523" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M347,506 L339,492 L358,503 L361,514" fill="none" stroke="#ffffff" stroke-width="0.9" />
+
+  
+  <line x1="200" y1="780" x2="620" y2="52" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="16,4,3,4" />
+
+  
+  <line x1="124" y1="351" x2="609" y2="631" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="5,4" />
+
+  
+  <line x1="211" y1="401" x2="475" y2="303" stroke="#ffffff" stroke-width="1.2" />
+  <line x1="211" y1="401" x2="467" y2="307" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+  <line x1="523" y1="581" x2="480" y2="313" stroke="#ffffff" stroke-width="1.2" />
+  <line x1="523" y1="581" x2="472" y2="318" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+
+  
+  
+  <polygon points="467,288 493,303 487,313 461,298" fill="none" stroke="#ffffff" stroke-width="1" />
+  <line x1="479" y1="295" x2="495" y2="267" stroke="#ffffff" stroke-width="0.75" />
+  
+  <path d="M449,300 Q472,313 491,324" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+  
+  <circle cx="470" cy="312" r="2" fill="#ffffff" />
+  
+  <line x1="466" y1="319" x2="474" y2="305" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="463" y1="308" x2="477" y2="316" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  <line x1="270" y1="172" x2="600" y2="362" stroke="#ffffff" stroke-width="0.6" stroke-dasharray="6,4" stroke-opacity="0.7" />
+  <line x1="330" y1="68" x2="660" y2="258" stroke="#ffffff" stroke-width="0.6" stroke-dasharray="6,4" stroke-opacity="0.7" />
+  <line x1="390" y1="-36" x2="720" y2="154" stroke="#ffffff" stroke-width="0.6" stroke-dasharray="6,4" stroke-opacity="0.5" />
+
+  
+  
+  <g stroke="#ffffff" stroke-width="0.9">
+    <line x1="363" y1="178" x2="225" y2="417" marker-mid="url(#ray-arrow)" />
+    <line x1="225" y1="417" x2="470" y2="312" />
+  </g>
+  
+  <g stroke="#ffffff" stroke-width="0.9">
+    <line x1="400" y1="193" x2="254" y2="447" marker-mid="url(#ray-arrow)" />
+    <line x1="254" y1="447" x2="470" y2="312" />
+  </g>
+  
+  <g stroke="#ffffff" stroke-width="0.9">
+    <line x1="438" y1="207" x2="284" y2="474" marker-mid="url(#ray-arrow)" />
+    <line x1="284" y1="474" x2="470" y2="312" />
+  </g>
+  
+  <g stroke="#ffffff" stroke-width="0.9">
+    <line x1="477" y1="220" x2="316" y2="499" marker-mid="url(#ray-arrow)" />
+    <line x1="316" y1="499" x2="470" y2="312" />
+  </g>
+  
+  <g stroke="#ffffff" stroke-width="0.9">
+    <line x1="551" y1="252" x2="386" y2="539" marker-mid="url(#ray-arrow)" />
+    <line x1="386" y1="539" x2="470" y2="312" />
+  </g>
+  
+  <g stroke="#ffffff" stroke-width="0.9">
+    <line x1="590" y1="264" x2="423" y2="554" marker-mid="url(#ray-arrow)" />
+    <line x1="423" y1="554" x2="470" y2="312" />
+  </g>
+  
+  <g stroke="#ffffff" stroke-width="0.9">
+    <line x1="629" y1="277" x2="461" y2="567" marker-mid="url(#ray-arrow)" />
+    <line x1="461" y1="567" x2="470" y2="312" />
+  </g>
+  
+  <g stroke="#ffffff" stroke-width="0.9">
+    <line x1="669" y1="288" x2="502" y2="577" marker-mid="url(#ray-arrow)" />
+    <line x1="502" y1="577" x2="470" y2="312" />
+  </g>
+
+  
+  <line x1="460" y1="306" x2="350" y2="512" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="3,3" />
+  <line x1="470" y1="312" x2="352" y2="515" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="3,3" />
+  <line x1="480" y1="318" x2="354" y2="518" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="3,3" />
+
+  
+  
+  <line x1="300" y1="570" x2="460" y2="570" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="4,3" />
+  
+  <path d="M410,570 A110,110 0 0,0 355,475" fill="none" stroke="#ffffff" stroke-width="1.2" marker-end="url(#arrow-end)" marker-start="url(#arrow-start)" />
+  
+  <path d="M422,570 A122,122 0 0,0 361,464" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" stroke-dasharray="2,2" />
+
+  
+  <path d="M328,542 A35,35 0 0,0 272,542" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="3,2" marker-end="url(#arrow-end)" />
+  <path d="M260,650 Q290,660 340,650" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="3,2" marker-end="url(#arrow-end)" />
+
+  
+  <line x1="365" y1="495" x2="485" y2="287" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.5" />
+  <line x1="340" y1="525" x2="370" y2="542" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.5" />
+  <line x1="460" y1="317" x2="490" y2="334" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.5" />
+  <line x1="360" y1="532" x2="480" y2="324" stroke="#ffffff" stroke-width="0.6" marker-start="url(#arrow-start)" marker-end="url(#arrow-end)" />
+
+  
+  <text x="424" y="542" font-family="monospace" font-size="13" fill="#ffffff" letter-spacing="1">EL 60.0°</text>
+  <text x="500" y="278" font-family="monospace" font-size="13" fill="#ffffff" letter-spacing="1">SUBREFLECTOR FOCUS</text>
+  <text x="80" y="420" font-family="monospace" font-size="13" fill="#ffffff" letter-spacing="1">PRIMARY APERTURE Ø25M</text>
+
+  
+  <polyline points="280,416 300,416 328,450" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <circle cx="328" cy="450" r="1.5" fill="#ffffff" />
+</svg>
