@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-18-pm",
+  "date": "2026-10-18",
+  "slot": "pm",
+  "text": "If you wish to make an apple pie from scratch, you must first invent the universe.",
+  "author": "Carl Sagan",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Carl_Sagan",
+  "sentiment": "Piques interest",
+  "visual_brief": "A precise engineering drawing showing orthographic views and a cross-section of a massive nested spherical apparatus, where concentric containment shells, dimensional callouts, and alignment axes focus down toward a single tiny crucible suspended at the absolute center. Directional arrows indicate the inward compression and flow of energy through successive tiers of shielding toward the central core.",
+  "alt": "Engineering cross-section of concentric spherical shells focusing energy onto a tiny center.",
+  "image": "data/images/2026-10-18-pm.svg",
+  "image_method": "llm"
+}
