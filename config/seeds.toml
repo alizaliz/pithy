@@ -187,6 +187,18 @@ weight = 0.5
 sentiments = ["Tender", "Melancholic"]
 
 [[sources]]
+author = "George Orwell"
+wikiquote = "George Orwell"
+weight = 0.75
+sentiments = ["Political", "Wry", "Philosophical"]
+
+[[sources]]
+author = "Aldous Huxley"
+wikiquote = "Aldous Huxley"
+weight = 0.5
+sentiments = ["Philosophical", "Political", "Piques interest"]
+
+[[sources]]
 author = "Brandon Sanderson"
 wikiquote = "Brandon Sanderson"
 weight = 0.75

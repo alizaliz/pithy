@@ -234,5 +234,17 @@
     "text": "How wonderful that we have met with a paradox. Now we have some hope of making progress.",
     "author": "Niels Bohr",
     "sentiments": ["Piques interest", "Wonder"]
+  },
+  {
+    "text": "I could hear my heart beating. I could hear everyone's heart. I could hear the human noise we sat there making, not one of us moving, not even when the room went dark.",
+    "author": "Raymond Carver",
+    "work": "What We Talk About When We Talk About Love",
+    "sentiments": ["Melancholic", "Tender"]
+  },
+  {
+    "text": "It was always the women, and above all the young ones, who were the most bigoted adherents of the Party, the swallowers of slogans, the amateur spies and nosers-out of unorthodoxy.",
+    "author": "George Orwell",
+    "work": "Nineteen Eighty-Four",
+    "sentiments": ["Political"]
   }
 ]
