@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-19-am",
+  "date": "2026-10-19",
+  "slot": "am",
+  "text": "If we have our own why in life, we shall get along with almost any how.",
+  "author": "Friedrich Nietzsche",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Friedrich_Nietzsche",
+  "sentiment": "Motivational",
+  "visual_brief": "A technical schematic of a three-axis gimbaled gyroscope rendered in precise white drafting lines on a black background. Curved motion arrows indicate the outer concentric brass rings pitching and rolling through turbulent angles, while the weighted central rotor remains undisturbed on its true horizontal axis.",
+  "alt": "Technical drawing of a gimbaled gyroscope maintaining level orientation amid tilting rings.",
+  "image": "data/images/2026-10-19-am.svg",
+  "image_method": "llm"
+}
