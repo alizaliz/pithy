@@ -8,7 +8,7 @@ import tomllib
 from generator import image, sources
 from zoneinfo import ZoneInfo
 
-from generator.__main__ import BAKED, CONFIG, entry_id, scheduled_for_now
+from generator.__main__ import BAKED, CONFIG, entry_id, scheduled_for_now, slot_times
 from generator.llm import extract_json, extract_svg
 
 WIKITEXT = """{{Wikipedia}}
@@ -171,40 +171,46 @@ class WikiquoteParsing(unittest.TestCase):
 
 
 class EntryIds(unittest.TestCase):
-    def test_slot_follows_the_local_hour(self):
-        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 1, 7)), "2026-10-12-am")
-        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 13, 7)), "2026-10-12-pm")
+    start, every = dt.timedelta(hours=11, minutes=45), dt.timedelta(hours=6)
 
-    def test_slots_start_at_slot_start(self):
-        start = dt.timedelta(hours=11, minutes=45)
-        ids = {when: entry_id(dt.datetime(2026, 10, 14, *when), start=start)
-               for when in [(11, 45), (12, 30), (23, 45), (0, 30), (11, 44)]}
-        self.assertEqual(ids, {(11, 45): "2026-10-14-am", (12, 30): "2026-10-14-am",
-                               (23, 45): "2026-10-14-pm", (0, 30): "2026-10-13-pm",
-                               (11, 44): "2026-10-13-pm"})
+    def eid(self, *when, **kw):
+        return entry_id(dt.datetime(*when), start=self.start, every=self.every, **kw)
+
+    def test_slot_times(self):
+        self.assertEqual(slot_times(self.start, self.every), ["0545", "1145", "1745", "2345"])
+
+    def test_id_is_the_slot_start_even_when_late(self):
+        self.assertEqual(self.eid(2026, 10, 20, 11, 45), "2026-10-20-1145")
+        self.assertEqual(self.eid(2026, 10, 20, 12, 30), "2026-10-20-1145")
+        self.assertEqual(self.eid(2026, 10, 20, 17, 44), "2026-10-20-1145")
+        self.assertEqual(self.eid(2026, 10, 20, 17, 45), "2026-10-20-1745")
+        self.assertEqual(self.eid(2026, 10, 20, 23, 50), "2026-10-20-2345")
+        self.assertEqual(self.eid(2026, 10, 21, 0, 40), "2026-10-20-2345")  # late, past midnight
+        self.assertEqual(self.eid(2026, 10, 21, 6, 0), "2026-10-21-0545")
 
     def test_explicit_date_and_slot(self):
-        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 13, 7), "2026-10-20"), "2026-10-20-am")
-        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 1, 7), "2026-10-20", "pm"), "2026-10-20-pm")
-        self.assertEqual(entry_id(dt.datetime(2026, 10, 12, 1, 7), slot="pm"), "2026-10-12-pm")
+        self.assertEqual(self.eid(2026, 10, 20, 13, 7, date="2026-10-25"), "2026-10-25-0545")
+        self.assertEqual(self.eid(2026, 10, 20, 13, 7, date="2026-10-25", slot="1745"), "2026-10-25-1745")
 
 
 class Schedule(unittest.TestCase):
-    start = dt.timedelta(hours=11, minutes=45)
+    start, every = dt.timedelta(hours=11, minutes=45), dt.timedelta(hours=6)
     nz = ZoneInfo("Pacific/Auckland")
+    NZDT, NZST = "45 4,10,16,22 * * *", "45 5,11,17,23 * * *"
 
     def check(self, cron, *utc):
-        return scheduled_for_now(cron, dt.datetime(*utc, tzinfo=dt.timezone.utc), self.nz, self.start)
+        return scheduled_for_now(cron, dt.datetime(*utc, tzinfo=dt.timezone.utc), self.nz, self.start, self.every)
 
     def test_daylight_time_uses_the_utc13_cron(self):  # October: NZDT
-        self.assertTrue(self.check("45 10,22 * * *", 2026, 10, 14, 22, 50))   # 11:45 local
-        self.assertTrue(self.check("45 10,22 * * *", 2026, 10, 14, 11, 20))   # 23:45, late start
-        self.assertFalse(self.check("45 11,23 * * *", 2026, 10, 14, 23, 50))  # 12:45 local
+        self.assertTrue(self.check(self.NZDT, 2026, 10, 20, 22, 50))   # 11:45 local
+        self.assertTrue(self.check(self.NZDT, 2026, 10, 20, 5, 20))    # 17:45, late start
+        self.assertTrue(self.check(self.NZDT, 2026, 10, 20, 16, 46))   # 05:45
+        self.assertFalse(self.check(self.NZST, 2026, 10, 20, 23, 50))  # 12:45 local
 
     def test_standard_time_uses_the_utc12_cron(self):  # July: NZST
-        self.assertTrue(self.check("45 11,23 * * *", 2026, 7, 14, 23, 50))
-        self.assertTrue(self.check("45 11,23 * * *", 2026, 7, 14, 11, 46))
-        self.assertFalse(self.check("45 10,22 * * *", 2026, 7, 14, 22, 50))  # 10:45 local
+        self.assertTrue(self.check(self.NZST, 2026, 7, 14, 23, 50))    # 11:45 local
+        self.assertTrue(self.check(self.NZST, 2026, 7, 14, 17, 46))    # 05:45
+        self.assertFalse(self.check(self.NZDT, 2026, 7, 14, 22, 50))   # 10:45 local
 
 
 class Extraction(unittest.TestCase):

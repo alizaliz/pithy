@@ -1,13 +1,14 @@
 """One run: pick seeds → fetch real quotes → curate → draw → write the site.
 
-There are two entries a day, "am" and "pm" (in the timezone set in seeds.toml),
-with ids like 2026-10-12-am.
+Entries are made every few hours from a local start time (`slot_start` and
+`every_hours` in seeds.toml), with ids of the slot's local date and start time,
+like 2026-10-20-1745. Older entries have ids like 2026-10-12-am or 2026-10-11.
 
 Usage:
   python -m generator              # make the current entry (skips if it exists)
   python -m generator --force      # regenerate the current entry
   python -m generator --offline    # no network/LLM: baked quotes + procedural image
-  python -m generator --date 2026-10-12 --slot pm
+  python -m generator --date 2026-10-20 --slot 1745
 """
 
 from __future__ import annotations
@@ -59,21 +60,34 @@ def parse_hhmm(value: str) -> dt.timedelta:
     return dt.timedelta(hours=int(h), minutes=int(m))
 
 
-def entry_id(now: dt.datetime, date: str | None = None, slot: str | None = None,
-             start: dt.timedelta = dt.timedelta(0)) -> str:
-    """Id of the entry for local time `now`, or for an explicit date/slot (slot defaults to am).
+DAY = dt.timedelta(days=1)
 
-    The am slot runs from `start` for 12 hours and the pm slot for the 12 after,
-    so a run that starts late still lands in the slot it was scheduled for.
+
+def slot_times(start: dt.timedelta, every: dt.timedelta) -> list[str]:
+    """Local start times of the day's slots as HHMM, e.g. 11:45 every 6h → 0545, 1145, 1745, 2345."""
+    times = sorted((start + k * every) % DAY for k in range(DAY // every))
+    return [f"{t.seconds // 3600:02d}{t.seconds // 60 % 60:02d}" for t in times]
+
+
+def entry_id(now: dt.datetime, date: str | None = None, slot: str | None = None,
+             start: dt.timedelta = dt.timedelta(0), every: dt.timedelta = DAY) -> str:
+    """Id of the entry for local time `now`: the date and local start time of its slot,
+    e.g. 2026-10-20-1745. Or an explicit date/slot (slot defaults to the first of the day).
+
+    Slots begin at `start` and every `every` after, so a run that starts late still
+    lands in the slot it was scheduled for.
     """
     if date:
-        return f"{date}-{slot or 'am'}"
-    shifted = now - start
-    return f"{shifted.date().isoformat()}-{slot or ('am' if shifted.hour < 12 else 'pm')}"
+        return f"{date}-{slot or slot_times(start, every)[0]}"
+    shifted = now.replace(tzinfo=None) - start
+    midnight = shifted.replace(hour=0, minute=0, second=0, microsecond=0)
+    begins = midnight + (shifted - midnight) // every * every + start
+    return begins.strftime("%Y-%m-%d-%H%M")
 
 
-def scheduled_for_now(cron: str, now_utc: dt.datetime, tz: ZoneInfo, start: dt.timedelta) -> bool:
-    """Whether the cron that fired ("M H1,H2 * * *", in UTC) was due at a local slot time.
+def scheduled_for_now(cron: str, now_utc: dt.datetime, tz: ZoneInfo,
+                      start: dt.timedelta, every: dt.timedelta) -> bool:
+    """Whether the cron that fired ("M H1,H2,... * * *", in UTC) was due at a local slot time.
 
     The workflow has one cron for each UTC offset (daylight time or not); only the
     one matching the timezone's current offset should make an entry.
@@ -82,9 +96,7 @@ def scheduled_for_now(cron: str, now_utc: dt.datetime, tz: ZoneInfo, start: dt.t
     due = max(t for h in hours.split(",") for day in (0, 1)
               if (t := now_utc.replace(hour=int(h), minute=int(minute), second=0, microsecond=0)
                   - dt.timedelta(days=day)) <= now_utc)
-    local = due.astimezone(tz)
-    since_midnight = dt.timedelta(hours=local.hour, minutes=local.minute)
-    return since_midnight in (start, start + dt.timedelta(hours=12))
+    return due.astimezone(tz).strftime("%H%M") in slot_times(start, every)
 
 
 def attribution(entry: dict) -> str:
@@ -112,7 +124,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--date")
-    ap.add_argument("--slot", choices=["am", "pm"])
+    ap.add_argument("--slot", help="a slot start time as HHMM, e.g. 1745 (with --date)")
     ap.add_argument("--cron", help="the schedule that triggered this run; skip if it isn't a slot time")
     args = ap.parse_args(argv)
 
@@ -120,10 +132,13 @@ def main(argv: list[str] | None = None) -> int:
     sched = cfg.get("schedule", {})
     tz = ZoneInfo(sched.get("timezone", "UTC"))
     start = parse_hhmm(sched.get("slot_start", "00:00"))
-    if args.cron and not scheduled_for_now(args.cron, dt.datetime.now(dt.timezone.utc), tz, start):
+    every = dt.timedelta(hours=float(sched.get("every_hours", 24)))
+    if args.slot and args.slot not in slot_times(start, every):
+        ap.error(f"--slot must be one of {', '.join(slot_times(start, every))}")
+    if args.cron and not scheduled_for_now(args.cron, dt.datetime.now(dt.timezone.utc), tz, start, every):
         print(f"Skipping: {args.cron!r} isn't a slot time in {tz.key} today (the other cron is).")
         return 0
-    eid = entry_id(dt.datetime.now(tz), args.date, args.slot, start)
+    eid = entry_id(dt.datetime.now(tz), args.date, args.slot, start, every)
 
     DATA.mkdir(parents=True, exist_ok=True)
     (DATA / "images").mkdir(exist_ok=True)
@@ -134,7 +149,7 @@ def main(argv: list[str] | None = None) -> int:
 
     history: list[dict] = json.loads(HISTORY.read_text()) if HISTORY.exists() else []
     for h in history:
-        h.setdefault("id", h["date"])  # entries from before am/pm slots
+        h.setdefault("id", h["date"])  # entries from before slots
     used = {h["hash"] for h in history}  # includes this entry's, so --force picks something new
     history = [h for h in history if h["id"] != eid]
     recent = history[-int(sched.get("avoid_recent", 6)):]
