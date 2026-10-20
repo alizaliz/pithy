@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-20-1745",
+  "date": "2026-10-20",
+  "slot": "1745",
+  "text": "The man has been in here 50 years, Heywood. 50 years. This is all he knows. In here, he's an important man. He's an educated man. Outside, he's nothing.",
+  "author": "Ellis Boyd \"Red\" Redding",
+  "work": "The Shawshank Redemption",
+  "origin": "https://en.wikiquote.org/wiki/The_Shawshank_Redemption",
+  "sentiment": "Melancholic",
+  "visual_brief": "An architectural cross-section of an abandoned Victorian greenhouse enclosing a single massive, ancient tree whose upper branches have slowly pressed through and shattered the iron-framed glass roof. Clean white drafting lines detail the rusted trusses, fallen panes, and delicate dimensional callouts measuring the constricted space.",
+  "alt": "Architectural drawing of an overgrown tree breaking through a greenhouse roof",
+  "image": "data/images/2026-10-20-1745.svg",
+  "image_method": "llm"
+}

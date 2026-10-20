@@ -1,0 +1,279 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <marker id="arr-d" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6">
+      <path d="M 1 1 L 7 4 L 1 7 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    <marker id="arr-rev" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6">
+      <path d="M 7 1 L 1 4 L 7 7 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.4" />
+    </pattern>
+  </defs>
+
+  
+  <rect width="800" height="800" fill="#000000" />
+
+  
+  <rect x="25" y="25" width="750" height="750" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <rect x="31" y="31" width="738" height="738" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.5" />
+
+  
+  <line x1="40" y1="680" x2="760" y2="680" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="8 6" stroke-opacity="0.3" />
+  <line x1="40" y1="440" x2="760" y2="440" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="8 6" stroke-opacity="0.3" />
+  <line x1="40" y1="210" x2="760" y2="210" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="8 6" stroke-opacity="0.3" />
+  <line x1="400" y1="40" x2="400" y2="760" stroke="#ffffff" stroke-width="0.7" stroke-dasharray="14 4 3 4" stroke-opacity="0.6" />
+
+  
+  <path d="M 110 680 L 110 740 L 170 740 L 170 680 Z" fill="url(#hatch)" stroke="#ffffff" stroke-width="1" />
+  <path d="M 630 680 L 630 740 L 690 740 L 690 680 Z" fill="url(#hatch)" stroke="#ffffff" stroke-width="1" />
+  <line x1="40" y1="680" x2="760" y2="680" stroke="#ffffff" stroke-width="1.8" />
+  
+  <path d="M 50 690 L 70 710 M 80 690 L 100 710 M 700 690 L 720 710 M 730 690 L 750 710" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.4" />
+
+  
+  <path d="M 370 680 Q 340 710 300 725 Q 260 740 210 735" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 430 680 Q 460 715 510 725 Q 560 735 610 730" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 390 680 Q 380 720 370 750" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M 410 680 Q 425 715 440 755" fill="none" stroke="#ffffff" stroke-width="1" />
+  <path d="M 320 715 Q 290 725 270 745" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <path d="M 480 720 Q 520 735 540 755" fill="none" stroke="#ffffff" stroke-width="0.8" />
+
+  
+  <rect x="120" y="620" width="40" height="60" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <line x1="120" y1="640" x2="160" y2="640" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="120" y1="660" x2="160" y2="660" stroke="#ffffff" stroke-width="0.6" />
+  <rect x="640" y="620" width="40" height="60" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <line x1="640" y1="640" x2="680" y2="640" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="640" y1="660" x2="680" y2="660" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  
+  <rect x="135" y="440" width="10" height="180" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M 130 440 L 150 440 L 145 450 L 135 450 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+  <path d="M 130 620 L 150 620 L 145 610 L 135 610 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+  
+  <line x1="140" y1="450" x2="140" y2="610" stroke="#ffffff" stroke-width="0.5" />
+  <line x1="125" y1="475" x2="140" y2="475" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="125" y1="510" x2="140" y2="510" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="125" y1="545" x2="140" y2="545" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="125" y1="580" x2="140" y2="580" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  <rect x="655" y="440" width="10" height="180" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M 650 440 L 670 440 L 665 450 L 655 450 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+  <path d="M 650 620 L 670 620 L 665 610 L 655 610 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+  
+  <line x1="660" y1="450" x2="660" y2="610" stroke="#ffffff" stroke-width="0.5" />
+  <line x1="660" y1="475" x2="675" y2="475" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="660" y1="510" x2="675" y2="510" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="660" y1="545" x2="675" y2="545" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="660" y1="580" x2="675" y2="580" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  <line x1="135" y1="440" x2="665" y2="440" stroke="#ffffff" stroke-width="1.5" />
+  <line x1="135" y1="448" x2="665" y2="448" stroke="#ffffff" stroke-width="0.8" />
+  
+  <circle cx="170" cy="444" r="3" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <circle cx="210" cy="444" r="3" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <circle cx="250" cy="444" r="3" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <circle cx="550" cy="444" r="3" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <circle cx="590" cy="444" r="3" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <circle cx="630" cy="444" r="3" fill="none" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  
+  <path d="M 140 440 C 140 320 220 230 330 205" fill="none" stroke="#ffffff" stroke-width="1.8" />
+  <path d="M 140 432 C 145 325 225 240 325 215" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M 660 440 C 660 320 580 230 470 205" fill="none" stroke="#ffffff" stroke-width="1.8" />
+  <path d="M 660 432 C 655 325 575 240 475 215" fill="none" stroke="#ffffff" stroke-width="1.2" />
+
+  
+  <path d="M 160 440 C 165 350 235 270 320 230" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.8" />
+  <path d="M 185 440 C 190 370 250 295 315 250" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.8" />
+  
+  <path d="M 640 440 C 635 350 565 270 480 230" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.8" />
+  <path d="M 615 440 C 610 370 550 295 485 250" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.8" />
+
+  
+  <line x1="165" y1="410" x2="185" y2="436" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="190" y1="375" x2="220" y2="415" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="225" y1="330" x2="260" y2="380" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="265" y1="285" x2="305" y2="340" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="165" y1="436" x2="190" y2="375" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="220" y1="415" x2="225" y2="330" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="260" y1="380" x2="265" y2="285" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  <line x1="635" y1="410" x2="615" y2="436" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="610" y1="375" x2="580" y2="415" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="575" y1="330" x2="540" y2="380" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="535" y1="285" x2="495" y2="340" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="635" y1="436" x2="610" y2="375" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="580" y1="415" x2="575" y2="330" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="540" y1="380" x2="535" y2="285" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  <line x1="152" y1="385" x2="195" y2="410" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+  <line x1="178" y1="340" x2="225" y2="368" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+  <line x1="210" y1="300" x2="262" y2="328" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+  <line x1="250" y1="262" x2="305" y2="290" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+
+  <line x1="648" y1="385" x2="605" y2="410" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+  <line x1="622" y1="340" x2="575" y2="368" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+  <line x1="590" y1="300" x2="538" y2="328" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+  <line x1="550" y1="262" x2="495" y2="290" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+
+  
+  
+  <path d="M 330 680 C 335 640 345 590 350 540 C 355 490 340 450 330 400 C 322 360 305 320 280 270 C 265 240 245 205 215 175" fill="none" stroke="#ffffff" stroke-width="2.5" />
+  <path d="M 470 680 C 465 635 455 580 450 530 C 445 480 460 435 470 380 C 478 340 495 290 520 240 C 540 200 565 170 595 140" fill="none" stroke="#ffffff" stroke-width="2.5" />
+
+  
+  <path d="M 360 680 C 365 620 370 560 375 510 C 380 460 375 420 365 370 C 355 330 330 285 305 250" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.7" />
+  <path d="M 385 680 C 390 630 392 570 395 500 C 398 440 395 390 385 340 C 375 290 355 240 340 200" fill="none" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.6" />
+  <path d="M 415 680 C 412 625 410 565 410 495 C 410 435 418 380 425 330 C 435 275 455 220 475 180" fill="none" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.6" />
+  <path d="M 440 680 C 438 630 432 575 430 515 C 428 465 438 415 448 365 C 460 315 480 265 505 225" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-opacity="0.7" />
+
+  
+  <path d="M 390 580 C 380 540 385 500 405 480 C 420 500 425 540 415 580 C 405 600 395 600 390 580 Z" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M 395 565 C 390 545 392 520 402 505 C 410 520 412 545 408 565" fill="none" stroke="#ffffff" stroke-width="0.5" />
+
+  
+  
+  <path d="M 370 380 C 360 320 330 250 320 200 C 310 150 315 110 325 75" fill="none" stroke="#ffffff" stroke-width="2.2" />
+  <path d="M 390 360 C 385 300 360 235 350 185 C 340 140 345 105 355 75" fill="none" stroke="#ffffff" stroke-width="1.8" />
+  
+  <path d="M 430 360 C 435 305 455 240 465 190 C 475 145 470 105 460 70" fill="none" stroke="#ffffff" stroke-width="2.2" />
+  <path d="M 450 375 C 460 325 485 255 495 205 C 505 155 500 115 490 70" fill="none" stroke="#ffffff" stroke-width="1.8" />
+
+  
+  <path d="M 320 180 Q 280 140 250 110 Q 220 85 195 70" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 270 130 Q 250 90 240 55" fill="none" stroke="#ffffff" stroke-width="1" />
+  <path d="M 335 110 Q 310 80 290 50" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M 345 130 Q 370 95 385 65 Q 395 45 400 35" fill="none" stroke="#ffffff" stroke-width="1.4" />
+  <path d="M 370 95 Q 355 60 350 40" fill="none" stroke="#ffffff" stroke-width="0.9" />
+
+  <path d="M 470 170 Q 510 135 550 105 Q 585 80 615 65" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 520 125 Q 545 85 555 50" fill="none" stroke="#ffffff" stroke-width="1" />
+  <path d="M 465 110 Q 485 75 505 45" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M 445 135 Q 430 95 420 60 Q 415 40 410 35" fill="none" stroke="#ffffff" stroke-width="1.4" />
+
+  
+  
+  <path d="M 340 460 C 290 450 230 460 180 480 C 160 490 148 505 140 525" fill="none" stroke="#ffffff" stroke-width="2" />
+  <path d="M 345 480 C 300 475 250 485 200 510 C 180 520 165 535 155 555" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 230 465 Q 210 430 190 415" fill="none" stroke="#ffffff" stroke-width="1" />
+
+  
+  <path d="M 460 460 C 510 450 570 460 620 480 C 640 490 652 505 660 525" fill="none" stroke="#ffffff" stroke-width="2" />
+  <path d="M 455 480 C 500 475 550 485 600 510 C 620 520 635 535 645 555" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 570 465 Q 590 430 610 415" fill="none" stroke="#ffffff" stroke-width="1" />
+
+  
+  
+  <path d="M 330 205 L 342 195 L 338 185 L 350 170" fill="none" stroke="#ffffff" stroke-width="1.8" />
+  <path d="M 325 215 L 332 205 L 320 195 L 328 178" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  
+  <path d="M 340 185 C 330 160 300 155 285 165" fill="none" stroke="#ffffff" stroke-width="1.4" />
+  <path d="M 350 170 C 355 140 335 125 315 130" fill="none" stroke="#ffffff" stroke-width="1.2" />
+
+  
+  <path d="M 470 205 L 458 195 L 462 185 L 450 170" fill="none" stroke="#ffffff" stroke-width="1.8" />
+  <path d="M 475 215 L 468 205 L 480 195 L 472 178" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  
+  <path d="M 460 185 C 470 160 500 155 515 165" fill="none" stroke="#ffffff" stroke-width="1.4" />
+  <path d="M 450 170 C 445 140 465 125 485 130" fill="none" stroke="#ffffff" stroke-width="1.2" />
+
+  
+  <path d="M 330 205 C 360 170 380 155 400 155 C 420 155 440 170 470 205" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="4 4" stroke-opacity="0.5" />
+  
+  <path d="M 395 155 L 400 120 L 405 155" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-dasharray="3 3" stroke-opacity="0.4" />
+
+  
+  
+  <polygon points="310,210 325,230 315,235" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <polygon points="360,230 375,220 370,245" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <polygon points="280,250 295,245 290,265" fill="none" stroke="#ffffff" stroke-width="0.7" />
+  <polygon points="435,225 445,210 450,235" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <polygon points="485,240 500,255 480,260" fill="none" stroke="#ffffff" stroke-width="0.7" />
+  <polygon points="340,300 355,320 335,315" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <polygon points="440,310 455,300 460,325" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <polygon points="290,380 305,395 285,400" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <polygon points="505,385 520,375 515,400" fill="none" stroke="#ffffff" stroke-width="0.6" />
+  <polygon points="380,420 395,440 375,435" fill="none" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  <line x1="295" y1="230" x2="310" y2="245" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2 2" />
+  <line x1="490" y1="230" x2="475" y2="245" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2 2" />
+  <line x1="260" y1="280" x2="275" y2="305" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="3 2" />
+  <line x1="530" y1="280" x2="515" y2="305" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="3 2" />
+
+  
+  <polygon points="180,676 195,680 185,673" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <polygon points="220,677 235,674 240,680" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <polygon points="270,675 285,679 275,673" fill="none" stroke="#ffffff" stroke-width="0.7" />
+  <polygon points="305,678 315,674 320,680" fill="none" stroke="#ffffff" stroke-width="0.7" />
+  <polygon points="480,676 495,680 490,673" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <polygon points="530,675 545,678 540,672" fill="none" stroke="#ffffff" stroke-width="0.7" />
+  <polygon points="580,677 595,674 600,680" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <polygon points="620,676 630,680 635,674" fill="none" stroke="#ffffff" stroke-width="0.7" />
+  
+  <path d="M 240 679 L 265 671 L 285 679" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <path d="M 520 679 L 545 672 L 560 679" fill="none" stroke="#ffffff" stroke-width="1.2" />
+
+  
+  
+  <path d="M 345 220 Q 325 180 300 155" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="3 3" marker-end="url(#arr-d)" />
+  <path d="M 455 220 Q 475 180 500 155" fill="none" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="3 3" marker-end="url(#arr-d)" />
+  
+  <line x1="335" y1="95" x2="335" y2="60" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2 2" marker-end="url(#arr-d)" />
+  <line x1="465" y1="95" x2="465" y2="60" stroke="#ffffff" stroke-width="0.8" stroke-dasharray="2 2" marker-end="url(#arr-d)" />
+
+  
+  
+  <line x1="120" y1="710" x2="680" y2="710" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="120" y1="700" x2="120" y2="720" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="680" y1="700" x2="680" y2="720" stroke="#ffffff" stroke-width="0.8" />
+  <path d="M 120 710 L 132 707 L 132 713 Z" fill="#ffffff" stroke="none" />
+  <path d="M 680 710 L 668 707 L 668 713 Z" fill="#ffffff" stroke="none" />
+  
+  <line x1="120" y1="680" x2="120" y2="700" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.4" />
+  <line x1="680" y1="680" x2="680" y2="700" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.4" />
+
+  
+  <line x1="330" y1="165" x2="470" y2="165" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="330" y1="155" x2="330" y2="175" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="470" y1="155" x2="470" y2="175" stroke="#ffffff" stroke-width="0.8" />
+  <path d="M 330 165 L 342 162 L 342 168 Z" fill="#ffffff" stroke="none" />
+  <path d="M 470 165 L 458 162 L 458 168 Z" fill="#ffffff" stroke="none" />
+
+  
+  <line x1="75" y1="680" x2="75" y2="40" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="65" y1="680" x2="85" y2="680" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="65" y1="40" x2="85" y2="40" stroke="#ffffff" stroke-width="0.8" />
+  <path d="M 75 680 L 72 668 L 78 668 Z" fill="#ffffff" stroke="none" />
+  <path d="M 75 40 L 72 52 L 78 52 Z" fill="#ffffff" stroke="none" />
+  
+  <line x1="85" y1="40" x2="395" y2="40" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="4 4" stroke-opacity="0.4" />
+
+  
+  <line x1="280" y1="270" x2="250" y2="270" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="250" y1="270" x2="225" y2="295" stroke="#ffffff" stroke-width="0.6" />
+  <circle cx="280" cy="270" r="1.5" fill="#ffffff" />
+
+  
+  <line x1="465" y1="165" x2="520" y2="120" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="520" y1="120" x2="550" y2="120" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  
+  <text x="50" y="60" font-family="monospace" font-size="14" fill="#ffffff" letter-spacing="2">SECTION A-A: PALM HOUSE TRANSVERSE</text>
+
+  
+  <text x="50" y="80" font-family="monospace" font-size="12" fill="#ffffff" letter-spacing="1.5">SPECIMEN: QUERCUS ROBUR (AGE EST. 280 YR)</text>
+
+  
+  <text x="555" y="124" font-family="monospace" font-size="12" fill="#ffffff" letter-spacing="1">BREACH ZONE (+14.2M)</text>
+
+</svg>
