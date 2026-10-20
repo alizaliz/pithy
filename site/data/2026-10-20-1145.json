@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-20-1145",
+  "date": "2026-10-20",
+  "slot": "1145",
+  "text": "Everything is an illusion in the mundane world. Only your conviction is real.",
+  "author": "Shibumi",
+  "work": "Dragon Tiger Gate",
+  "origin": "baked",
+  "sentiment": "Martial Arts",
+  "visual_brief": "A precision technical cross-section of a heavy brass plumb bob suspended dead center within three concentric gimbal rings. Fine dashed alignment crosshairs and circular rotation arrows show the outer rings spinning in turbulent multi-axis motion while the central weight hangs absolute and undisturbed.",
+  "alt": "Technical diagram of a static plumb bob centered inside spinning gimbal rings.",
+  "image": "data/images/2026-10-20-1145.svg",
+  "image_method": "llm"
+}
