@@ -159,5 +159,12 @@
   "hash": "82d2ad12c879",
   "sentiment": "Motivational",
   "source": "baked"
+ },
+ {
+  "id": "2026-10-21-2345",
+  "date": "2026-10-21",
+  "hash": "af89d15caeb9",
+  "sentiment": "Political",
+  "source": "Jacob Bronowski"
  }
 ]

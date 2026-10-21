@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-21-1745",
+  "id": "2026-10-21-2345",
   "date": "2026-10-21",
-  "slot": "1745",
-  "text": "Fall seven times, stand up eight.",
-  "author": "Japanese proverb",
+  "slot": "2345",
+  "text": "With the... symbolic memory we spell out the future—not one but many futures, which we weigh one against another.",
+  "author": "Jacob Bronowski",
   "work": null,
-  "origin": "baked",
-  "sentiment": "Motivational",
-  "visual_brief": "An engineering cross-section of a self-righting lifeboat hull submerged and inverted, featuring buoyancy and gravity center-lines with dynamic curved arrows showing its forced rotation back upright.",
-  "alt": "Engineering cross-section schematic of a self-righting boat hull rotating upright",
-  "image": "data/images/2026-10-21-1745.svg",
-  "image_method": "llm"
+  "origin": "https://en.wikiquote.org/wiki/Jacob_Bronowski",
+  "sentiment": "Political",
+  "visual_brief": "An abstract precision instrument evoking: political, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-10-21-2345.svg",
+  "image_method": "fallback"
 }
