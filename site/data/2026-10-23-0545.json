@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-23-0545",
+  "date": "2026-10-23",
+  "slot": "0545",
+  "text": "Everything is an illusion in the mundane world. Only your conviction is real.",
+  "author": "Shibumi",
+  "work": "Dragon Tiger Gate",
+  "origin": "baked",
+  "sentiment": "Martial Arts",
+  "visual_brief": "An abstract precision instrument evoking: martial arts, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-10-23-0545.svg",
+  "image_method": "llm"
+}
