@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-22-1145",
+  "id": "2026-10-22-1745",
   "date": "2026-10-22",
-  "slot": "1145",
-  "text": "I think a man working outdoors feels more like a man if he can have a bottle of suds. That's only my opinion, sir.",
-  "author": "Andy Dufresne",
-  "work": "The Shawshank Redemption",
-  "origin": "https://en.wikiquote.org/wiki/The_Shawshank_Redemption",
-  "sentiment": "Tender",
-  "visual_brief": "An industrial design sketch in crisp white perspective linework showing a thick, heavy glass bottle resting on an unfinished wooden plank. Fine construction lines and dashed callouts indicate the gentle bead of condensation droplets gathering and rolling down its shoulder.",
-  "alt": "Line sketch of a cold glass bottle resting on rough wood.",
-  "image": "data/images/2026-10-22-1145.svg",
-  "image_method": "fallback"
+  "slot": "1745",
+  "text": "Men are disturbed, not by things, but by the principles and notions which they form concerning things.",
+  "author": "Epictetus",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Epictetus",
+  "sentiment": "Philosophical",
+  "visual_brief": "A technical optical diagram in the style of a physics patent, showing parallel incident light rays passing through an asymmetrical glass prism and refracting into a wide fan of altered trajectories, with dashed normal lines and construction arcs marking angles of incidence.",
+  "alt": "Technical ray tracing diagram of light bending through an asymmetrical prism",
+  "image": "data/images/2026-10-22-1745.svg",
+  "image_method": "llm"
 }
