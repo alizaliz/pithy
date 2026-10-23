@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-23-1745",
+  "date": "2026-10-23",
+  "slot": "1745",
+  "text": "First say to yourself what you would be; and then do what you have to do.",
+  "author": "Epictetus",
+  "work": "Discourses",
+  "origin": "baked",
+  "sentiment": "Motivational",
+  "visual_brief": "An industrial design sketch with confident perspective linework and construction lines showing a heavy mechanical ratchet and pawl mechanism mid-stroke. Curved motion arrows indicate the irreversible forward rotation of the toothed gear wheel as the lever drives it ahead.",
+  "alt": "Industrial sketch of a mechanical ratchet wheel advancing forward on its axle.",
+  "image": "data/images/2026-10-23-1745.svg",
+  "image_method": "llm"
+}
