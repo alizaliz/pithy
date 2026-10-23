@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-23-1145",
+  "date": "2026-10-23",
+  "slot": "1145",
+  "text": "I guess once you start doubting, there's no end to it.",
+  "author": "Batou",
+  "work": "Ghost in the Shell",
+  "origin": "https://en.wikiquote.org/wiki/Ghost_in_the_Shell_%28film%29",
+  "sentiment": "Piques interest",
+  "visual_brief": "An engineering schematic of a recursive gear train, where each meshed spur gear drives two progressively smaller gears in an outward branching fractal, with faint rotational arrows indicating infinite mechanical regression.",
+  "alt": "Technical diagram of gears splitting endlessly into smaller branching mechanisms.",
+  "image": "data/images/2026-10-23-1145.svg",
+  "image_method": "fallback"
+}
