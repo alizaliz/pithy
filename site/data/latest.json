@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-24-1745",
+  "id": "2026-10-24-2345",
   "date": "2026-10-24",
-  "slot": "1745",
-  "text": "If a man has lost a leg or an eye, he knows he has lost a leg or an eye; but if he has lost a self—himself—he cannot know it, because he is no longer there to know it.",
-  "author": "Oliver Sacks",
-  "work": "The Man Who Mistook His Wife for a Hat",
-  "origin": "baked",
-  "sentiment": "Philosophical",
-  "visual_brief": "A precise engineering schematic of an optical sensor assembly or interferometer, showing light paths reflecting through a series of precision prisms and mirrors toward a central receiver socket that is rendered entirely in faint, dashed ghost lines around an empty void. Fine dimension callouts and dashed alignment axes cross at the missing focal point.",
-  "alt": "Engineering schematic of an optical sensor loop converging on an empty void",
-  "image": "data/images/2026-10-24-1745.svg",
-  "image_method": "fallback"
+  "slot": "2345",
+  "text": "Our origins are of the earth. And so there is in us a deeply seated response to the natural universe, which is part of our humanity.",
+  "author": "Rachel Carson",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Rachel_Carson",
+  "sentiment": "Tender",
+  "visual_brief": "An industrial design concept sketch of a palm-sized botanical incubator, rendered in fine white linework on black. Construction lines and faint radial callouts show a central glass droplet cradled within ribbed ceramic tongs, with subtle directional arrows indicating the gentle hinge motion opening to release a sprouted seed.",
+  "alt": "Design sketch of a delicate hand-held glass and ceramic seed incubator",
+  "image": "data/images/2026-10-24-2345.svg",
+  "image_method": "llm"
 }

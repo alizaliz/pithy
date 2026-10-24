@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-24-2345",
+  "date": "2026-10-24",
+  "slot": "2345",
+  "text": "Our origins are of the earth. And so there is in us a deeply seated response to the natural universe, which is part of our humanity.",
+  "author": "Rachel Carson",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Rachel_Carson",
+  "sentiment": "Tender",
+  "visual_brief": "An industrial design concept sketch of a palm-sized botanical incubator, rendered in fine white linework on black. Construction lines and faint radial callouts show a central glass droplet cradled within ribbed ceramic tongs, with subtle directional arrows indicating the gentle hinge motion opening to release a sprouted seed.",
+  "alt": "Design sketch of a delicate hand-held glass and ceramic seed incubator",
+  "image": "data/images/2026-10-24-2345.svg",
+  "image_method": "llm"
+}

@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    <marker id="arrow-faint" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#ffffff" fill-opacity="0.4" stroke="none" />
+    </marker>
+  </defs>
+
+  
+  <rect width="800" height="800" fill="#000000" />
+
+  
+  <g stroke="#ffffff" stroke-opacity="0.15" stroke-width="0.75" fill="none">
+    
+    <line x1="400" y1="60" x2="400" y2="740" stroke-dasharray="16 6 4 6" />
+    <line x1="120" y1="400" x2="680" y2="400" stroke-dasharray="16 6 4 6" />
+
+    
+    <line x1="160" y1="160" x2="640" y2="640" />
+    <line x1="640" y1="160" x2="160" y2="640" />
+    <line x1="220" y1="680" x2="580" y2="680" />
+    <line x1="200" y1="620" x2="600" y2="620" />
+
+    
+    <ellipse cx="400" cy="380" rx="140" ry="140" />
+    <ellipse cx="400" cy="380" rx="170" ry="60" />
+    <ellipse cx="400" cy="460" rx="130" ry="45" />
+    <ellipse cx="400" cy="300" rx="100" ry="35" />
+    
+    
+    <line x1="310" y1="650" x2="490" y2="650" />
+    <ellipse cx="400" cy="650" rx="70" ry="22" />
+  </g>
+
+  
+  
+  <g stroke="#ffffff" stroke-opacity="0.28" stroke-dasharray="5 4" stroke-width="1.2" fill="none">
+    
+    <path d="M 330 650 C 270 630 190 530 190 410 C 190 310 230 220 280 170 C 295 155 315 165 305 185 C 265 240 235 320 235 410 C 235 500 295 590 355 625 Z" />
+    
+    <path d="M 470 650 C 530 630 610 530 610 410 C 610 310 570 220 520 170 C 505 155 485 165 495 185 C 535 240 565 320 565 410 C 565 500 505 590 445 625 Z" />
+    
+    <path d="M 400 170 C 360 230 330 290 330 350 C 330 410 365 450 400 450 C 435 450 470 410 470 350 C 470 290 440 230 400 170 Z" />
+  </g>
+
+  
+  <g stroke="#ffffff" fill="none">
+    
+    <path d="M 270 360 C 240 370 215 390 195 420" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrow)" />
+    <path d="M 530 360 C 560 370 585 390 605 420" stroke-width="1.5" stroke-opacity="0.8" marker-end="url(#arrow)" />
+    <path d="M 300 250 C 270 270 240 300 225 330" stroke-width="1.2" stroke-opacity="0.6" marker-end="url(#arrow)" />
+    <path d="M 500 250 C 530 270 560 300 575 330" stroke-width="1.2" stroke-opacity="0.6" marker-end="url(#arrow)" />
+
+    
+    <line x1="400" y1="210" x2="400" y2="130" stroke-width="1.5" stroke-dasharray="4 3" stroke-opacity="0.7" marker-end="url(#arrow)" />
+    
+    
+    <path d="M 365 675 C 385 685 415 685 435 675" stroke-width="1.2" stroke-opacity="0.6" marker-end="url(#arrow)" />
+  </g>
+
+  
+  
+  <g stroke="#ffffff" fill="none">
+    
+    <path d="M 400 220 C 345 300 310 370 310 440 C 310 510 350 550 400 550 C 450 550 490 510 490 440 C 490 370 455 300 400 220 Z" stroke-width="2.2" />
+    
+    <path d="M 400 240 C 355 310 325 375 325 435 C 325 495 358 535 400 535 C 442 535 475 495 475 435 C 475 375 445 310 400 240 Z" stroke-width="0.9" stroke-opacity="0.6" />
+
+    
+    <path d="M 340 380 C 335 420 340 460 355 490" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M 348 370 C 344 400 348 440 362 470" stroke-width="0.6" stroke-opacity="0.5" />
+    <path d="M 460 380 C 465 410 462 450 450 480" stroke-width="1.0" stroke-opacity="0.6" stroke-linecap="round" />
+    <path d="M 395 240 C 385 270 375 300 365 330" stroke-width="0.8" stroke-opacity="0.4" />
+
+    
+    <ellipse cx="400" cy="495" rx="55" ry="14" stroke-width="0.9" stroke-dasharray="3 2" stroke-opacity="0.7" />
+    <path d="M 347 492 C 370 512 430 512 453 492" stroke-width="1.2" stroke-opacity="0.7" />
+
+    
+    
+    <ellipse cx="400" cy="460" rx="16" ry="22" stroke-width="1.8" transform="rotate(-12 400 460)" />
+    <path d="M 396 440 C 392 455 394 472 405 480" stroke-width="0.9" stroke-opacity="0.7" />
+
+    
+    <path d="M 404 478 C 408 495 404 508 398 522 C 395 528 397 532 401 534" stroke-width="1.4" stroke-linecap="round" />
+    <path d="M 402 498 C 396 504 390 507 386 510" stroke-width="0.7" stroke-opacity="0.6" />
+    <path d="M 402 512 C 408 516 414 519 418 521" stroke-width="0.7" stroke-opacity="0.6" />
+
+    
+    <path d="M 395 440 C 392 410 380 390 368 375 C 385 375 400 390 400 415" stroke-width="1.4" stroke-linecap="round" />
+    <path d="M 398 425 C 404 402 418 382 434 370 C 430 390 418 412 406 426" stroke-width="1.4" stroke-linecap="round" />
+    
+    <path d="M 382 390 C 378 384 372 380 368 375" stroke-width="0.6" stroke-opacity="0.5" />
+    <path d="M 412 398 C 420 390 426 382 434 370" stroke-width="0.6" stroke-opacity="0.5" />
+
+    
+    <circle cx="370" cy="450" r="2" stroke-width="0.8" stroke-opacity="0.5" />
+    <circle cx="430" cy="460" r="3" stroke-width="0.8" stroke-opacity="0.5" />
+    <circle cx="385" cy="350" r="1.5" stroke-width="0.6" stroke-opacity="0.4" />
+    <circle cx="420" cy="340" r="2.5" stroke-width="0.6" stroke-opacity="0.4" />
+  </g>
+
+  
+  <g stroke="#ffffff" fill="none">
+    
+    
+    <path d="M 345 640 C 300 620 248 540 248 440 C 248 350 280 270 325 215 C 336 202 350 212 342 226 C 306 275 278 350 278 436 C 278 518 322 585 365 615 Z" stroke-width="2.2" stroke-linejoin="round" />
+    
+    
+    <path d="M 335 644 C 285 625 232 540 232 440 C 232 340 268 255 315 198" stroke-width="1.0" stroke-opacity="0.5" />
+    
+    
+    <g stroke-width="1.4" stroke-linecap="round">
+      <line x1="249" y1="460" x2="278" y2="455" />
+      <line x1="248" y1="435" x2="278" y2="432" />
+      <line x1="251" y1="410" x2="280" y2="409" />
+      <line x1="256" y1="385" x2="285" y2="386" />
+      <line x1="264" y1="360" x2="292" y2="363" />
+      <line x1="274" y1="335" x2="301" y2="340" />
+      <line x1="287" y1="310" x2="312" y2="318" />
+      <line x1="303" y1="285" x2="324" y2="296" />
+      <line x1="320" y1="260" x2="337" y2="274" />
+
+      
+      <line x1="254" y1="485" x2="282" y2="478" />
+      <line x1="264" y1="510" x2="291" y2="500" />
+      <line x1="278" y1="535" x2="304" y2="522" />
+      <line x1="296" y1="560" x2="321" y2="544" />
+      <line x1="318" y1="585" x2="340" y2="568" />
+    </g>
+
+    
+    
+    <path d="M 455 640 C 500 620 552 540 552 440 C 552 350 520 270 475 215 C 464 202 450 212 458 226 C 494 275 522 350 522 436 C 522 518 478 585 435 615 Z" stroke-width="2.2" stroke-linejoin="round" />
+    
+    
+    <path d="M 465 644 C 515 625 568 540 568 440 C 568 340 532 255 485 198" stroke-width="1.0" stroke-opacity="0.5" />
+
+    
+    <g stroke-width="1.4" stroke-linecap="round">
+      <line x1="551" y1="460" x2="522" y2="455" />
+      <line x1="552" y1="435" x2="522" y2="432" />
+      <line x1="549" y1="410" x2="520" y2="409" />
+      <line x1="544" y1="385" x2="515" y2="386" />
+      <line x1="536" y1="360" x2="508" y2="363" />
+      <line x1="526" y1="335" x2="499" y2="340" />
+      <line x1="513" y1="310" x2="488" y2="318" />
+      <line x1="497" y1="285" x2="476" y2="296" />
+      <line x1="480" y1="260" x2="463" y2="274" />
+
+      
+      <line x1="546" y1="485" x2="518" y2="478" />
+      <line x1="536" y1="510" x2="509" y2="500" />
+      <line x1="522" y1="535" x2="496" y2="522" />
+      <line x1="504" y1="560" x2="479" y2="544" />
+      <line x1="482" y1="585" x2="460" y2="568" />
+    </g>
+
+    
+    <path d="M 334 220 C 330 228 333 236 341 230" stroke-width="1.2" />
+    <path d="M 466 220 C 470 228 467 236 459 230" stroke-width="1.2" />
+  </g>
+
+  
+  <g stroke="#ffffff" fill="none">
+    
+    <ellipse cx="400" cy="640" rx="46" ry="18" stroke-width="2.0" />
+    <ellipse cx="400" cy="648" rx="46" ry="18" stroke-width="1.2" stroke-opacity="0.6" />
+    <line x1="354" y1="640" x2="354" y2="668" stroke-width="1.8" />
+    <line x1="446" y1="640" x2="446" y2="668" stroke-width="1.8" />
+    <path d="M 354 668 C 354 678 375 686 400 686 C 425 686 446 678 446 668" stroke-width="1.8" />
+
+    
+    <ellipse cx="375" cy="638" rx="10" ry="4" stroke-width="1.2" />
+    <ellipse cx="425" cy="638" rx="10" ry="4" stroke-width="1.2" />
+    <circle cx="375" cy="638" r="2" fill="#ffffff" />
+    <circle cx="425" cy="638" r="2" fill="#ffffff" />
+
+    
+    <path d="M 370 682 C 370 705 382 715 400 715 C 418 715 430 705 430 682" stroke-width="1.5" stroke-dasharray="8 3" />
+    <line x1="390" y1="715" x2="410" y2="715" stroke-width="2.0" />
+
+    
+    <line x1="385" y1="655" x2="395" y2="665" stroke-width="0.8" stroke-opacity="0.5" />
+    <line x1="395" y1="655" x2="405" y2="665" stroke-width="0.8" stroke-opacity="0.5" />
+    <line x1="405" y1="655" x2="415" y2="665" stroke-width="0.8" stroke-opacity="0.5" />
+  </g>
+
+  
+  
+  <g stroke="#ffffff" stroke-opacity="0.7" fill="none">
+    <polyline points="420,200 480,140 570,140" stroke-width="1.0" />
+    <circle cx="420" cy="200" r="2.5" fill="#ffffff" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-opacity="0.7" fill="none">
+    <polyline points="240,440 180,440 130,490 80,490" stroke-width="1.0" />
+    <circle cx="240" cy="440" r="2.5" fill="#ffffff" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-opacity="0.7" fill="none">
+    <polyline points="446,655 520,655 570,695 640,695" stroke-width="1.0" />
+    <circle cx="446" cy="655" r="2.5" fill="#ffffff" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.8" fill="none">
+    
+    <path d="M 670 280 L 685 280 L 685 580 L 670 580" />
+    <line x1="675" y1="430" x2="685" y2="430" />
+    
+    <line x1="680" y1="330" x2="685" y2="330" />
+    <line x1="680" y1="380" x2="685" y2="380" />
+    <line x1="680" y1="480" x2="685" y2="480" />
+    <line x1="680" y1="530" x2="685" y2="530" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-opacity="0.12" stroke-dasharray="2 4" stroke-width="0.8" fill="none">
+    <circle cx="400" cy="420" r="80" />
+    <circle cx="400" cy="420" r="160" />
+    <circle cx="400" cy="420" r="240" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-opacity="0.5" stroke-width="0.8">
+    <path d="M 395 100 L 405 100 M 400 95 L 400 105" />
+    <path d="M 395 730 L 405 730 M 400 725 L 400 735" />
+    <path d="M 235 440 L 245 440 M 240 435 L 240 445" />
+    <path d="M 555 440 L 565 440 M 560 435 L 560 445" />
+  </g>
+
+  
+  <text x="580" y="144" fill="#ffffff" font-family="monospace" font-size="13" letter-spacing="1.5">BOROSILICATE CHAMBER</text>
+  <text x="80" y="484" fill="#ffffff" font-family="monospace" font-size="13" letter-spacing="1.5">CERAMIC TONGS</text>
+  <text x="648" y="699" fill="#ffffff" font-family="monospace" font-size="13" letter-spacing="1.5">RELEASE HINGE</text>
+
+</svg>
