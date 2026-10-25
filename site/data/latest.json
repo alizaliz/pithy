@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-25-1745",
+  "id": "2026-10-25-2345",
   "date": "2026-10-25",
-  "slot": "1745",
-  "text": "Everything is an illusion in the mundane world. Only your conviction is real.",
-  "author": "Shibumi",
-  "work": "Dragon Tiger Gate",
+  "slot": "2345",
+  "text": "All happy families are alike; each unhappy family is unhappy in its own way.",
+  "author": "Leo Tolstoy",
+  "work": "Anna Karenina",
   "origin": "baked",
-  "sentiment": "Martial Arts",
-  "visual_brief": "Technical engineering diagram of a heavy mechanical gyroscope spinning perfectly upright at its center point, defined by crisp concentric gimbal rings and fine rotational motion arrows. Faint, turbulent fluid-flow lines and chaotic vector arrows swirl through the surrounding dark field without perturbing the rigid alignment of the central rotor.",
-  "alt": "White line drawing of a steady gyroscope spinning amid turbulent vectors.",
-  "image": "data/images/2026-10-25-1745.svg",
+  "sentiment": "Piques interest",
+  "visual_brief": "An abstract precision instrument evoking: piques interest, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-10-25-2345.svg",
   "image_method": "fallback"
 }
