@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-26-1745",
-  "date": "2026-10-26",
-  "slot": "1745",
-  "text": "I urge you to please notice when you are happy, and exclaim or murmur or think at some point, \"If this isn't nice, I don't know what is.\"",
-  "author": "Kurt Vonnegut",
-  "work": "A Man Without a Country",
+  "id": "2026-10-27-0545",
+  "date": "2026-10-27",
+  "slot": "0545",
+  "text": "In life, there's nothing to be feared, everything is to be understood.",
+  "author": "Marie Curie",
+  "work": null,
   "origin": "baked",
-  "sentiment": "Tender",
-  "visual_brief": "An abstract precision instrument evoking: tender, as an engineering drawing",
+  "sentiment": "Wonder",
+  "visual_brief": "An abstract precision instrument evoking: wonder, as an engineering drawing",
   "alt": "Technical line drawing of a precision instrument",
-  "image": "data/images/2026-10-26-1745.svg",
+  "image": "data/images/2026-10-27-0545.svg",
   "image_method": "fallback"
 }
