@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-27-1745",
+  "date": "2026-10-27",
+  "slot": "1745",
+  "text": "The only thing we have to fear is fear itself.",
+  "author": "Franklin D. Roosevelt",
+  "work": "First inaugural address, 1933",
+  "origin": "baked",
+  "sentiment": "Motivational",
+  "visual_brief": "An abstract precision instrument evoking: motivational, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-10-27-1745.svg",
+  "image_method": "fallback"
+}
