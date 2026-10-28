@@ -1,0 +1,14 @@
+{
+  "id": "2026-10-28-2345",
+  "date": "2026-10-28",
+  "slot": "2345",
+  "text": "Power tends to corrupt, and absolute power corrupts absolutely.",
+  "author": "Lord Acton",
+  "work": "Letter to Mandell Creighton, 1887",
+  "origin": "baked",
+  "sentiment": "Political",
+  "visual_brief": "An abstract precision instrument evoking: political, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-10-28-2345.svg",
+  "image_method": "fallback"
+}
