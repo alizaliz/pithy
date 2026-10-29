@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-29-0545",
+  "id": "2026-10-29-1145",
   "date": "2026-10-29",
-  "slot": "0545",
-  "text": "You can't remember your name?\nNo. But for some reason I remember yours.",
-  "author": "Chihiro and Haku",
-  "work": "Spirited Away",
-  "origin": "baked",
-  "sentiment": "Tender",
-  "visual_brief": "A precise engineering drawing of two matched acoustic tuning forks mounted on wooden resonance chambers, facing one another across an open gap. Faint dashed concentric wave arcs travel from one fork to the other, with small motion arrows showing the sympathetic vibration carried across the silence.",
-  "alt": "Engineering diagram of two facing tuning forks sharing sympathetic acoustic resonance.",
-  "image": "data/images/2026-10-29-0545.svg",
-  "image_method": "llm"
+  "slot": "1145",
+  "text": "Well, that's where I come in. I channel it, filter it, funnel it. Stocks, securities, tax free municipals. I send that money out into the real world and when it comes back.",
+  "author": "Andy Dufresne",
+  "work": "The Shawshank Redemption",
+  "origin": "https://en.wikiquote.org/wiki/The_Shawshank_Redemption",
+  "sentiment": "Melancholic",
+  "visual_brief": "An abstract precision instrument evoking: melancholic, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-10-29-1145.svg",
+  "image_method": "fallback"
 }
