@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 2 L 7 5 L 1 8 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    <marker id="arrow-rev" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 7 2 L 1 5 L 7 8 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.4" />
+    </pattern>
+  </defs>
+
+  
+  <rect width="800" height="800" fill="#000000" />
+
+  
+  <rect x="25" y="25" width="750" height="750" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <rect x="35" y="35" width="730" height="730" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+  
+  
+  <path d="M 25 200 H 35 M 25 400 H 35 M 25 600 H 35 M 765 200 H 775 M 765 400 H 775 M 765 600 H 775" stroke="#ffffff" stroke-width="0.75" />
+  <path d="M 200 25 V 35 M 400 25 V 35 M 600 25 V 35 M 200 765 V 775 M 400 765 V 775 M 600 765 V 775" stroke="#ffffff" stroke-width="0.75" />
+
+  
+  <g stroke="#ffffff" stroke-width="0.75">
+    <rect x="490" y="705" width="275" height="60" fill="none" />
+    <line x1="490" y1="735" x2="765" y2="735" />
+    <line x1="620" y1="705" x2="620" y2="765" />
+    <text x="500" y="725" font-family="monospace" font-size="12" fill="#ffffff" stroke="none">SYS: WRY-INDICATOR</text>
+    <text x="500" y="753" font-family="monospace" font-size="12" fill="#ffffff" stroke="none">DWG NO. 88-B</text>
+    <text x="630" y="725" font-family="monospace" font-size="12" fill="#ffffff" stroke="none">TOL: ±0.013°</text>
+    <text x="630" y="753" font-family="monospace" font-size="12" fill="#ffffff" stroke="none">STATUS: BIAS</text>
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.6" stroke-dasharray="16,4,2,4">
+    
+    <line x1="40" y1="440" x2="760" y2="360" />
+    <line x1="360" y1="40" x2="440" y2="760" />
+    
+    <line x1="40" y1="400" x2="760" y2="400" />
+    <line x1="400" y1="40" x2="400" y2="760" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="0.75" opacity="0.8">
+    <circle cx="400" cy="400" r="3" fill="none" />
+    <circle cx="404" cy="396" r="1.5" fill="#ffffff" />
+  </g>
+
+  
+  
+  <path d="M 220 540 L 580 500 L 585 530 L 225 570 Z" fill="url(#hatch)" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 220 540 L 210 610 L 250 605 L 255 565 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+  <path d="M 550 503 L 545 575 L 585 570 L 585 530 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+  
+  
+  <path d="M 260 535 C 230 400, 260 250, 390 190 C 470 150, 580 180, 620 260 C 640 300, 645 350, 625 410 C 610 450, 560 480, 520 480 C 460 480, 420 440, 420 380 C 420 320, 460 280, 510 280 C 540 280, 560 295, 570 320" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+
+  
+  <path d="M 290 510 C 270 410, 290 290, 390 235 C 450 200, 530 220, 565 270" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="8,3" />
+
+  
+  <g id="vernier-dial">
+    
+    <path d="M 280 430 C 310 470, 370 500, 440 490 C 510 480, 550 440, 570 390" fill="none" stroke="#ffffff" stroke-width="1.5" />
+    <path d="M 288 438 C 316 476, 372 505, 438 496 C 504 486, 542 448, 560 400" fill="none" stroke="#ffffff" stroke-width="0.75" />
+    
+    
+    <g stroke="#ffffff" stroke-width="0.8">
+      
+      <line x1="300" y1="445" x2="295" y2="455" />
+      <line x1="315" y1="457" x2="312" y2="467" />
+      <line x1="330" y1="467" x2="328" y2="479" />
+      <line x1="345" y1="475" x2="344" y2="487" />
+      <line x1="360" y1="482" x2="360" y2="495" stroke-width="1.2" />
+      <line x1="375" y1="487" x2="376" y2="500" />
+      <line x1="390" y1="490" x2="392" y2="504" />
+      <line x1="405" y1="492" x2="408" y2="506" />
+      <line x1="420" y1="492" x2="424" y2="506" stroke-width="1.2" />
+      <line x1="435" y1="490" x2="440" y2="504" />
+      <line x1="450" y1="486" x2="456" y2="500" />
+      <line x1="465" y1="480" x2="472" y2="493" />
+      <line x1="480" y1="472" x2="488" y2="484" stroke-width="1.2" />
+      <line x1="495" y1="462" x2="504" y2="473" />
+      <line x1="510" y1="450" x2="520" y2="460" />
+      <line x1="525" y1="436" x2="536" y2="445" />
+      <line x1="540" y1="420" x2="552" y2="428" stroke-width="1.2" />
+      <line x1="552" y1="403" x2="565" y2="410" />
+    </g>
+  </g>
+
+  
+  
+  <circle cx="390" cy="360" r="55" fill="none" stroke="#ffffff" stroke-width="1.8" />
+  <circle cx="390" cy="360" r="50" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="3,3" />
+  <circle cx="415" cy="345" r="8" fill="none" stroke="#ffffff" stroke-width="1.2" />
+  <circle cx="415" cy="345" r="2" fill="#ffffff" />
+  
+  
+  <circle cx="360" cy="340" r="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="357.5" y1="337.5" x2="362.5" y2="342.5" stroke="#ffffff" stroke-width="0.8" />
+  <circle cx="380" cy="400" r="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="377" y1="400" x2="383" y2="400" stroke="#ffffff" stroke-width="0.8" />
+  <circle cx="425" cy="385" r="3.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+  <line x1="425" y1="382" x2="425" y2="388" stroke="#ffffff" stroke-width="0.8" />
+
+  
+  <path d="M 415 345 C 380 320, 360 260, 385 200 C 395 175, 420 145, 410 110" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" />
+  
+  <path d="M 415 345 C 390 325, 375 270, 400 210 C 412 185, 435 155, 430 118" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="4,4" stroke-opacity="0.6" />
+
+  
+  <path d="M 395 112 C 410 106, 428 112, 442 122" fill="none" stroke="#ffffff" stroke-width="0.8" marker-end="url(#arrow)" marker-start="url(#arrow-rev)" />
+  
+  
+  <g id="micrometer-spindle">
+    
+    <g transform="translate(560, 220) rotate(-22)">
+      <rect x="0" y="-14" width="90" height="28" fill="none" stroke="#ffffff" stroke-width="1.4" />
+      
+      <line x1="0" y1="0" x2="80" y2="0" stroke="#ffffff" stroke-width="0.75" />
+      <line x1="15" y1="-8" x2="15" y2="8" stroke="#ffffff" stroke-width="0.75" />
+      <line x1="30" y1="-12" x2="30" y2="12" stroke="#ffffff" stroke-width="1" />
+      <line x1="45" y1="-8" x2="45" y2="8" stroke="#ffffff" stroke-width="0.75" />
+      <line x1="60" y1="-12" x2="60" y2="12" stroke="#ffffff" stroke-width="1" />
+      <line x1="75" y1="-8" x2="75" y2="8" stroke="#ffffff" stroke-width="0.75" />
+      
+      
+      <rect x="90" y="-11" width="35" height="22" fill="none" stroke="#ffffff" stroke-width="1.2" />
+      <line x1="97" y1="-11" x2="97" y2="11" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,2" />
+      <line x1="104" y1="-11" x2="104" y2="11" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,2" />
+      <line x1="111" y1="-11" x2="111" y2="11" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,2" />
+      <line x1="118" y1="-11" x2="118" y2="11" stroke="#ffffff" stroke-width="0.5" stroke-dasharray="2,2" />
+      
+      
+      <path d="M 0 -8 L -55 -8 L -55 8 L 0 8" fill="none" stroke="#ffffff" stroke-width="1" />
+      
+      <path d="M -10 -8 L -6 8 M -20 -8 L -16 8 M -30 -8 L -26 8 M -40 -8 L -36 8 M -50 -8 L -46 8" stroke="#ffffff" stroke-width="0.6" />
+      
+      
+      <path d="M 105 -18 C 112 -22, 122 -20, 125 -14" fill="none" stroke="#ffffff" stroke-width="0.8" marker-end="url(#arrow)" />
+    </g>
+  </g>
+
+  
+  <g transform="translate(180, 480) rotate(15)">
+    
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#ffffff" stroke-width="0.8" />
+    <circle cx="0" cy="0" r="5" fill="#ffffff" />
+    
+    <circle cx="-18" cy="0" r="2.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+    <circle cx="18" cy="0" r="2.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+    <circle cx="0" cy="-18" r="2.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+    <circle cx="0" cy="18" r="2.5" fill="none" stroke="#ffffff" stroke-width="0.8" />
+    
+    <line x1="0" y1="-26" x2="60" y2="-60" stroke="#ffffff" stroke-width="1.2" />
+    <line x1="0" y1="26" x2="70" y2="-10" stroke="#ffffff" stroke-width="1" />
+    
+    
+    <path d="M -32 5 C -36 -12, -22 -32, 0 -34" fill="none" stroke="#ffffff" stroke-width="0.8" marker-end="url(#arrow)" />
+  </g>
+
+  
+  <g transform="translate(90, 80)">
+    
+    <rect x="0" y="0" width="160" height="150" fill="#000000" stroke="#ffffff" stroke-width="0.8" />
+    <text x="10" y="20" font-family="monospace" font-size="12" fill="#ffffff">DETAIL "A"</text>
+    
+    
+    <ellipse cx="80" cy="75" rx="45" ry="22" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <ellipse cx="80" cy="95" rx="45" ry="22" fill="none" stroke="#ffffff" stroke-width="0.8" />
+    <line x1="35" y1="75" x2="35" y2="95" stroke="#ffffff" stroke-width="1" />
+    <line x1="125" y1="75" x2="125" y2="95" stroke="#ffffff" stroke-width="1" />
+    
+    
+    <path d="M 80 75 L 125 75 L 125 95 L 80 95 Z" fill="url(#hatch)" stroke="#ffffff" stroke-width="0.6" />
+    <ellipse cx="80" cy="75" rx="20" ry="10" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="4,2" />
+    <ellipse cx="85" cy="73" rx="8" ry="4" fill="none" stroke="#ffffff" stroke-width="1" />
+    
+    
+    <polyline points="160,110 190,110 230,165" fill="none" stroke="#ffffff" stroke-width="0.6" stroke-dasharray="3,2" marker-end="url(#arrow)" />
+  </g>
+
+  
+  
+  <g stroke="#ffffff" stroke-width="0.6">
+    
+    <line x1="390" y1="190" x2="310" y2="190" stroke-opacity="0.5" />
+    
+    <line x1="410" y1="110" x2="310" y2="135" stroke-opacity="0.5" />
+    
+    <path d="M 325 186 C 320 170, 322 152, 328 138" fill="none" marker-start="url(#arrow-rev)" marker-end="url(#arrow)" />
+    
+    <text x="210" y="165" font-family="monospace" font-size="12" fill="#ffffff" stroke="none">ANGULAR BIAS 7°</text>
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="0.6">
+    <line x1="210" y1="610" x2="130" y2="610" stroke-opacity="0.4" />
+    <line x1="180" y1="480" x2="130" y2="480" stroke-opacity="0.4" />
+    <line x1="140" y1="600" x2="140" y2="490" marker-start="url(#arrow-rev)" marker-end="url(#arrow)" />
+    <text x="65" y="550" font-family="monospace" font-size="12" fill="#ffffff" stroke="none">128.4 REF</text>
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="0.6">
+    <line x1="390" y1="360" x2="340" y2="280" />
+    <polyline points="340,280 320,280" />
+    <text x="260" y="284" font-family="monospace" font-size="12" fill="#ffffff" stroke="none">ECCENTRIC NULL</text>
+  </g>
+
+  
+  <g transform="translate(310, 580)">
+    <rect x="-30" y="0" width="60" height="70" fill="none" stroke="#ffffff" stroke-width="1.2" />
+    <rect x="-24" y="8" width="48" height="54" fill="url(#hatch)" stroke="#ffffff" stroke-width="0.5" />
+    <line x1="0" y1="-30" x2="0" y2="35" stroke="#ffffff" stroke-width="1.5" />
+    
+    <rect x="-20" y="30" width="40" height="10" fill="#000000" stroke="#ffffff" stroke-width="1" />
+    
+    <path d="M 40 18 L 40 48" fill="none" stroke="#ffffff" stroke-width="0.75" marker-start="url(#arrow-rev)" marker-end="url(#arrow)" />
+    <line x1="36" y1="33" x2="44" y2="33" stroke="#ffffff" stroke-width="0.75" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.3">
+    <circle cx="390" cy="190" r="120" stroke-dasharray="2,4" />
+    <circle cx="510" cy="280" r="70" stroke-dasharray="2,4" />
+    <line x1="260" y1="535" x2="625" y2="410" />
+    <line x1="390" y1="190" x2="580" y2="500" />
+    <line x1="180" y1="480" x2="640" y2="300" />
+  </g>
+
+</svg>
