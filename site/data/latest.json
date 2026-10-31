@@ -1,14 +1,14 @@
 {
-  "id": "2026-10-31-1145",
+  "id": "2026-10-31-1745",
   "date": "2026-10-31",
-  "slot": "1145",
-  "text": "Everything is an illusion in the mundane world. Only your conviction is real.",
-  "author": "Shibumi",
-  "work": "Dragon Tiger Gate",
-  "origin": "baked",
-  "sentiment": "Martial Arts",
-  "visual_brief": "An abstract precision instrument evoking: martial arts, as an engineering drawing",
+  "slot": "1745",
+  "text": "Stop right where you are! You know the score, pal! If you're not cop, you're little people.",
+  "author": "Bryant",
+  "work": "Blade Runner",
+  "origin": "https://en.wikiquote.org/wiki/Blade_Runner",
+  "sentiment": "Philosophical",
+  "visual_brief": "An abstract precision instrument evoking: philosophical, as an engineering drawing",
   "alt": "Technical line drawing of a precision instrument",
-  "image": "data/images/2026-10-31-1145.svg",
-  "image_method": "fallback"
+  "image": "data/images/2026-10-31-1745.svg",
+  "image_method": "llm"
 }
