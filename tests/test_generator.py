@@ -220,6 +220,25 @@ class Schedule(unittest.TestCase):
         self.assertFalse(self.check(self.NZDT, 2026, 7, 14, 22, 50))   # 10:45 local
 
 
+class LLMErrors(unittest.TestCase):
+    DAILY = (b'[{"error":{"code":429,"message":"You exceeded your current quota.\\n* details","details":'
+             b'[{"violations":[{"quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaValue":"20"}]}]}}]')
+
+    def test_daily_quota_stops_further_requests(self):
+        import io
+        import urllib.error
+        from generator import llm
+        err = urllib.error.HTTPError("u", 429, "Too Many Requests", None, io.BytesIO(self.DAILY))
+        client = llm.LLM("key")
+        with unittest.mock.patch("urllib.request.urlopen", side_effect=err) as urlopen:
+            for _ in range(3):
+                with self.assertRaises(llm.LLMError) as ctx:
+                    client.chat("s", "u")
+        self.assertEqual(urlopen.call_count, 1)
+        self.assertIn("PerDay", str(ctx.exception))
+        self.assertIn("limit 20", str(ctx.exception))
+
+
 class Extraction(unittest.TestCase):
     def test_json_in_fences(self):
         self.assertEqual(extract_json('```json\n{"index": 3}\n```')["index"], 3)

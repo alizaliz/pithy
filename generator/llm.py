@@ -19,6 +19,8 @@ DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 DEFAULT_MODEL = "gemini-3.8-flash"
 # Long SVG replies can take minutes; a short timeout just wastes the attempt.
 TIMEOUT = float(os.environ.get("LLM_TIMEOUT") or 240)
+# First wait before retrying an overloaded (503) or failed request; it triples after.
+RETRY_WAIT = float(os.environ.get("LLM_RETRY_WAIT") or 30)
 
 
 class LLMError(RuntimeError):
@@ -32,6 +34,7 @@ class LLM:
         self.api_key = api_key
         self.url = base_url.rstrip("/") + "/chat/completions"
         self.model = model
+        self.quota_exhausted = ""  # set once the provider says today's quota is used up
 
     @classmethod
     def from_env(cls) -> "LLM":
@@ -55,9 +58,11 @@ class LLM:
             data=body,
             headers={"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"},
         )
+        if self.quota_exhausted:  # no point asking again in this run
+            raise LLMError(f"LLM request skipped: {self.quota_exhausted}")
         last: Exception | None = None
         for attempt in range(retries):
-            wait = 5 * (attempt + 1)
+            wait = RETRY_WAIT * 3 ** attempt  # 30s, then 90s: overload (503) usually clears in minutes
             started = time.monotonic()
             try:
                 with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
@@ -68,8 +73,12 @@ class LLM:
                     raise LLMError(f"empty or cut-off reply (finish_reason={choice.get('finish_reason')!r})")
                 return content
             except urllib.error.HTTPError as e:
-                body = e.read()[:300]
-                last = LLMError(f"HTTP {e.code}: {body!r}")
+                body = e.read()
+                last = LLMError(f"HTTP {e.code}: {_describe(body)}")
+                if e.code == 429 and re.search(rb'"quotaId":\s*"[^"]*PerDay', body):
+                    # The daily quota is used up: retrying only wastes time until it resets.
+                    self.quota_exhausted = f"daily quota exhausted ({_describe(body)})"
+                    break
                 if e.code not in (429, 500, 502, 503, 504):
                     break
                 wait = max(wait, _retry_after(e, body))
@@ -94,7 +103,19 @@ def _retry_after(e: urllib.error.HTTPError, body: bytes) -> float:
         seconds = float(m.group(1)) if m else float(value or 0)
     except ValueError:
         seconds = 0
-    return min(seconds, 90)
+    return min(seconds, 180)
+
+
+def _describe(body: bytes) -> str:
+    """A short, readable error: the provider's message plus any quota it names."""
+    text = body.decode("utf-8", "replace")
+    message = re.search(r'"message":\s*"((?:[^"\\]|\\.)*)"', text)
+    summary = (message.group(1).split("\\n")[0] if message else text)[:160]
+    quotas = sorted(set(re.findall(r'"quotaId":\s*"([^"]+)"', text)))
+    limits = sorted(set(re.findall(r'"quotaValue":\s*"([^"]+)"', text)))
+    if quotas:
+        summary += f" [quota: {', '.join(quotas)}{'; limit ' + '/'.join(limits) if limits else ''}]"
+    return summary
 
 
 def extract_json(text: str) -> dict:

@@ -35,7 +35,8 @@ flowchart TD
    - Secret `LLM_API_KEY` = your key
    - Variables (optional): `LLM_MODEL` (default `gemini-3.8-flash`),
      `LLM_BASE_URL` (default Gemini's OpenAI endpoint), `LLM_TIMEOUT` (seconds
-     per request, default 240). Any OpenAI-compatible
+     per request, default 240), `LLM_RETRY_WAIT` (seconds before retrying an
+     overloaded request, tripling after; default 30). Any OpenAI-compatible
      provider works, e.g. Groq or OpenRouter.
 4. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 5. **Actions → pithy → Run workflow** to make the first entry. Until then the
