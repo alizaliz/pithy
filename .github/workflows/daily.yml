@@ -2,19 +2,15 @@ name: pithy
 
 on:
   schedule:
-    # 05:45, 11:45, 17:45 and 23:45 in Pacific/Auckland. Cron is UTC-only, so there's
+    # 11:45 and 23:45 in Pacific/Auckland. Cron is UTC-only, so there's
     # a set for daylight time (UTC+13) and a set for standard time (UTC+12); the
     # generator skips whichever doesn't match the current offset. One line per time,
     # because a run only knows which line fired it, and GitHub can start runs hours late.
     # Daylight time (UTC+13):
-    - cron: "45 16 * * *"
     - cron: "45 22 * * *"
-    - cron: "45 4 * * *"
     - cron: "45 10 * * *"
     # Standard time (UTC+12):
-    - cron: "45 17 * * *"
     - cron: "45 23 * * *"
-    - cron: "45 5 * * *"
     - cron: "45 11 * * *"
   workflow_dispatch:
     inputs:

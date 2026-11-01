@@ -8,7 +8,7 @@ Usage:
   python -m generator              # make the current entry (skips if it exists)
   python -m generator --force      # regenerate the current entry
   python -m generator --offline    # no network/LLM: baked quotes + procedural image
-  python -m generator --date 2026-10-20 --slot 1745
+  python -m generator --date 2026-10-20 --slot 2345
 """
 
 from __future__ import annotations
