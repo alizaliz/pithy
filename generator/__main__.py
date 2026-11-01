@@ -85,18 +85,25 @@ def entry_id(now: dt.datetime, date: str | None = None, slot: str | None = None,
     return begins.strftime("%Y-%m-%d-%H%M")
 
 
+def due_time(cron: str, now_utc: dt.datetime) -> dt.datetime:
+    """When the cron that fired ("M H1,H2,... * * *", in UTC) was last due.
+
+    GitHub can start scheduled runs hours late, so this, not the start time,
+    says which slot a run is for."""
+    minute, hours = cron.split()[:2]
+    return max(t for h in hours.split(",") for day in (0, 1)
+               if (t := now_utc.replace(hour=int(h), minute=int(minute), second=0, microsecond=0)
+                   - dt.timedelta(days=day)) <= now_utc)
+
+
 def scheduled_for_now(cron: str, now_utc: dt.datetime, tz: ZoneInfo,
                       start: dt.timedelta, every: dt.timedelta) -> bool:
-    """Whether the cron that fired ("M H1,H2,... * * *", in UTC) was due at a local slot time.
+    """Whether the cron that fired was due at a local slot time.
 
     The workflow has one cron for each UTC offset (daylight time or not); only the
     one matching the timezone's current offset should make an entry.
     """
-    minute, hours = cron.split()[:2]
-    due = max(t for h in hours.split(",") for day in (0, 1)
-              if (t := now_utc.replace(hour=int(h), minute=int(minute), second=0, microsecond=0)
-                  - dt.timedelta(days=day)) <= now_utc)
-    return due.astimezone(tz).strftime("%H%M") in slot_times(start, every)
+    return due_time(cron, now_utc).astimezone(tz).strftime("%H%M") in slot_times(start, every)
 
 
 def attribution(entry: dict) -> str:
@@ -135,10 +142,14 @@ def main(argv: list[str] | None = None) -> int:
     every = dt.timedelta(hours=float(sched.get("every_hours", 24)))
     if args.slot and args.slot not in slot_times(start, every):
         ap.error(f"--slot must be one of {', '.join(slot_times(start, every))}")
-    if args.cron and not scheduled_for_now(args.cron, dt.datetime.now(dt.timezone.utc), tz, start, every):
-        print(f"Skipping: {args.cron!r} isn't a slot time in {tz.key} today (the other cron is).")
-        return 0
-    eid = entry_id(dt.datetime.now(tz), args.date, args.slot, start, every)
+    now = dt.datetime.now(tz)
+    if args.cron:
+        now_utc = dt.datetime.now(dt.timezone.utc)
+        if not scheduled_for_now(args.cron, now_utc, tz, start, every):
+            print(f"Skipping: {args.cron!r} isn't a slot time in {tz.key} today (the other cron is).")
+            return 0
+        now = due_time(args.cron, now_utc).astimezone(tz)  # the slot it was scheduled for
+    eid = entry_id(now, args.date, args.slot, start, every)
 
     DATA.mkdir(parents=True, exist_ok=True)
     (DATA / "images").mkdir(exist_ok=True)
@@ -182,7 +193,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  quote: {pick['text'][:70]}… — {attribution(pick)}")
     print(f"  brief: {pick['visual_brief']}")
 
-    svg, method = image.generate_svg(llm, pick["visual_brief"])
+    svg, method, image_errors = image.generate_svg(llm, pick["visual_brief"])
     img_rel = f"data/images/{eid}.svg"
     (SITE / img_rel).write_text(svg, encoding="utf-8")
 
@@ -200,6 +211,10 @@ def main(argv: list[str] | None = None) -> int:
         "image": img_rel,
         "image_method": method,
     }
+    # Why anything fell back, so failures can be diagnosed from the published data.
+    errors = {k: v for k, v in (("curator", pick.get("curator_errors")), ("image", image_errors)) if v}
+    if errors:
+        entry["errors"] = errors
     entry_path.write_text(json.dumps(entry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (DATA / "latest.json").write_text(json.dumps(entry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     history.append({"id": eid, "date": eid[:10], "hash": quote_hash(pick["text"]), "sentiment": sentiment["name"],

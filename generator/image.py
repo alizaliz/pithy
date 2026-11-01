@@ -182,18 +182,19 @@ def _num(v: str) -> float:
         return 0.0
 
 
-def generate_svg(llm: LLM, brief: str, attempts: int = 3) -> tuple[str, str]:
-    """Returns (svg, method). Falls back to a procedural drawing if the model keeps failing."""
+def generate_svg(llm: LLM, brief: str, attempts: int = 3) -> tuple[str, str, list[str]]:
+    """Returns (svg, method, errors). Falls back to a procedural drawing if the model
+    keeps failing; errors lists why each failed attempt failed."""
     user = f"Draw this:\n{brief}"
-    errors = []
+    errors: list[str] = []
     for _ in range(attempts):
         try:
-            return sanitize_svg(extract_svg(llm.chat(SVG_SYSTEM_PROMPT, user, temperature=0.9))), "llm"
+            return sanitize_svg(extract_svg(llm.chat(SVG_SYSTEM_PROMPT, user, temperature=0.9))), "llm", errors
         except Exception as e:  # noqa: BLE001 — any failure means try again
-            errors.append(str(e))
+            errors.append(str(e)[:300])
             user = f"Draw this:\n{brief}\n\nPrevious attempt failed: {e}. Follow the rules exactly."
     print(f"  image: falling back to procedural drawing ({'; '.join(errors)})")
-    return fallback_svg(brief), "fallback"
+    return fallback_svg(brief), "fallback", errors
 
 
 def fallback_svg(seed: str) -> str:

@@ -34,7 +34,8 @@ flowchart TD
 3. In the repo: **Settings → Secrets and variables → Actions**
    - Secret `LLM_API_KEY` = your key
    - Variables (optional): `LLM_MODEL` (default `gemini-3.8-flash`),
-     `LLM_BASE_URL` (default Gemini's OpenAI endpoint). Any OpenAI-compatible
+     `LLM_BASE_URL` (default Gemini's OpenAI endpoint), `LLM_TIMEOUT` (seconds
+     per request, default 240). Any OpenAI-compatible
      provider works, e.g. Groq or OpenRouter.
 4. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 5. **Actions → pithy → Run workflow** to make the first entry. Until then the
@@ -96,7 +97,8 @@ An entry looks like:
 }
 ```
 
-`image` is relative to the site root. `text` may contain `\n` line breaks
+`image` is relative to the site root. When the curator or drawing fell back,
+`errors` says why (e.g. `{"image": ["LLM request failed: HTTP 429: ..."]}`). `text` may contain `\n` line breaks
 (passages). Older entries have other ids: `2026-10-11` (no `id` or `slot`), then
 `YYYY-MM-DD-am` / `-pm` until 2026-10-19. Use these Pages URLs rather than raw
 files from the repo: they only change after a successful run and are what the

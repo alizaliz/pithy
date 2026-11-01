@@ -17,6 +17,8 @@ import urllib.request
 
 DEFAULT_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
 DEFAULT_MODEL = "gemini-3.8-flash"
+# Long SVG replies can take minutes; a short timeout just wastes the attempt.
+TIMEOUT = float(os.environ.get("LLM_TIMEOUT") or 240)
 
 
 class LLMError(RuntimeError):
@@ -55,18 +57,44 @@ class LLM:
         )
         last: Exception | None = None
         for attempt in range(retries):
+            wait = 5 * (attempt + 1)
+            started = time.monotonic()
             try:
-                with urllib.request.urlopen(req, timeout=120) as resp:
+                with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
                     data = json.load(resp)
-                return data["choices"][0]["message"]["content"] or ""
+                choice = data["choices"][0]
+                content = choice["message"].get("content") or ""
+                if not content.strip() or choice.get("finish_reason") == "length":
+                    raise LLMError(f"empty or cut-off reply (finish_reason={choice.get('finish_reason')!r})")
+                return content
             except urllib.error.HTTPError as e:
-                last = LLMError(f"HTTP {e.code}: {e.read()[:300]!r}")
+                body = e.read()[:300]
+                last = LLMError(f"HTTP {e.code}: {body!r}")
                 if e.code not in (429, 500, 502, 503, 504):
                     break
-            except (urllib.error.URLError, TimeoutError, KeyError, ValueError) as e:
+                wait = max(wait, _retry_after(e, body))
+            except (urllib.error.URLError, TimeoutError) as e:
+                last = LLMError(f"{type(e).__name__} after {time.monotonic() - started:.0f}s: {e}")
+                if time.monotonic() - started >= TIMEOUT * 0.9:
+                    break  # timed out: the caller's own retry is the next attempt
+            except (LLMError, KeyError, ValueError) as e:
                 last = e
-            time.sleep(5 * (attempt + 1))
+                if "finish_reason='length'" in str(e):
+                    break  # the same request would be cut off again
+            if attempt + 1 < retries:
+                time.sleep(wait)
         raise LLMError(f"LLM request failed: {last}")
+
+
+def _retry_after(e: urllib.error.HTTPError, body: bytes) -> float:
+    """Seconds the provider asked us to wait (Retry-After, or Gemini's "retryDelay": "34s"), capped."""
+    m = re.search(rb'"retryDelay":\s*"(\d+(?:\.\d+)?)s"', body)
+    value = e.headers.get("Retry-After") if e.headers else None
+    try:
+        seconds = float(m.group(1)) if m else float(value or 0)
+    except ValueError:
+        seconds = 0
+    return min(seconds, 90)
 
 
 def extract_json(text: str) -> dict:

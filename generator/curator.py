@@ -48,6 +48,7 @@ def curate(llm: LLM, sentiment: dict, candidates: list[dict], rng: random.Random
     listing = "\n".join(f"{i}. {' / '.join(c['text'].splitlines())}" for i, c in enumerate(pool))
     user = f"Mood: {sentiment['name']} — {sentiment['description']}\n\nQuotes:\n{listing}"
 
+    errors = []
     for _ in range(2):
         try:
             reply = extract_json(llm.chat(CURATOR_SYSTEM, user, temperature=0.4))
@@ -55,9 +56,11 @@ def curate(llm: LLM, sentiment: dict, candidates: list[dict], rng: random.Random
             brief = str(reply["visual_brief"]).strip()
             if 0 <= idx < len(pool) and brief:
                 return {**pool[idx], "visual_brief": brief, "alt": str(reply.get("alt") or brief)[:160]}
+            errors.append(f"unusable reply: index={idx}, brief={brief[:40]!r}")
         except Exception as e:  # noqa: BLE001
+            errors.append(str(e)[:300])
             print(f"  curator: bad reply ({e}), retrying")
     print("  curator: falling back to a random candidate")
     pick = rng.choice(pool)
     return {**pick, "visual_brief": f"An abstract precision instrument evoking: {sentiment['name'].lower()}, as an engineering drawing",
-            "alt": "Technical line drawing of a precision instrument"}
+            "alt": "Technical line drawing of a precision instrument", "curator_errors": errors}

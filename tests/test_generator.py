@@ -8,7 +8,7 @@ import tomllib
 from generator import image, sources
 from zoneinfo import ZoneInfo
 
-from generator.__main__ import BAKED, CONFIG, entry_id, scheduled_for_now, slot_times
+from generator.__main__ import BAKED, CONFIG, due_time, entry_id, scheduled_for_now, slot_times
 from generator.llm import extract_json, extract_svg
 
 WIKITEXT = """{{Wikipedia}}
@@ -206,6 +206,13 @@ class Schedule(unittest.TestCase):
         self.assertTrue(self.check(self.NZDT, 2026, 10, 20, 5, 20))    # 17:45, late start
         self.assertTrue(self.check(self.NZDT, 2026, 10, 20, 16, 46))   # 05:45
         self.assertFalse(self.check(self.NZST, 2026, 10, 20, 23, 50))  # 12:45 local
+
+    def test_late_run_keeps_its_scheduled_slot(self):
+        # The 04:45 UTC run (17:45 NZDT) started 6 hours late, after the 10:45 one was due.
+        now_utc = dt.datetime(2026, 10, 30, 10, 50, tzinfo=dt.timezone.utc)
+        self.assertTrue(scheduled_for_now("45 4 * * *", now_utc, self.nz, self.start, self.every))
+        local = due_time("45 4 * * *", now_utc).astimezone(self.nz)
+        self.assertEqual(entry_id(local, start=self.start, every=self.every), "2026-10-30-1745")
 
     def test_standard_time_uses_the_utc12_cron(self):  # July: NZST
         self.assertTrue(self.check(self.NZST, 2026, 7, 14, 23, 50))    # 11:45 local
