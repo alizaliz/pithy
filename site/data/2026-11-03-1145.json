@@ -1,0 +1,21 @@
+{
+  "id": "2026-11-03-1145",
+  "date": "2026-11-03",
+  "slot": "1145",
+  "text": "When they're standing right in front of you, kings are a kind of speech impediment.",
+  "author": "Terry Pratchett",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Terry_Pratchett",
+  "sentiment": "Political",
+  "visual_brief": "A precise engineering cross-section of a heavy, monolithic check valve assembly, showing an oversized weighted piston seated immovably across a conduit. Small dashed flow arrows approach along the intake pipe but terminate abruptly against the solid plug, accompanied by delicate technical callouts and dimensional witness lines.",
+  "alt": "Engineering cross-section of a massive weighted valve blocking a flow conduit",
+  "image": "data/images/2026-11-03-1145.svg",
+  "image_method": "fallback",
+  "errors": {
+    "image": [
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out"
+    ]
+  }
+}
