@@ -1,21 +1,24 @@
 {
-  "id": "2026-11-05-2345",
-  "date": "2026-11-05",
-  "slot": "2345",
-  "text": "We all have strength enough to endure the misfortunes of others.",
-  "author": "François de La Rochefoucauld",
-  "work": "Maxims",
-  "origin": "https://en.wikiquote.org/wiki/Fran%C3%A7ois_de_La_Rochefoucauld",
-  "sentiment": "Wry",
-  "visual_brief": "An orthographic engineering schematic of a dual-column stress-testing rig, showing one support member severely warped and micro-fractured under an active hydraulic ram while an adjacent, identical beam sits untouched with dimension lines and callouts indicating zero load.",
-  "alt": "Engineering schematic of an unloaded strut beside a heavily buckled beam",
-  "image": "data/images/2026-11-05-2345.svg",
-  "image_method": "fallback",
+  "id": "2026-11-06-1145",
+  "date": "2026-11-06",
+  "slot": "1145",
+  "text": "It's perfectly legal, go ask the IRS, they'll say the same thing. Actually I feel stupid telling you this, I'm sure you would've investigated the matter yourself.",
+  "author": "Andy Dufresne",
+  "work": "The Shawshank Redemption",
+  "origin": "https://en.wikiquote.org/wiki/The_Shawshank_Redemption",
+  "sentiment": "Tender",
+  "visual_brief": "An abstract precision instrument evoking: tender, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-11-06-1145.svg",
+  "image_method": "llm",
   "errors": {
+    "curator": [
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out"
+    ],
     "image": [
       "LLM request failed: TimeoutError after 240s: The read operation timed out",
-      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+      "LLM request failed: TimeoutError after 240s: The read operation timed out"
     ]
   }
 }
