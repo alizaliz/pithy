@@ -1,25 +1,25 @@
 {
-  "id": "2026-11-06-2345",
-  "date": "2026-11-06",
-  "slot": "2345",
-  "text": "Like many who have no reason for pride, that very lack of reason for it made me the prouder. But certain realities have a way of making themselves felt, and debt is one of them.",
-  "author": "Brent Weeks",
+  "id": "2026-11-07-1145",
+  "date": "2026-11-07",
+  "slot": "1145",
+  "text": "Quantum theory provides us with a striking illustration of the fact that we can fully understand a connection though we can only speak of it in images and parables.",
+  "author": "Werner Heisenberg",
   "work": null,
-  "origin": "https://en.wikiquote.org/wiki/Brent_Weeks",
-  "sentiment": "Martial Arts",
-  "visual_brief": "An abstract precision instrument evoking: martial arts, as an engineering drawing",
+  "origin": "https://en.wikiquote.org/wiki/Werner_Heisenberg",
+  "sentiment": "Wonder",
+  "visual_brief": "An abstract precision instrument evoking: wonder, as an engineering drawing",
   "alt": "Technical line drawing of a precision instrument",
-  "image": "data/images/2026-11-06-2345.svg",
+  "image": "data/images/2026-11-07-1145.svg",
   "image_method": "fallback",
   "errors": {
     "curator": [
       "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "LLM request failed: TimeoutError after 240s: The read operation timed out"
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     ],
     "image": [
-      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "LLM request failed: TimeoutError after 240s: The read operation timed out",
-      "LLM request failed: TimeoutError after 240s: The read operation timed out"
+      "LLM request failed: HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- [quota: GenerateRequestsPerDayPerProjectPerModel-FreeTier; limit 20]",
+      "LLM request skipped: daily quota exhausted (You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- [quota: GenerateRequestsPerDayPerProjectPerModel-FreeTier; limit 20])",
+      "LLM request skipped: daily quota exhausted (You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- [quota: GenerateRequestsPerDayPerProjectPerModel-FreeTier; limit 20])"
     ]
   }
 }
