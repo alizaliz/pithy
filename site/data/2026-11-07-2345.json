@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-07-2345",
+  "date": "2026-11-07",
+  "slot": "2345",
+  "text": "What need is there to weep over parts of life? The whole of it calls for tears.",
+  "author": "Seneca",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Seneca_the_Younger",
+  "sentiment": "Melancholic",
+  "visual_brief": "An orthographic engineering cross-section of an ancient outflow clepsydra (water clock). Fine calibration ticks and dimension lines chart the diminishing fluid level within the upper chamber, with delicate dotted vectors indicating slow drainage into an empty lower basin.",
+  "alt": "Orthographic engineering cross-section of a draining water clock with measurement markings",
+  "image": "data/images/2026-11-07-2345.svg",
+  "image_method": "llm"
+}
