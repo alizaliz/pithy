@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-08-1145",
+  "date": "2026-11-08",
+  "slot": "1145",
+  "text": "It is all a matter of time scale. An event that would be unthinkable in a hundred years may be inevitable in a hundred million.",
+  "author": "Carl Sagan",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Carl_Sagan",
+  "sentiment": "Philosophical",
+  "visual_brief": "A precise geological cross-section in clean orthographic line work, depicting horizontal sediment strata interrupted by a single micro-fault and a slow glacial U-valley. Fine engineering dimension lines, depth indicators, and subtle directional shear arrows frame the layers, emphasizing imperceptible movement across immense scales.",
+  "alt": "Orthographic geological cross-section of ancient rock strata with engineering dimension lines",
+  "image": "data/images/2026-11-08-1145.svg",
+  "image_method": "llm"
+}
