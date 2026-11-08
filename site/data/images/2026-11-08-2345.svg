@@ -1,0 +1,293 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ffffff" />
+    </marker>
+    <marker id="dot" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="4" markerHeight="4">
+      <circle cx="3" cy="3" r="2" fill="#ffffff" />
+    </marker>
+  </defs>
+
+  
+  <rect width="800" height="800" fill="#000000" />
+
+  
+  <rect x="25" y="25" width="750" height="750" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <rect x="30" y="30" width="740" height="740" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.5" />
+  <line x1="120" y1="25" x2="120" y2="775" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="4 4" />
+
+  
+  <text x="140" y="55" fill="#ffffff" font-family="monospace" font-size="14" letter-spacing="2">SURFACE DATUM ±0.00</text>
+  <text x="140" y="745" fill="#ffffff" font-family="monospace" font-size="13" letter-spacing="2">BEDROCK BASE -42.00</text>
+  <text x="560" y="55" fill="#ffffff" font-family="monospace" font-size="13" letter-spacing="1.5">RECURSIVE STRATA</text>
+
+  
+  <line x1="85" y1="90" x2="85" y2="720" stroke="#ffffff" stroke-width="1" />
+  
+  
+  
+  <path d="M 70 120 L 85 120 L 80 115 M 85 120 L 80 125" stroke="#ffffff" stroke-width="1" fill="none" />
+  <text x="40" y="124" fill="#ffffff" font-family="monospace" font-size="11">±0.0</text>
+  <line x1="85" y1="120" x2="115" y2="120" stroke="#ffffff" stroke-width="0.5" />
+  
+  
+  <path d="M 70 260 L 85 260 L 80 255 M 85 260 L 80 265" stroke="#ffffff" stroke-width="1" fill="none" />
+  <text x="35" y="264" fill="#ffffff" font-family="monospace" font-size="11">-10.5</text>
+  <line x1="85" y1="260" x2="115" y2="260" stroke="#ffffff" stroke-width="0.5" />
+
+  
+  <path d="M 70 410 L 85 410 L 80 405 M 85 410 L 80 415" stroke="#ffffff" stroke-width="1" fill="none" />
+  <text x="35" y="414" fill="#ffffff" font-family="monospace" font-size="11">-21.0</text>
+  <line x1="85" y1="410" x2="115" y2="410" stroke="#ffffff" stroke-width="0.5" />
+
+  
+  <path d="M 70 560 L 85 560 L 80 555 M 85 560 L 80 565" stroke="#ffffff" stroke-width="1" fill="none" />
+  <text x="35" y="564" fill="#ffffff" font-family="monospace" font-size="11">-31.5</text>
+  <line x1="85" y1="560" x2="115" y2="560" stroke="#ffffff" stroke-width="0.5" />
+
+  
+  <path d="M 70 690 L 85 690 L 80 685 M 85 690 L 80 695" stroke="#ffffff" stroke-width="1" fill="none" />
+  <text x="35" y="694" fill="#ffffff" font-family="monospace" font-size="11">-42.0</text>
+  <line x1="85" y1="690" x2="115" y2="690" stroke="#ffffff" stroke-width="0.5" />
+
+  
+  <path d="M 80 155 H 85 M 80 190 H 85 M 80 225 H 85 M 80 295 H 85 M 80 330 H 85 M 80 375 H 85 M 80 445 H 85 M 80 480 H 85 M 80 525 H 85 M 80 595 H 85 M 80 630 H 85 M 80 660 H 85" stroke="#ffffff" stroke-width="0.5" />
+
+  
+  <g stroke="#ffffff" stroke-width="0.75" stroke-dasharray="14 3 2 3" stroke-opacity="0.7">
+    <line x1="230" y1="70" x2="230" y2="730" />
+    <line x1="430" y1="70" x2="430" y2="730" />
+    <line x1="630" y1="70" x2="630" y2="730" />
+  </g>
+
+  
+  <path d="M 120 260 Q 280 275 440 255 T 765 265" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="2 2" />
+  <path d="M 120 410 Q 270 425 430 405 T 765 415" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="2 2" />
+  <path d="M 120 560 Q 290 570 450 550 T 765 565" fill="none" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="2 2" />
+  <path d="M 120 690 Q 310 705 470 685 T 765 695" fill="none" stroke="#ffffff" stroke-width="1.25" />
+
+  
+  <g stroke="#ffffff" stroke-width="0.8" marker-end="url(#arrow)" stroke-opacity="0.6">
+    <line x1="150" y1="180" x2="150" y2="230" />
+    <line x1="150" y1="330" x2="150" y2="380" />
+    <line x1="150" y1="480" x2="150" y2="530" />
+    <line x1="150" y1="610" x2="150" y2="660" />
+    <line x1="710" y1="180" x2="710" y2="230" />
+    <line x1="710" y1="330" x2="710" y2="380" />
+    <line x1="710" y1="480" x2="710" y2="530" />
+    <line x1="710" y1="610" x2="710" y2="660" />
+  </g>
+
+  
+  
+  
+  <line x1="120" y1="120" x2="765" y2="120" stroke="#ffffff" stroke-width="2" />
+  
+  <path d="M 130 110 L 140 120 M 150 110 L 160 120 M 170 110 L 180 120 M 270 110 L 280 120 M 290 110 L 300 120 M 370 110 L 380 120 M 390 110 L 400 120 M 470 110 L 480 120 M 490 110 L 500 120 M 570 110 L 580 120 M 590 110 L 600 120 M 670 110 L 680 120 M 690 110 L 700 120" stroke="#ffffff" stroke-width="0.6" />
+
+  
+  
+  <rect x="205" y="120" width="50" height="90" fill="none" stroke="#ffffff" stroke-width="1.75" />
+  <line x1="205" y1="120" x2="255" y2="210" stroke="#ffffff" stroke-width="0.5" />
+  <line x1="255" y1="120" x2="205" y2="210" stroke="#ffffff" stroke-width="0.5" />
+  <rect x="195" y="210" width="70" height="25" fill="none" stroke="#ffffff" stroke-width="1.75" />
+
+  
+  <rect x="405" y="120" width="50" height="90" fill="none" stroke="#ffffff" stroke-width="1.75" />
+  <line x1="405" y1="120" x2="455" y2="210" stroke="#ffffff" stroke-width="0.5" />
+  <line x1="455" y1="120" x2="405" y2="210" stroke="#ffffff" stroke-width="0.5" />
+  <rect x="395" y="210" width="70" height="25" fill="none" stroke="#ffffff" stroke-width="1.75" />
+
+  
+  <rect x="605" y="120" width="50" height="90" fill="none" stroke="#ffffff" stroke-width="1.75" />
+  <line x1="605" y1="120" x2="655" y2="210" stroke="#ffffff" stroke-width="0.5" />
+  <line x1="655" y1="120" x2="605" y2="210" stroke="#ffffff" stroke-width="0.5" />
+  <rect x="595" y="210" width="70" height="25" fill="none" stroke="#ffffff" stroke-width="1.75" />
+
+  
+  <path d="M 255 150 A 75 75 0 0 1 405 150" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 255 140 A 85 85 0 0 1 405 140" fill="none" stroke="#ffffff" stroke-width="0.75" />
+  <path d="M 455 150 A 75 75 0 0 1 605 150" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 455 140 A 85 85 0 0 1 605 140" fill="none" stroke="#ffffff" stroke-width="0.75" />
+
+  
+  <line x1="215" y1="235" x2="215" y2="270" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 2" />
+  <line x1="245" y1="235" x2="245" y2="270" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 2" />
+  <line x1="415" y1="235" x2="415" y2="270" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 2" />
+  <line x1="445" y1="235" x2="445" y2="270" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 2" />
+  <line x1="615" y1="235" x2="615" y2="270" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 2" />
+  <line x1="645" y1="235" x2="645" y2="270" stroke="#ffffff" stroke-width="1" stroke-dasharray="3 2" />
+
+  
+  
+  
+  
+  
+  <path d="M 203 270 L 257 268 L 255 350 L 243 353 L 240 360 L 200 358 L 205 320 Z" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 210 285 L 248 285 M 205 305 L 253 303 M 206 325 L 235 325 M 220 345 L 252 342" stroke="#ffffff" stroke-width="0.5" />
+  <path d="M 190 360 L 270 360 L 265 385 L 185 385 Z" fill="none" stroke="#ffffff" stroke-width="1.5" />
+
+  
+  <path d="M 403 268 L 458 272 L 453 348 L 460 355 L 400 358 L 405 310 Z" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 410 287 L 452 287 M 406 307 L 451 305 M 408 327 L 440 327 M 415 345 L 455 345" stroke="#ffffff" stroke-width="0.5" />
+  <path d="M 390 358 L 472 358 L 468 385 L 388 385 Z" fill="none" stroke="#ffffff" stroke-width="1.5" />
+
+  
+  <path d="M 605 272 L 655 269 L 658 350 L 598 352 L 602 315 Z" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <path d="M 610 288 L 650 288 M 607 308 L 654 306 M 605 328 L 642 328 M 612 346 L 655 346" stroke="#ffffff" stroke-width="0.5" />
+  <path d="M 590 352 L 670 352 L 664 385 L 588 385 Z" fill="none" stroke="#ffffff" stroke-width="1.5" />
+
+  
+  <path d="M 257 295 C 290 280 320 310 345 320 C 370 330 380 290 403 295" fill="none" stroke="#ffffff" stroke-width="1.25" />
+  <path d="M 458 295 C 490 320 520 280 545 310 C 570 330 580 285 605 292" fill="none" stroke="#ffffff" stroke-width="1.25" />
+  
+  <g stroke="#ffffff" stroke-width="0.5">
+    <circle cx="310" cy="350" r="4" />
+    <circle cx="325" cy="365" r="7" />
+    <circle cx="345" cy="355" r="5" />
+    <circle cx="365" cy="368" r="8" />
+    <circle cx="510" cy="350" r="6" />
+    <circle cx="530" cy="365" r="5" />
+    <circle cx="550" cy="355" r="7" />
+    <path d="M 280 370 L 295 360 L 305 375 Z" />
+    <path d="M 480 365 L 495 355 L 490 375 Z" />
+  </g>
+
+  
+  
+  
+  
+  
+  <g stroke="#ffffff" stroke-width="1.25">
+    <rect x="198" y="420" width="64" height="22" />
+    <rect x="202" y="442" width="56" height="22" />
+    <rect x="196" y="464" width="68" height="22" />
+    <rect x="185" y="486" width="90" height="30" />
+    
+    <line x1="230" y1="420" x2="230" y2="442" stroke-width="0.5" />
+    <line x1="220" y1="442" x2="220" y2="464" stroke-width="0.5" />
+    <line x1="240" y1="442" x2="240" y2="464" stroke-width="0.5" />
+    <line x1="230" y1="464" x2="230" y2="486" stroke-width="0.5" />
+    <line x1="215" y1="486" x2="215" y2="516" stroke-width="0.5" />
+    <line x1="245" y1="486" x2="245" y2="516" stroke-width="0.5" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="1.25">
+    <rect x="398" y="420" width="64" height="22" />
+    <rect x="402" y="442" width="56" height="22" />
+    <rect x="396" y="464" width="68" height="22" />
+    <rect x="385" y="486" width="90" height="30" />
+    
+    <line x1="430" y1="420" x2="430" y2="442" stroke-width="0.5" />
+    <line x1="420" y1="442" x2="420" y2="464" stroke-width="0.5" />
+    <line x1="440" y1="442" x2="440" y2="464" stroke-width="0.5" />
+    <line x1="430" y1="464" x2="430" y2="486" stroke-width="0.5" />
+    <line x1="415" y1="486" x2="415" y2="516" stroke-width="0.5" />
+    <line x1="445" y1="486" x2="445" y2="516" stroke-width="0.5" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="1.25">
+    <rect x="598" y="420" width="64" height="22" />
+    <rect x="602" y="442" width="56" height="22" />
+    <rect x="596" y="464" width="68" height="22" />
+    <rect x="585" y="486" width="90" height="30" />
+    
+    <line x1="630" y1="420" x2="630" y2="442" stroke-width="0.5" />
+    <line x1="620" y1="442" x2="620" y2="464" stroke-width="0.5" />
+    <line x1="640" y1="442" x2="640" y2="464" stroke-width="0.5" />
+    <line x1="630" y1="464" x2="630" y2="486" stroke-width="0.5" />
+    <line x1="615" y1="486" x2="615" y2="516" stroke-width="0.5" />
+    <line x1="645" y1="486" x2="645" y2="516" stroke-width="0.5" />
+  </g>
+
+  
+  <path d="M 262 445 C 310 420 350 420 398 445" stroke="#ffffff" stroke-width="1.25" fill="none" />
+  <path d="M 262 435 C 310 410 350 410 398 435" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="3 3" fill="none" />
+  <path d="M 462 445 C 510 420 550 420 598 445" stroke="#ffffff" stroke-width="1.25" fill="none" />
+  <path d="M 462 435 C 510 410 550 410 598 435" stroke="#ffffff" stroke-width="0.75" stroke-dasharray="3 3" fill="none" />
+
+  
+  <path d="M 225 415 L 235 450 L 228 475 L 240 515" fill="none" stroke="#ffffff" stroke-width="0.75" />
+  <path d="M 435 418 L 425 460 L 438 490 L 430 515" fill="none" stroke="#ffffff" stroke-width="0.75" />
+  <path d="M 622 415 L 638 455 L 625 480 L 632 516" fill="none" stroke="#ffffff" stroke-width="0.75" />
+
+  
+  
+  
+  
+  
+  <path d="M 185 570 L 275 565 L 285 640 L 250 660 L 180 655 L 175 610 Z" stroke="#ffffff" stroke-width="1.75" fill="none" />
+  <path d="M 185 570 L 230 610 L 285 640 M 230 610 L 250 660 M 175 610 L 230 610 M 230 610 L 245 567" stroke="#ffffff" stroke-width="0.75" />
+
+  
+  <path d="M 385 568 L 475 565 L 485 645 L 440 662 L 375 655 L 375 615 Z" stroke="#ffffff" stroke-width="1.75" fill="none" />
+  <path d="M 385 568 L 430 612 L 485 645 M 430 612 L 440 662 M 375 615 L 430 612 M 430 612 L 445 566" stroke="#ffffff" stroke-width="0.75" />
+
+  
+  <path d="M 585 565 L 675 568 L 680 642 L 640 660 L 578 655 L 575 610 Z" stroke="#ffffff" stroke-width="1.75" fill="none" />
+  <path d="M 585 565 L 630 610 L 680 642 M 630 610 L 640 660 M 575 610 L 630 610 M 630 610 L 642 567" stroke="#ffffff" stroke-width="0.75" />
+
+  
+  <polygon points="270,590 390,590 385,615 275,615" stroke="#ffffff" stroke-width="1" fill="none" />
+  <polygon points="470,590 590,590 585,615 475,615" stroke="#ffffff" stroke-width="1" fill="none" />
+
+  
+  
+  
+  
+  
+  <path d="M 120 700 H 170 V 720 H 290 V 700 H 370 V 720 H 490 V 700 H 570 V 720 H 690 V 700 H 765" stroke="#ffffff" stroke-width="1.5" fill="none" />
+
+  
+  <g stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6">
+    <line x1="130" y1="730" x2="160" y2="760" />
+    <line x1="150" y1="730" x2="180" y2="760" />
+    <line x1="170" y1="730" x2="200" y2="760" />
+    <line x1="210" y1="730" x2="240" y2="760" />
+    <line x1="250" y1="730" x2="280" y2="760" />
+    <line x1="290" y1="730" x2="320" y2="760" />
+    <line x1="330" y1="730" x2="360" y2="760" />
+    <line x1="370" y1="730" x2="400" y2="760" />
+    <line x1="410" y1="730" x2="440" y2="760" />
+    <line x1="450" y1="730" x2="480" y2="760" />
+    <line x1="490" y1="730" x2="520" y2="760" />
+    <line x1="530" y1="730" x2="560" y2="760" />
+    <line x1="570" y1="730" x2="600" y2="760" />
+    <line x1="610" y1="730" x2="640" y2="760" />
+    <line x1="650" y1="730" x2="680" y2="760" />
+    <line x1="690" y1="730" x2="720" y2="760" />
+    <line x1="730" y1="730" x2="760" y2="760" />
+
+    <line x1="160" y1="730" x2="130" y2="760" />
+    <line x1="200" y1="730" x2="170" y2="760" />
+    <line x1="240" y1="730" x2="210" y2="760" />
+    <line x1="280" y1="730" x2="250" y2="760" />
+    <line x1="320" y1="730" x2="290" y2="760" />
+    <line x1="360" y1="730" x2="330" y2="760" />
+    <line x1="400" y1="730" x2="370" y2="760" />
+    <line x1="440" y1="730" x2="410" y2="760" />
+    <line x1="480" y1="730" x2="450" y2="760" />
+    <line x1="520" y1="730" x2="490" y2="760" />
+    <line x1="560" y1="730" x2="530" y2="760" />
+    <line x1="600" y1="730" x2="570" y2="760" />
+    <line x1="640" y1="730" x2="610" y2="760" />
+    <line x1="680" y1="730" x2="650" y2="760" />
+    <line x1="720" y1="730" x2="690" y2="760" />
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="0.8">
+    
+    <line x1="230" y1="80" x2="430" y2="80" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+    <line x1="430" y1="80" x2="630" y2="80" marker-start="url(#arrow)" marker-end="url(#arrow)" />
+    <line x1="230" y1="72" x2="230" y2="88" />
+    <line x1="430" y1="72" x2="430" y2="88" />
+    <line x1="630" y1="72" x2="630" y2="88" />
+    
+    <path d="M 680 160 H 695 V 320 H 680" fill="none" stroke-width="0.75" />
+    <path d="M 680 320 H 695 V 470 H 680" fill="none" stroke-width="0.75" />
+    <path d="M 680 470 H 695 V 610 H 680" fill="none" stroke-width="0.75" />
+  </g>
+</svg>
