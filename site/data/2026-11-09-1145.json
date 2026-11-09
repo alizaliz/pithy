@@ -1,0 +1,20 @@
+{
+  "id": "2026-11-09-1145",
+  "date": "2026-11-09",
+  "slot": "1145",
+  "text": "Light thinks it travels faster than anything but it is wrong. No matter how fast light travels it finds the darkness has always got there first, and is waiting for it.",
+  "author": "Terry Pratchett",
+  "work": "Reaper Man",
+  "origin": "baked",
+  "sentiment": "Piques interest",
+  "visual_brief": "An optical ray-tracing diagram in precise technical linework, showing a collimated beam bursting from an aperture into empty void. Vector arrows mark the advancing wavefronts across fine coordinate crosshairs, surrounded and dwarfed by expansive, uninterrupted black negative space.",
+  "alt": "Technical ray-tracing schematic of a light beam propagating into deep space",
+  "image": "data/images/2026-11-09-1145.svg",
+  "image_method": "llm",
+  "errors": {
+    "image": [
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out"
+    ]
+  }
+}
