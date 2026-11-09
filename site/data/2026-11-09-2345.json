@@ -1,0 +1,20 @@
+{
+  "id": "2026-11-09-2345",
+  "date": "2026-11-09",
+  "slot": "2345",
+  "text": "In the middle of winter I at last discovered that there was in me an invincible summer.",
+  "author": "Albert Camus",
+  "work": "Return to Tipasa",
+  "origin": "baked",
+  "sentiment": "Motivational",
+  "visual_brief": "An engineering cross-section of an insulated thermal core embedded deep within a frozen crystalline shell, depicted in crisp white drafting lines on black. Dimensional callouts and radiating dashed arrows show the internal heat flux pushing steadily outward against the exterior frost lines.",
+  "alt": "Engineering cross-section of a radiating thermal core inside a cold shell.",
+  "image": "data/images/2026-11-09-2345.svg",
+  "image_method": "llm",
+  "errors": {
+    "image": [
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out"
+    ]
+  }
+}
