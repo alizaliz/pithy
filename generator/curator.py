@@ -25,6 +25,12 @@ Reject dialogue, narration, lists, and lines that only make sense in the source
 Lines of a passage are separated by " / " in the list.
 If none fit well, choose the closest one anyway.
 
+Judge only on how well a line works as an aphorism. Take no side on politics,
+religion or ideology: don't favour lines that fit any worldview, and don't
+pass over lines because they are unfashionable, uncomfortable, or critical of
+any group, institution or belief. Sharp, sceptical and contrarian lines are
+welcome; flattery and platitudes are not.
+
 Then write a brief for a white-on-black line drawing that captures the quote's
 feeling indirectly, by metaphor rather than illustration. The subject can be an
 object, machine, structure, instrument or natural form, or a scene or situation

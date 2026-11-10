@@ -246,5 +246,28 @@
     "author": "George Orwell",
     "work": "Nineteen Eighty-Four",
     "sentiments": ["Political"]
+  },
+  {
+    "text": "To understand what is coming at you, you need to understand what happened before you.",
+    "author": "Ray Dalio",
+    "sentiments": ["Political", "Philosophical"]
+  },
+  {
+    "text": "We were the first human beings who would never see anything for the first time.",
+    "author": "Gillian Flynn",
+    "work": "Gone Girl",
+    "sentiments": ["Melancholic", "Wry", "Piques interest"]
+  },
+  {
+    "text": "Our kind of love can go into remission, but it’s always waiting to return. Like the world’s sweetest cancer.",
+    "author": "Gillian Flynn",
+    "work": "Gone Girl",
+    "sentiments": ["Tender", "Melancholic"]
+  },
+  {
+    "text": "I wanted it to be clear that power can be ugly, and a matriarchy is just as ugly as a patriarchy. It may look a little different, but power is bloody.",
+    "author": "Gillian Flynn",
+    "work": "on Sharp Objects",
+    "sentiments": ["Political", "Wry"]
   }
 ]

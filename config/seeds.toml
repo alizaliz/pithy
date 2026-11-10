@@ -190,6 +190,24 @@ weight = 0.5
 sentiments = ["Tender", "Melancholic"]
 
 [[sources]]
+author = "Fyodor Dostoevsky"
+wikiquote = "Fyodor Dostoevsky"
+weight = 0.75
+sentiments = ["Philosophical", "Melancholic", "Piques interest"]
+
+[[sources]]
+author = "Leo Tolstoy"
+wikiquote = "Leo Tolstoy"
+weight = 0.75
+sentiments = ["Philosophical", "Tender", "Political"]
+
+[[sources]]
+author = "Bill Bryson"
+wikiquote = "Bill Bryson"
+weight = 0.5
+sentiments = ["Wry", "Wonder"]
+
+[[sources]]
 author = "George Orwell"
 wikiquote = "George Orwell"
 weight = 0.75
