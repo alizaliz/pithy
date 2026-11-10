@@ -269,5 +269,23 @@
     "author": "Gillian Flynn",
     "work": "on Sharp Objects",
     "sentiments": ["Political", "Wry"]
+  },
+  {
+    "text": "The view that people in the future matter just as much as us has deep practical implications. We have a long way to go if we are to understand these and integrate them fully into our moral thinking.",
+    "author": "Toby Ord",
+    "work": "The Precipice",
+    "sentiments": ["Philosophical", "Political"]
+  },
+  {
+    "text": "The Anthropocene is the time of profound human effects on the environment, while the Precipice is the time where humanity is at high risk of destroying itself.",
+    "author": "Toby Ord",
+    "work": "The Precipice",
+    "sentiments": ["Piques interest", "Melancholic"]
+  },
+  {
+    "text": "As the gap between our power and our wisdom grows, our future is subject to an ever-increasing level of risk.",
+    "author": "Toby Ord",
+    "work": "The Precipice",
+    "sentiments": ["Philosophical", "Wonder", "Political"]
   }
 ]
