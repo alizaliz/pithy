@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-12-2345",
+  "date": "2026-11-12",
+  "slot": "2345",
+  "text": "To understand what is coming at you, you need to understand what happened before you.",
+  "author": "Ray Dalio",
+  "work": null,
+  "origin": "baked",
+  "sentiment": "Philosophical",
+  "visual_brief": "An abstract precision instrument evoking: philosophical, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-11-12-2345.svg",
+  "image_method": "fallback",
+  "errors": {
+    "curator": [
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    ],
+    "image": [
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out"
+    ]
+  }
+}
