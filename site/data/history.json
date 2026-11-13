@@ -600,5 +600,12 @@
   "hash": "8dfa47175409",
   "sentiment": "Martial Arts",
   "source": "Bruce Lee"
+ },
+ {
+  "id": "2026-11-13-2345",
+  "date": "2026-11-13",
+  "hash": "1ef278a63e24",
+  "sentiment": "Motivational",
+  "source": "Brent Weeks"
  }
 ]

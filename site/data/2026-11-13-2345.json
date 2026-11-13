@@ -1,0 +1,21 @@
+{
+  "id": "2026-11-13-2345",
+  "date": "2026-11-13",
+  "slot": "2345",
+  "text": "I’m trying to do what’s right, whether or not that measures up with what men call honorable. There’s a gap between those, you know?",
+  "author": "Brent Weeks",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Brent_Weeks",
+  "sentiment": "Motivational",
+  "visual_brief": "A precise engineering cross-section of a gyroscopic gimbal mechanism suspended inside a heavily tilted structural ring. Directional rotation arrows and datum lines show the inner core remaining strictly level and upright despite the steep angle of the surrounding frame.",
+  "alt": "Engineering drawing of a gyroscope maintaining vertical balance inside a tilted frame",
+  "image": "data/images/2026-11-13-2345.svg",
+  "image_method": "fallback",
+  "errors": {
+    "image": [
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    ]
+  }
+}
