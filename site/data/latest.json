@@ -1,25 +1,14 @@
 {
-  "id": "2026-11-12-2345",
-  "date": "2026-11-12",
-  "slot": "2345",
-  "text": "To understand what is coming at you, you need to understand what happened before you.",
-  "author": "Ray Dalio",
+  "id": "2026-11-13-1145",
+  "date": "2026-11-13",
+  "slot": "1145",
+  "text": "Research your own experience; absorb what is useful, reject what is useless and add what is essentially your own.",
+  "author": "Bruce Lee",
   "work": null,
-  "origin": "baked",
-  "sentiment": "Philosophical",
-  "visual_brief": "An abstract precision instrument evoking: philosophical, as an engineering drawing",
-  "alt": "Technical line drawing of a precision instrument",
-  "image": "data/images/2026-11-12-2345.svg",
-  "image_method": "fallback",
-  "errors": {
-    "curator": [
-      "LLM request failed: TimeoutError after 240s: The read operation timed out",
-      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
-    ],
-    "image": [
-      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "LLM request failed: TimeoutError after 240s: The read operation timed out"
-    ]
-  }
+  "origin": "https://en.wikiquote.org/wiki/Bruce_Lee",
+  "sentiment": "Martial Arts",
+  "visual_brief": "A precise engineering schematic of a gem faceting arm and dop stick holding an unrefined mineral crystal against a flat lap wheel. Fine projection lines and angular degree callouts map out the planes being shaved away, with directional rotation arrows showing the cut while dotted lines trace the discarded rough silhouette.",
+  "alt": "Engineering schematic of a lapidary tool carving precise facets into stone",
+  "image": "data/images/2026-11-13-1145.svg",
+  "image_method": "llm"
 }
