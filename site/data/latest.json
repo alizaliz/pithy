@@ -1,20 +1,14 @@
 {
-  "id": "2026-11-15-1145",
+  "id": "2026-11-15-2345",
   "date": "2026-11-15",
-  "slot": "1145",
-  "text": "All becoming and growing—all that guarantees a future—involves pain.",
-  "author": "Friedrich Nietzsche",
-  "work": null,
-  "origin": "https://en.wikiquote.org/wiki/Friedrich_Nietzsche",
-  "sentiment": "Melancholic",
-  "visual_brief": "An abstract precision instrument evoking: melancholic, as an engineering drawing",
-  "alt": "Technical line drawing of a precision instrument",
-  "image": "data/images/2026-11-15-1145.svg",
-  "image_method": "llm",
-  "errors": {
-    "curator": [
-      "LLM request failed: TimeoutError after 240s: The read operation timed out",
-      "LLM request failed: TimeoutError after 240s: The read operation timed out"
-    ]
-  }
+  "slot": "2345",
+  "text": "Freedom may be mankind’s natural state, but so is sitting in a tree eating your dinner while it is still wriggling.",
+  "author": "Terry Pratchett",
+  "work": "Discworld",
+  "origin": "https://en.wikiquote.org/wiki/Discworld",
+  "sentiment": "Wry",
+  "visual_brief": "A precise architectural section drawing in white on black, showing a stark, cantilevered modernist steel terrace projecting over open space, terminating abruptly into a single rough, unpeeled tree bough. Fine dimension strings, plumb lines, and load vector arrows annotate the junction where engineered geometry meets raw wood.",
+  "alt": "White-line architectural section of a cantilevered steel beam transitioning into a rough tree bough",
+  "image": "data/images/2026-11-15-2345.svg",
+  "image_method": "llm"
 }

@@ -1,0 +1,260 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 2 L 7 5 L 1 8 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    <marker id="arrow-dim" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M 0 5 L 8 2 L 5 5 L 8 8 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    <marker id="vector-arrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 1 2 L 10 6 L 1 10 L 3 6 Z" fill="#ffffff" stroke="none" />
+    </marker>
+    
+    <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 2 8 L 8 2" stroke="#ffffff" stroke-width="1.2" fill="none" />
+    </marker>
+  </defs>
+
+  
+  <rect width="800" height="800" fill="#000000" />
+
+  
+  <rect x="35" y="35" width="730" height="730" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <rect x="40" y="40" width="720" height="720" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.6" />
+  
+  
+  
+  <g stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.3">
+    <line x1="50" y1="210" x2="110" y2="150" />
+    <line x1="50" y1="250" x2="150" y2="150" />
+    <line x1="50" y1="290" x2="175" y2="165" />
+    <line x1="50" y1="330" x2="175" y2="205" />
+    <line x1="50" y1="370" x2="175" y2="245" />
+    <line x1="50" y1="410" x2="175" y2="285" />
+    <line x1="50" y1="450" x2="175" y2="325" />
+    <line x1="50" y1="490" x2="175" y2="365" />
+    <line x1="50" y1="530" x2="175" y2="405" />
+    <line x1="50" y1="570" x2="175" y2="445" />
+    <line x1="50" y1="610" x2="175" y2="485" />
+    <line x1="50" y1="650" x2="175" y2="525" />
+    <line x1="65" y1="675" x2="175" y2="565" />
+    <line x1="105" y1="675" x2="175" y2="605" />
+    <line x1="145" y1="675" x2="175" y2="645" />
+  </g>
+
+  
+  <path d="M 50 150 L 175 150 L 175 320 L 155 320 L 155 675 L 50 675" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="miter" />
+  
+  <line x1="40" y1="675" x2="220" y2="675" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="6,3" />
+
+  
+  
+  <line x1="175" y1="320" x2="520" y2="320" stroke="#ffffff" stroke-width="2.0" />
+  <line x1="175" y1="326" x2="520" y2="326" stroke="#ffffff" stroke-width="0.8" />
+
+  
+  <path d="M 175 440 L 340 395 L 512 344" fill="none" stroke="#ffffff" stroke-width="2.0" />
+  <path d="M 175 434 L 340 390 L 512 340" fill="none" stroke="#ffffff" stroke-width="0.8" />
+
+  
+  <g stroke="#ffffff" stroke-width="0.8">
+    
+    <line x1="175" y1="326" x2="175" y2="434" />
+    <line x1="195" y1="326" x2="195" y2="428" />
+    <line x1="195" y1="326" x2="175" y2="370" stroke-dasharray="2,2" />
+    <line x1="195" y1="428" x2="175" y2="370" stroke-dasharray="2,2" />
+    
+    
+    <line x1="260" y1="326" x2="260" y2="412" />
+    <line x1="330" y1="326" x2="330" y2="393" />
+    <line x1="400" y1="326" x2="400" y2="373" />
+    <line x1="465" y1="326" x2="465" y2="354" />
+
+    
+    <path d="M 160 375 L 515 334" stroke-dasharray="14,3,2,3" stroke-width="0.6" stroke-opacity="0.8" />
+  </g>
+
+  
+  
+  <line x1="175" y1="315" x2="525" y2="315" stroke="#ffffff" stroke-width="1.0" />
+  <g stroke="#ffffff" stroke-width="0.5">
+    <line x1="210" y1="315" x2="210" y2="320" />
+    <line x1="245" y1="315" x2="245" y2="320" />
+    <line x1="280" y1="315" x2="280" y2="320" />
+    <line x1="315" y1="315" x2="315" y2="320" />
+    <line x1="350" y1="315" x2="350" y2="320" />
+    <line x1="385" y1="315" x2="385" y2="320" />
+    <line x1="420" y1="315" x2="420" y2="320" />
+    <line x1="455" y1="315" x2="455" y2="320" />
+    <line x1="490" y1="315" x2="490" y2="320" />
+  </g>
+
+  
+  
+  <line x1="200" y1="215" x2="520" y2="215" stroke="#ffffff" stroke-width="1.5" />
+  
+  <line x1="200" y1="220" x2="518" y2="220" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.7" />
+  <line x1="200" y1="312" x2="518" y2="312" stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.7" />
+  <line x1="200" y1="220" x2="200" y2="312" stroke="#ffffff" stroke-width="0.6" />
+  <line x1="518" y1="220" x2="518" y2="312" stroke="#ffffff" stroke-width="0.6" />
+  
+  <line x1="260" y1="215" x2="260" y2="315" stroke="#ffffff" stroke-width="0.9" />
+  <line x1="360" y1="215" x2="360" y2="315" stroke="#ffffff" stroke-width="0.9" />
+  <line x1="460" y1="215" x2="460" y2="315" stroke="#ffffff" stroke-width="0.9" />
+
+  
+  <g stroke="#ffffff">
+    
+    <polygon points="515,312 528,312 528,345 515,347" fill="none" stroke-width="1.8" />
+    
+    <path d="M 528 316 C 538 317, 545 321, 545 330 C 545 339, 538 343, 528 344" fill="none" stroke-width="1.8" />
+    <path d="M 525 310 C 542 312, 552 320, 552 331 C 552 342, 542 349, 525 350" fill="none" stroke-width="1.0" />
+    
+    <circle cx="534" cy="322" r="2.2" stroke-width="1.0" />
+    <circle cx="534" cy="338" r="2.2" stroke-width="1.0" />
+    <circle cx="542" cy="326" r="2.2" stroke-width="1.0" />
+    <circle cx="542" cy="334" r="2.2" stroke-width="1.0" />
+    
+    <line x1="485" y1="326" x2="528" y2="316" stroke-width="1.0" />
+    <line x1="485" y1="350" x2="528" y2="344" stroke-width="1.0" />
+  </g>
+
+  
+  
+  <g stroke="#ffffff">
+    
+    <path d="M 470 70               C 475 110, 482 145, 488 185               C 493 218, 498 245, 510 280               C 517 298, 528 312, 532 316               C 542 322, 546 335, 548 345              C 555 385, 575 440, 595 500               C 615 560, 642 625, 665 725" fill="none" stroke-width="2.4" stroke-linecap="round" />
+
+    
+    <path d="M 425 65               C 432 105, 440 150, 442 190               C 445 235, 462 278, 478 315              C 490 342, 502 360, 515 390              C 530 435, 548 495, 570 565              C 590 625, 612 680, 625 725" fill="none" stroke-width="2.2" stroke-linecap="round" />
+
+    
+    <g stroke-width="0.7" stroke-opacity="0.75" fill="none">
+      
+      <path d="M 445 95 C 455 125, 460 160, 468 190" />
+      <path d="M 460 120 C 468 150, 472 175, 478 210" />
+      <path d="M 438 150 C 445 175, 448 205, 452 230" />
+      
+      <ellipse cx="482" cy="240" rx="6" ry="12" transform="rotate(-15 482 240)" stroke-width="1.0" />
+      <path d="M 478 222 C 468 232, 468 248, 477 258" />
+      <path d="M 488 225 C 496 235, 495 248, 487 256" />
+
+      
+      <path d="M 502 295 C 506 312, 508 330, 510 348" />
+      <path d="M 515 285 C 522 305, 523 315, 526 332" />
+      <path d="M 522 355 C 530 380, 538 410, 545 440" />
+      <path d="M 535 365 C 542 395, 550 425, 560 460" />
+      <path d="M 510 370 C 518 400, 528 435, 538 470" />
+
+      
+      <ellipse cx="580" cy="515" rx="7" ry="15" transform="rotate(20 580 515)" stroke-width="0.9" />
+      <path d="M 570 495 C 560 515, 565 535, 575 545" />
+      <path d="M 552 475 C 560 520, 575 570, 595 620" />
+      <path d="M 568 535 C 578 575, 595 625, 610 670" />
+      <path d="M 585 550 C 600 600, 620 655, 638 710" />
+      <path d="M 605 605 C 620 645, 635 685, 648 725" />
+      <path d="M 542 575 C 555 615, 572 665, 588 710" />
+
+      
+      <ellipse cx="448" cy="67" rx="23" ry="7" transform="rotate(-18 448 67)" stroke-width="1.2" stroke-dasharray="3,1" />
+      <ellipse cx="448" cy="67" rx="14" ry="4.5" transform="rotate(-18 448 67)" stroke-width="0.8" />
+      <ellipse cx="448" cy="67" rx="6" ry="2" transform="rotate(-18 448 67)" stroke-width="0.6" />
+    </g>
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.4" fill="none">
+    <path d="M 155 675 C 220 690, 310 710, 420 735 C 520 755, 640 765, 750 760" stroke-dasharray="4,4" />
+    <path d="M 155 695 C 240 715, 360 740, 500 760 C 600 775, 700 775, 750 770" stroke-dasharray="2,4" />
+  </g>
+
+  
+  <g stroke="#ffffff">
+    
+    <line x1="535" y1="340" x2="535" y2="650" stroke-width="0.7" stroke-dasharray="6,3,1.5,3" stroke-opacity="0.8" />
+    
+    <line x1="530" y1="650" x2="540" y2="650" stroke-width="1.0" />
+    <path d="M 530 650 L 540 650 L 535 665 Z" fill="none" stroke-width="1.0" />
+    <circle cx="535" cy="648" r="1.5" fill="#ffffff" />
+    
+    <line x1="535" y1="658" x2="570" y2="658" stroke-width="0.5" stroke-dasharray="2,2" />
+    <text x="575" y="661" fill="#ffffff" font-family="monospace" font-size="10" stroke="none">PLUMB 0.00</text>
+  </g>
+
+  
+  
+  <line x1="535" y1="260" x2="535" y2="308" stroke="#ffffff" stroke-width="2.0" marker-end="url(#vector-arrow)" />
+  <text x="542" y="280" fill="#ffffff" font-family="monospace" font-size="11" font-weight="bold">F<tspan dy="3" font-size="8">z</tspan><tspan dy="-3"> = 42.8 kN</tspan></text>
+
+  
+  <line x1="600" y1="410" x2="562" y2="362" stroke="#ffffff" stroke-width="1.6" marker-end="url(#vector-arrow)" />
+  <text x="605" y="405" fill="#ffffff" font-family="monospace" font-size="10">R<tspan dy="3" font-size="7">thrust</tspan></text>
+
+  
+  <path d="M 140 340 A 35 35 0 0 1 140 405" fill="none" stroke="#ffffff" stroke-width="1.4" marker-end="url(#arrow)" />
+  <text x="85" y="377" fill="#ffffff" font-family="monospace" font-size="10">M<tspan dy="3" font-size="7">k</tspan></text>
+
+  
+  <g stroke="#ffffff" stroke-width="0.6" stroke-opacity="0.7">
+    <line x1="495" y1="375" x2="495" y2="415" />
+    <line x1="495" y1="415" x2="535" y2="415" />
+    <line x1="495" y1="375" x2="535" y2="415" stroke-dasharray="2,2" />
+    <path d="M 525 415 A 10 10 0 0 0 528 408" fill="none" />
+    <text x="470" y="420" fill="#ffffff" font-family="monospace" font-size="9" stroke="none">θ=34°</text>
+  </g>
+
+  
+  
+  <g stroke="#ffffff" stroke-width="0.7">
+    
+    <line x1="175" y1="180" x2="175" y2="135" stroke-opacity="0.6" />
+    <line x1="535" y1="310" x2="535" y2="135" stroke-opacity="0.6" />
+    
+    <line x1="175" y1="145" x2="535" y2="145" marker-start="url(#tick)" marker-end="url(#tick)" />
+    
+    <text x="330" y="140" fill="#ffffff" font-family="monospace" font-size="11" text-anchor="middle">3600 [CANTILEVER]</text>
+
+    
+    <line x1="50" y1="140" x2="50" y2="105" stroke-opacity="0.6" />
+    <line x1="535" y1="135" x2="535" y2="105" stroke-opacity="0.6" />
+    <line x1="50" y1="115" x2="535" y2="115" marker-start="url(#tick)" marker-end="url(#tick)" />
+    <text x="270" y="110" fill="#ffffff" font-family="monospace" font-size="11" text-anchor="middle">4850 TOTAL CLEAR SPAN</text>
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="0.7">
+    <line x1="145" y1="675" x2="90" y2="675" stroke-opacity="0.6" />
+    <line x1="165" y1="320" x2="90" y2="320" stroke-opacity="0.6" />
+    <line x1="100" y1="675" x2="100" y2="320" marker-start="url(#tick)" marker-end="url(#tick)" />
+    <text x="92" y="505" fill="#ffffff" font-family="monospace" font-size="11" text-anchor="middle" transform="rotate(-90 92 505)">3550 T.O.C.</text>
+  </g>
+
+  
+  <g stroke="#ffffff" stroke-width="0.8">
+    
+    <path d="M 590 320 L 605 320 L 597 310 Z" fill="none" />
+    <line x1="590" y1="320" x2="650" y2="320" />
+    <text x="655" y="324" fill="#ffffff" font-family="monospace" font-size="11">EL. +4.200</text>
+
+    
+    <path d="M 280 675 L 295 675 L 287 665 Z" fill="none" />
+    <line x1="280" y1="675" x2="335" y2="675" />
+    <text x="340" y="679" fill="#ffffff" font-family="monospace" font-size="11">DATUM ±0.000</text>
+  </g>
+
+  
+  <g stroke="#ffffff">
+    <circle cx="530" cy="330" r="42" fill="none" stroke-width="1.0" stroke-dasharray="5,2" />
+    <line x1="565" y1="310" x2="630" y2="240" stroke-width="0.8" />
+    <line x1="630" y1="240" x2="710" y2="240" stroke-width="0.8" />
+    <circle cx="565" cy="310" r="1.5" fill="#ffffff" />
+    <text x="635" y="234" fill="#ffffff" font-family="monospace" font-size="12">NODE DETAIL 'B'</text>
+  </g>
+
+  
+  <text x="60" y="75" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="1">SECTION A-A</text>
+  <text x="60" y="93" fill="#ffffff" font-family="monospace" font-size="12" letter-spacing="0.5">SCALE 1:25</text>
+  <text x="545" y="745" fill="#ffffff" font-family="monospace" font-size="13" letter-spacing="0.8">NATURAL BOUGH JUNCTION</text>
+
+</svg>
