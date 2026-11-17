@@ -1,25 +1,14 @@
 {
-  "id": "2026-11-17-1145",
+  "id": "2026-11-17-2345",
   "date": "2026-11-17",
-  "slot": "1145",
-  "text": "Of the life of man the duration is but a point.",
-  "author": "Marcus Aurelius",
-  "work": "Meditations",
-  "origin": "https://en.wikiquote.org/wiki/Marcus_Aurelius",
-  "sentiment": "Philosophical",
-  "visual_brief": "An abstract precision instrument evoking: philosophical, as an engineering drawing",
-  "alt": "Technical line drawing of a precision instrument",
-  "image": "data/images/2026-11-17-1145.svg",
-  "image_method": "fallback",
-  "errors": {
-    "curator": [
-      "LLM request failed: TimeoutError after 240s: The read operation timed out",
-      "LLM request failed: TimeoutError after 240s: The read operation timed out"
-    ],
-    "image": [
-      "LLM request failed: TimeoutError after 240s: The read operation timed out",
-      "LLM request failed: TimeoutError after 240s: The read operation timed out",
-      "LLM request failed: TimeoutError after 240s: The read operation timed out"
-    ]
-  }
+  "slot": "2345",
+  "text": "We are what we pretend to be, so we must be careful about what we pretend to be.",
+  "author": "Kurt Vonnegut",
+  "work": "Mother Night",
+  "origin": "baked",
+  "sentiment": "Piques interest",
+  "visual_brief": "A precise architectural section and elevation of a theatrical false front, showing a hollow decorative facade supported by timber scaffolding, with detailed engineering callouts revealing that the ornamental exterior has developed massive concrete footings and structural piles driven deep into the bedrock.",
+  "alt": "Architectural cross-section of a hollow facade anchored permanently into bedrock",
+  "image": "data/images/2026-11-17-2345.svg",
+  "image_method": "llm"
 }

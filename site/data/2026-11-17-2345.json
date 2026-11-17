@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-17-2345",
+  "date": "2026-11-17",
+  "slot": "2345",
+  "text": "We are what we pretend to be, so we must be careful about what we pretend to be.",
+  "author": "Kurt Vonnegut",
+  "work": "Mother Night",
+  "origin": "baked",
+  "sentiment": "Piques interest",
+  "visual_brief": "A precise architectural section and elevation of a theatrical false front, showing a hollow decorative facade supported by timber scaffolding, with detailed engineering callouts revealing that the ornamental exterior has developed massive concrete footings and structural piles driven deep into the bedrock.",
+  "alt": "Architectural cross-section of a hollow facade anchored permanently into bedrock",
+  "image": "data/images/2026-11-17-2345.svg",
+  "image_method": "llm"
+}
