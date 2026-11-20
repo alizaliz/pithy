@@ -1,14 +1,25 @@
 {
-  "id": "2026-11-20-1145",
+  "id": "2026-11-20-2345",
   "date": "2026-11-20",
-  "slot": "1145",
-  "text": "Language is the foundation of civilization. It is the glue that holds a people together. It is the first weapon drawn in a conflict.",
-  "author": "Dr. Louise Banks",
-  "work": "Arrival",
-  "origin": "baked",
-  "sentiment": "Political",
-  "visual_brief": "Architectural cross-section of a classical stone arch, rendered in precise white drafting lines against black. Vector arrows indicate compressive forces locking the voussoirs together, converging on a tapered keystone that doubles as an inverted splitting wedge with downward force vectors.",
-  "alt": "Architectural drafting of a stone arch keystone under compression forces",
-  "image": "data/images/2026-11-20-1145.svg",
-  "image_method": "llm"
+  "slot": "2345",
+  "text": "To err is human also in so far as animals seldom or never err, or at least only the cleverest of them do so.",
+  "author": "Georg Christoph Lichtenberg",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Georg_Christoph_Lichtenberg",
+  "sentiment": "Wonder",
+  "visual_brief": "An abstract precision instrument evoking: wonder, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-11-20-2345.svg",
+  "image_method": "fallback",
+  "errors": {
+    "curator": [
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    ],
+    "image": [
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    ]
+  }
 }
