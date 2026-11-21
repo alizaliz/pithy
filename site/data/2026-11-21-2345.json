@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-21-2345",
+  "date": "2026-11-21",
+  "slot": "2345",
+  "text": "This world's a treasure, but it's been telling us to leave for a while now.",
+  "author": "Cooper",
+  "work": "Interstellar",
+  "origin": "https://en.wikiquote.org/wiki/Interstellar_%28film%29",
+  "sentiment": "Motivational",
+  "visual_brief": "An abstract precision instrument evoking: motivational, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-11-21-2345.svg",
+  "image_method": "fallback",
+  "errors": {
+    "curator": [
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out"
+    ],
+    "image": [
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out",
+      "LLM request failed: TimeoutError after 240s: The read operation timed out"
+    ]
+  }
+}
