@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-22-2345",
+  "date": "2026-11-22",
+  "slot": "2345",
+  "text": "Given time-time not in years but in millennia-life adjusts, and a balance has been reached. For time is the essential ingredient; but in the modern world there is no time.",
+  "author": "Rachel Carson",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Rachel_Carson",
+  "sentiment": "Melancholic",
+  "visual_brief": "A precise engineering cross-section of a deep-earth core sample tube, detailing hundreds of paper-thin horizontal strata labeled with fine geological dimension lines, terminating abruptly in an empty, fractured void at the upper rim. Clean orthographic linework with callout ticks and depth markers emphasizes immense compression against sudden absence.",
+  "alt": "Engineering cross-section of a stratified geological core tube terminating abruptly.",
+  "image": "data/images/2026-11-22-2345.svg",
+  "image_method": "llm"
+}
