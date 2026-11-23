@@ -1,0 +1,23 @@
+{
+  "id": "2026-11-23-2345",
+  "date": "2026-11-23",
+  "slot": "2345",
+  "text": "The view that people in the future matter just as much as us has deep practical implications. We have a long way to go if we are to understand these and integrate them fully into our moral thinking.",
+  "author": "Toby Ord",
+  "work": "The Precipice",
+  "origin": "baked",
+  "sentiment": "Philosophical",
+  "visual_brief": "An abstract precision instrument evoking: philosophical, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-11-23-2345.svg",
+  "image_method": "llm",
+  "errors": {
+    "curator": [
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    ],
+    "image": [
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    ]
+  }
+}
