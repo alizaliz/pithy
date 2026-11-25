@@ -1,0 +1,25 @@
+{
+  "id": "2026-11-25-1145",
+  "date": "2026-11-25",
+  "slot": "1145",
+  "text": "Cease negative mental chattering. — If you think a thing is impossible, you'll make it impossible. Pessimism blunts the tools you need to succeed.",
+  "author": "Bruce Lee",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Bruce_Lee",
+  "sentiment": "Martial Arts",
+  "visual_brief": "An abstract precision instrument evoking: martial arts, as an engineering drawing",
+  "alt": "Technical line drawing of a precision instrument",
+  "image": "data/images/2026-11-25-1145.svg",
+  "image_method": "fallback",
+  "errors": {
+    "curator": [
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    ],
+    "image": [
+      "LLM request failed: HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "LLM request failed: HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- [quota: GenerateRequestsPerDayPerProjectPerModel-FreeTier; limit 20]",
+      "LLM request skipped: daily quota exhausted (You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate- [quota: GenerateRequestsPerDayPerProjectPerModel-FreeTier; limit 20])"
+    ]
+  }
+}
