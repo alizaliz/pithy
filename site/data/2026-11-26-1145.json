@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-26-1145",
+  "date": "2026-11-26",
+  "slot": "1145",
+  "text": "On a long enough time line, the survival rate for everyone drops to zero.",
+  "author": "The Narrator",
+  "work": "Fight Club",
+  "origin": "https://en.wikiquote.org/wiki/Fight_Club_%28film%29",
+  "sentiment": "Melancholic",
+  "visual_brief": "An orthographic engineering drawing of orbital decay, showing nested elliptical flight paths slowly spiraling inward toward a dark planetary sphere. Fine dashed tangent lines and minute inward-pointing vector arrows chart the inevitable collapse of the orbit, rendered in clean, technical white linework with delicate dimension markers.",
+  "alt": "Technical diagram showing orbital trajectories spiraling inward toward a planet.",
+  "image": "data/images/2026-11-26-1145.svg",
+  "image_method": "llm"
+}
