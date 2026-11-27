@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-27-2345",
+  "date": "2026-11-27",
+  "slot": "2345",
+  "text": "A heart is a heavy burden.",
+  "author": "Sophie",
+  "work": "Howl's Moving Castle",
+  "origin": "baked",
+  "sentiment": "Tender",
+  "visual_brief": "A precise engineering drawing of an antique counterweight balance scale, showing front and side orthographic views with fine dimension lines. One side of the beam supports an intricately woven bird's nest cradling a smooth pebble, held in delicate static equilibrium.",
+  "alt": "Engineering line drawing of an antique balance scale holding a small nest",
+  "image": "data/images/2026-11-27-2345.svg",
+  "image_method": "llm"
+}
