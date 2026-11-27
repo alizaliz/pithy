@@ -1,0 +1,19 @@
+{
+  "id": "2026-11-27-1145",
+  "date": "2026-11-27",
+  "slot": "1145",
+  "text": "How nice -- to feel nothing, and still get full credit for being alive.",
+  "author": "Kurt Vonnegut",
+  "work": null,
+  "origin": "https://en.wikiquote.org/wiki/Kurt_Vonnegut",
+  "sentiment": "Wry",
+  "visual_brief": "An orthographic engineering schematic of an automated chart recorder, showing paper feeding through drive sprockets indicated by fine curved motion arrows, while a delicate suspended stylus rests completely still, scoring an unbroken, flat baseline across the moving grid.",
+  "alt": "Engineering drawing of a chart recorder steadily advancing paper under a motionless stylus",
+  "image": "data/images/2026-11-27-1145.svg",
+  "image_method": "llm",
+  "errors": {
+    "image": [
+      "invalid XML: not well-formed (invalid token): line 366, column 35"
+    ]
+  }
+}
